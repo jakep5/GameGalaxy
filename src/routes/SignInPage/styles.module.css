@@ -1,0 +1,73 @@
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.nav,
+.footer {
+  padding: 0% 0;
+  background-color: #aaa;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.header {
+  padding: 12% 0;
+}
+
+section.signInWrapper {
+  min-height: 100%;
+  height: 100%;
+  padding: 6% 0;
+  background-color: #bbb;
+}
+
+div.signInHolder {
+  display: block;
+  border: 1px solid black;
+  width: 300px;
+  height: 400px;
+  margin-top: 75px;
+  margin-left: calc(50% - 150px);
+}
+
+.signInLegend {
+  margin-left: 0px;
+}
+
+input.signInUsername {
+  display: block;
+  position: relative;
+  top: 50px;
+}
+
+.signInButton {
+  margin-top: 15%;
+}
+
+p.signUpLink {
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+@media only screen and (min-width: 400px) {
+  .signInHolder {
+    width: 450px;
+    height: 500px;
+    margin-left: calc(50% - 225px);
+  }
+}
+
+
