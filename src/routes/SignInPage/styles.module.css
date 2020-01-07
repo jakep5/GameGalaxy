@@ -59,11 +59,11 @@ input.signInUsername {
 
 p.signUpLink {
   margin-top: 2px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 @media only screen and (min-width: 400px) {
-  .signInHolder {
+  div.signInHolder {
     width: 450px;
     height: 500px;
     margin-left: calc(50% - 225px);
