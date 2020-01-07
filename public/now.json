@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "game-galaxy",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}
