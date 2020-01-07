@@ -1,0 +1,135 @@
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.nav,
+.footer {
+  padding: 0% 0;
+  background-color: #aaa;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+p.profile {
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p.signOut {
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.section {
+  width: 100%;
+  min-height: 525px;
+  padding: 6% 0;
+  background-color: #bbb;
+}
+
+section.searchPage {
+  display: block;
+  height: 450px;
+}
+
+section.searchResults {
+  height: 100%;
+  overflow-y: auto;
+  padding: 2% 0;
+}
+
+section:nth-child(even) {
+  background-color: #ddd;
+}
+
+form.searchForm {
+  position: relative;
+  top: 40px;
+}
+
+.platformHolder {
+  display: flex;
+  height: 200px;
+  width: 300px;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-left: calc(50% - 150px);
+}
+ 
+.nameInputLabel {
+  position: relative;
+  top: 15px;
+}
+
+.nameInput {
+  position: relative;
+  top: 15px;
+  margin-left: 5px;
+}
+
+input.inputCheck {
+  position: relative;
+  bottom: 23px;
+  left: 30px;
+}
+
+div.resultItem {
+  border: 1px solid black;
+  display: inline-block;
+  height: 200px;
+  width: 275px;
+  margin-bottom: 45px;
+}
+
+@media only screen and (min-width: 1080px) {
+  div.platformHolder {
+    flex-direction: row;
+    width: 1200px;
+    height: 100px;
+    margin-top: 50px;
+    margin-left: calc(50% - 600px);
+  }
+
+  form.searchForm {
+    top: 50px;
+  }
+
+  input.inputCheck {
+    bottom: 0px;
+    top: 7px;
+    left: -25px;
+  }
+
+  section.searchPage {
+    min-height: 0;
+    height: 250px;
+  }
+
+  div.searchResultHolder {
+    display: grid;
+    grid-template-columns: 40% 40% 40%;
+  }
+
+  div.resultItem {
+    margin-right: 7%;
+    margin-left: 7%;
+  }
+}
