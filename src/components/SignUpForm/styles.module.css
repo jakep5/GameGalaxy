@@ -1,4 +1,4 @@
-div.signInHolder {
+div.signUpHolder {
   display: block;
   border: 1px solid black;
   width: 300px;
@@ -7,31 +7,12 @@ div.signInHolder {
   margin-left: calc(50% - 150px);
 }
 
-.signInLegend {
-  margin-left: 0px;
-}
-
-input.signInUsername {
-  display: block;
-  position: relative;
-  top: 50px;
-}
-
-.signInButton {
+.signUpButton {
   margin-top: 15%;
 }
 
-p.signUpLink {
-  margin-top: 2px;
-  margin-bottom: 8px;
-}
-
-p.error {
-  color: rgb(179, 5, 5);
-}
-
 @media only screen and (min-width: 400px) {
-  div.signInHolder {
+  div.signUpHolder {
     width: 450px;
     height: 500px;
     margin-left: calc(50% - 225px);
