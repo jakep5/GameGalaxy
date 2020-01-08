@@ -38,6 +38,7 @@ const GameApiServiceObject = {
     },
 
     deleteGame(gameId) {
+        let token = TokenServiceObject.getAuthToken();
         return fetch(`${config.API_BASE_URL}/games/${gameId}`, {
             method: 'DELETE',
             headers: {

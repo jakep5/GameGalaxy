@@ -5,6 +5,10 @@ import TokenServiceObject from '../../services/token-service';
 
 export default class SignUpForm extends Component {
 
+    static defaultProps = {
+        onRegistrationSuccess: () => {}
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -30,6 +34,7 @@ export default class SignUpForm extends Component {
             .then(res => {
                 user_name.value = '';
                 password.value = '';
+                this.props.onRegistrationSuccess();
                 this.setState({
                     isLoading: false
                 })
@@ -39,16 +44,22 @@ export default class SignUpForm extends Component {
                     error: res.error,
                     isLoading: false
                 })
-            })
+        })
     };
-    
+
     render() {
+
+        const { error } = this.state;
 
         return (
             <div role="presentation" className={styles.signUpHolder}>
                 <form onSubmit={e => this.handleSignUpAuth(e)}className={styles.signUpForm} id="signUpForm" name="signUpForm">
 
                     <legend className={styles.signUpLegend}>Sign Up</legend>
+
+                    <div role='alert'>
+                    {error && <p className={styles.error}>{error}</p>}
+                    </div>
 
                     <label for="user_name">Username:</label>
                     <input type="text" name="user_name" className={styles.signUpUsername} id="signUpUsername" />

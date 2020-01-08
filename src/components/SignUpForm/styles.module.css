@@ -11,6 +11,10 @@ div.signUpHolder {
   margin-top: 15%;
 }
 
+p.error {
+    color: rgb(134, 2, 2);
+}
+
 @media only screen and (min-width: 400px) {
   div.signUpHolder {
     width: 450px;

@@ -1,8 +1,20 @@
 import React, { Component } from 'react'
 import GameApiServiceObject from '../services/game-api-service'
 import {withRouter} from 'react-router-dom'
+import AuthApiServiceObject from '../services/auth-api-service';
 
-export default class GamesContext extends Component {
+export const GamesContext = React.createContext();
+
+class GamesProvider extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            games: [],
+            userId: null,
+            isLoading: false
+        }
+    }
 
     render() {
 
@@ -19,3 +31,7 @@ export default class GamesContext extends Component {
         )
     }
 }
+
+export default withRouter(GamesProvider);
+
+export const GamesConsumer = GamesContext.Consumer;

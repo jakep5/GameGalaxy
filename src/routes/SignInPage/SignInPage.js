@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 
 export default class SignInPage extends Component {
 
-    
+
+    componentDidMount() {
+        document.title = "Sign In Page"
+    }
 
 
     render() {
