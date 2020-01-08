@@ -30,5 +30,33 @@ const GameApiServiceObject = {
                 user_id: game.user_id
             })
         })
+        .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+        )
+    },
+
+    deleteGame(gameId) {
+        return fetch(`${config.API_BASE_URL}/games/${gameId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${token}`
+            }
+        })
+            .then(res => {
+                if(!res.ok) {
+                    return res.json().then(error => {
+                        throw error
+                    })
+                }
+                return res.json()
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 }
+
+export default GameApiServiceObject;
