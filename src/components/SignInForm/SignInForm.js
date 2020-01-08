@@ -22,6 +22,8 @@ export default class SignInForm extends Component {
 
         let { user_name, password } = e.target;
 
+        AuthA
+
 
     }
 
