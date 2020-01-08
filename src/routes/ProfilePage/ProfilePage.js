@@ -7,8 +7,13 @@ export default class ProfilePage extends Component {
     return (
         <>
             <nav className={styles.nav} role="navigation">
-                <p className={styles.signOut}>Sign Out</p>
-                <p className={styles.returnToSearch}>Back to Search</p>
+                <Link to="/">
+                    <p className={styles.signOut}>Sign Out</p>
+                </Link>
+                
+                <Link to="/search">
+                    <p className={styles.returnToSearch}>Back to Search</p>
+                </Link>
             </nav>
             <main className={styles.main} role="main">
 

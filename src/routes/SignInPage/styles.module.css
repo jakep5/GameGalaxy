@@ -34,40 +34,6 @@ section.signInWrapper {
   background-color: #bbb;
 }
 
-div.signInHolder {
-  display: block;
-  border: 1px solid black;
-  width: 300px;
-  height: 400px;
-  margin-top: 75px;
-  margin-left: calc(50% - 150px);
-}
 
-.signInLegend {
-  margin-left: 0px;
-}
-
-input.signInUsername {
-  display: block;
-  position: relative;
-  top: 50px;
-}
-
-.signInButton {
-  margin-top: 15%;
-}
-
-p.signUpLink {
-  margin-top: 2px;
-  margin-bottom: 8px;
-}
-
-@media only screen and (min-width: 400px) {
-  div.signInHolder {
-    width: 450px;
-    height: 500px;
-    margin-left: calc(50% - 225px);
-  }
-}
 
 
