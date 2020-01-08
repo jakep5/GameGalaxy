@@ -1,0 +1,22 @@
+form.searchForm {
+  position: relative;
+  top: 40px;
+}
+
+.nameInputLabel {
+  position: relative;
+  top: 15px;
+}
+
+.nameInput {
+  position: relative;
+  top: 15px;
+  margin-left: 5px;
+}
+
+
+@media only screen and (min-width: 1080px) {
+    form.searchForm {
+      top: 50px;
+    }
+}

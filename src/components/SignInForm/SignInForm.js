@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import styles from './styles.module.css'
-import BarLoader from 'react-spinners/BarLoader'
+import BarLoader from 'react-spinners/BarLoader';
+import GamesContext from '../../contexts/GamesContext'
 import AuthApiServiceObject from '../../services/auth-api-service'
 import TokenServiceObject from '../../services/token-service';
 
 export default class SignInForm extends Component {
+
+    static contextType = GamesContext;
 
     constructor(props) {
         super(props);
@@ -31,10 +34,11 @@ export default class SignInForm extends Component {
             .then(res => {
                 user_name.value = '';
                 password.value = '';
-                TokenServiceObject.saveAuthToken(res.authToken)
+                TokenServiceObject.saveAuthToken(res.authToken);
                 this.setState({
                     isLoading: false
-                })
+                });
+                this.props.onLogInSuccess();
             })
             .catch(res => {
                 this.setState({
@@ -46,6 +50,8 @@ export default class SignInForm extends Component {
 
     render() {
 
+        let justSignedUp = this.props.justSignedUp;
+
         const { error } = this.state;
 
         return (
@@ -54,8 +60,12 @@ export default class SignInForm extends Component {
 
                     <legend className={styles.signInLegend}>Sign In</legend>
 
-                    <div role='alert'>
+                    <div className={styles.errorDiv} role='alert'>
                     {error && <p className={styles.error}>{error}</p>}
+                    </div>
+
+                    <div className={styles.justSignedUpDiv} role='alert'>
+                    {justSignedUp && <p className={styles.justSignedUp}>Thanks for signing up! Please sign in.</p>}
                     </div>
 
                     <label for="user_name">Username:</label>

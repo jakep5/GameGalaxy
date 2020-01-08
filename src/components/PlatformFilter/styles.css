@@ -1,0 +1,33 @@
+button.collapsible {
+  color: white;
+  margin-top: 35px;
+  background-color: rgb(36, 35, 35);
+  text-align: left;
+  cursor: pointer;
+  padding: 12px;
+  width: 85%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+div.platformHolder {
+  height: 200px;
+  width: 300px;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 25px;
+  display: flex;
+  margin-left: calc(50% - 150px);
+  transition: max-height 0.2s ease-out;
+}
+
+@media only screen and (min-width: 1080px) {
+  div.platformHolder {
+    flex-direction: row;
+    width: 1200px;
+    height: 100px;
+    margin-top: 50px;
+    margin-left: calc(50% - 600px);
+  }
+}

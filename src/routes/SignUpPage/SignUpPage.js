@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 import SignUpForm from '../../components/SignUpForm/SignUpForm'
+import GamesContext from '../../contexts/GamesContext'
 import { Link } from 'react-router-dom';
 
 export default class SignUpPage extends Component {
@@ -11,10 +12,14 @@ export default class SignUpPage extends Component {
         }
     }
 
-    handleRegistrationSuccess = (e) => {
+    static contextType = GamesContext;
+
+    handleRegistrationSuccess = () => {
+
         const { history } = this.props;
 
-        history.push('/signIn');
+        history.push('/signIn', { justSignedUp: true });
+    
     }
 
     componentDidMount() {
@@ -32,7 +37,7 @@ export default class SignUpPage extends Component {
             <main className={styles.main} role="main">
 
                 <section className={styles.signUpWrapper} role="banner">
-                    <SignUpForm onRegistrationSuccess={(e) => this.handleRegistrationSuccess(e)}/>
+                    <SignUpForm onRegistrationSuccess={this.handleRegistrationSuccess}/>
                 </section>
 
             </main>

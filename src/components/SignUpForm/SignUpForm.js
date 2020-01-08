@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './styles.module.css'
+import GamesContext from '../../contexts/GamesContext'
 import AuthApiServiceObject from '../../services/auth-api-service';
 import TokenServiceObject from '../../services/token-service';
 
@@ -8,6 +9,8 @@ export default class SignUpForm extends Component {
     static defaultProps = {
         onRegistrationSuccess: () => {}
     }
+
+    static contextType = GamesContext;
 
     constructor(props) {
         super(props);

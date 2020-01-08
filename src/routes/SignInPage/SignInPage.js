@@ -1,17 +1,33 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import SignInForm from '../../components/SignInForm/SignInForm'
+import SignInForm from '../../components/SignInForm/SignInForm';
+import GamesContext from '../../contexts/GamesContext'
 import { Link } from 'react-router-dom';
 
 export default class SignInPage extends Component {
+
+    static contextType = GamesContext;
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            justSignedUp: false
+        }
+    }
+
+    handleLogInSuccess = () => {
+        const { history } = this.props;
+
+        history.push('/search')
+    }
 
 
     componentDidMount() {
         document.title = "Sign In Page"
     }
 
-
     render() {
+
         return (
             <>
                 <nav className={styles.nav} role="navigation">
@@ -24,7 +40,7 @@ export default class SignInPage extends Component {
                 <main className={styles.main} role="main">
 
                     <section className={styles.signInWrapper} role="banner">
-                        <SignInForm />
+                        <SignInForm onLogInSuccess={this.handleLogInSuccess}/>
                     </section>
 
                 </main>

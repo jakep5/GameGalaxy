@@ -57,6 +57,27 @@ const GameApiServiceObject = {
             .catch(error => {
                 console.log(error)
             })
+    },
+
+    gamesSearch(game) {
+        let title = game.title
+
+        return fetch(`${config.GAME_API_BASE_URL}/games?name=${title}`, {
+            headers: {
+                'user-key': config.GAME_API_KEY
+            }
+        })
+            .then(res => {
+                if(!res.ok) {
+                    return res.json().then(error => {
+                        throw error
+                    })
+                }
+                return res.json();
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 }
 

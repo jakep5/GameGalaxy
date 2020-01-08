@@ -7,19 +7,35 @@ export const GamesContext = React.createContext();
 
 class GamesProvider extends Component {
 
+    static defaultProps = {
+        history: {
+            push: () => {}
+        }
+    }
+
     constructor(props) {
         super(props);
         this.state = {
             games: [],
             userId: null,
-            isLoading: false
+            isLoading: false,
+            justSignedUp: false
         }
+    }
+
+    handleGamesSearch = (games) => {
+        this.setState({
+            games: games
+        })
     }
 
     render() {
 
         const contextValue = {
-
+            handleSignUp: this.handleSignUp,
+            justSignedUp: this.state.justSignedUp,
+            switchJustSignedUp: this.switchJustSignedUp,
+            handleGamesSearch: this.handleGamesSearch
         }
 
         return (

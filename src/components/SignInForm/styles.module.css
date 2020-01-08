@@ -30,6 +30,10 @@ p.error {
   color: rgb(179, 5, 5);
 }
 
+p.justSignedUp {
+  color: rgb(1, 1, 114);
+}
+
 @media only screen and (min-width: 400px) {
   div.signInHolder {
     width: 450px;

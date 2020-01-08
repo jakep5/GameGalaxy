@@ -59,37 +59,7 @@ section:nth-child(even) {
   background-color: #ddd;
 }
 
-form.searchForm {
-  position: relative;
-  top: 40px;
-}
 
-.platformHolder {
-  display: flex;
-  height: 200px;
-  width: 300px;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-top: 25px;
-  margin-left: calc(50% - 150px);
-}
- 
-.nameInputLabel {
-  position: relative;
-  top: 15px;
-}
-
-.nameInput {
-  position: relative;
-  top: 15px;
-  margin-left: 5px;
-}
-
-input.inputCheck {
-  position: relative;
-  bottom: 23px;
-  left: 30px;
-}
 
 div.resultItem {
   border: 1px solid black;
@@ -100,24 +70,6 @@ div.resultItem {
 }
 
 @media only screen and (min-width: 1080px) {
-  div.platformHolder {
-    flex-direction: row;
-    width: 1200px;
-    height: 100px;
-    margin-top: 50px;
-    margin-left: calc(50% - 600px);
-  }
-
-  form.searchForm {
-    top: 50px;
-  }
-
-  input.inputCheck {
-    bottom: 0px;
-    top: 7px;
-    left: -25px;
-  }
-
   section.searchPage {
     min-height: 0;
     height: 250px;
