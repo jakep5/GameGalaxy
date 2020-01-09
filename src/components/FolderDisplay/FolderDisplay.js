@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css'
-import GamesContext from '../../contexts/GamesContext'
+import { GamesContext } from '../../contexts/GamesContext';
+import FolderApiServiceObject from '../../services/folder-api-service';
 
 export default class FolderDisplay extends Component {
 
@@ -13,9 +14,18 @@ export default class FolderDisplay extends Component {
     
     static contextType = GamesContext;
 
+    componentDidMount = () => {
+        let userId = this.context.userId;
+
+        console.log(userId);
+
+        this.context.getFolders();
+    }
+
     handleAddFolderClick = () => {
         this.setState({
             addFolder: !this.state.addFolder,
+            folders: this.context.folders
         })
     }
 
@@ -23,6 +33,9 @@ export default class FolderDisplay extends Component {
         e.preventDefault();
 
         let folderName = document.getElementById('folderName').value;
+        let user_id = this.context.userId;
+
+        FolderApiServiceObject.postFolder(folderName, user_id)
 
         this.context.handleFolderSubmit(folderName);
     }

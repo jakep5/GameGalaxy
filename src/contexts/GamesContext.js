@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import GameApiServiceObject from '../services/game-api-service'
+import GameApiServiceObject from '../services/game-api-service';
+import FolderApiServiceObject from '../services/folder-api-service';
 import {withRouter} from 'react-router-dom'
 import AuthApiServiceObject from '../services/auth-api-service';
 
@@ -11,7 +12,7 @@ class GamesProvider extends Component {
         history: {
             push: () => {}
         }
-    }
+    };
 
     constructor(props) {
         super(props);
@@ -19,13 +20,38 @@ class GamesProvider extends Component {
             games: [],
             userId: null,
             isLoading: false,
-            justSignedUp: false
+            justSignedUp: false,
+            userId: null,
+            folders: [],
         }
-    }
+    };
 
     handleGamesSearch = (games) => {
         this.setState({
             games: games
+        })
+    };
+
+    setUserId = (userId) => {
+        this.setState({
+            userId: userId
+        });
+    };
+
+    handleFolderSubmit = (newFolder) => {
+
+    };
+
+    getFolders = () => {
+        let userId = this.state.userId;
+
+        FolderApiServiceObject.getFolders(userId)
+            .then(folders => this.setNewFolders(folders))
+    };
+
+    setNewFolders = (folders) => {
+        this.setState({
+            folders
         })
     }
 
@@ -36,7 +62,11 @@ class GamesProvider extends Component {
             justSignedUp: this.state.justSignedUp,
             switchJustSignedUp: this.switchJustSignedUp,
             handleGamesSearch: this.handleGamesSearch,
-            handleFolderSubmit: this.handleFolderSubmit
+            handleFolderSubmit: this.handleFolderSubmit,
+            setUserId: this.setUserId,
+            userId: this.state.userId,
+            folders: this.state.folders,
+            getFolders: this.getFolders
         }
 
         return (

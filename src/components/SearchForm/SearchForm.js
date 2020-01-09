@@ -5,8 +5,9 @@ import PlatformFilter from '../PlatformFilter/PlatformFilter';
 import GameApiServiceObject from '../../services/game-api-service'
 
 export default class SearchForm extends Component {
-    
+
     static contextType = GamesContext;
+    
 
     handleSearchSubmit = (e) => {
         e.preventDefault();

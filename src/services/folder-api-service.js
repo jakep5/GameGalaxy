@@ -2,7 +2,22 @@ import config from '../config';
 import TokenServiceObject from './token-service';
 
 const FolderApiServiceObject = {
-    postFolder(folder) {
+    getFolders(userId) {
+        let token = TokenServiceObject.getAuthToken();
+
+        return fetch(`${config.API_BASE_URL}/folders/${userId}`, {
+            headers: {
+                'Authorization': `bearer ${token}`
+            }
+        })
+            .then(res => {
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json();
+            });
+    },
+
+    postFolder(folderName, user_id) {
         let token = TokenServiceObject.getAuthToken();
         return fetch(`${config.API_BASE_URL}/folders/`, {
             method: 'POST',
@@ -11,8 +26,8 @@ const FolderApiServiceObject = {
                 'Authorization': `bearer ${token}`
             },
             body: JSON.stringify({
-                name: folder.name,
-                user_id: folder.user_id,
+                name: folderName,
+                user_id: user_id,
             })
         })
             .then(res => {
@@ -22,3 +37,5 @@ const FolderApiServiceObject = {
             })
     }
 }
+
+export default FolderApiServiceObject;
