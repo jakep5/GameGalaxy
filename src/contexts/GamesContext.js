@@ -22,7 +22,7 @@ class GamesProvider extends Component {
             isLoading: false,
             justSignedUp: false,
             userId: null,
-            folders: [],
+            folders: null,
         }
     };
 
@@ -42,16 +42,14 @@ class GamesProvider extends Component {
 
     };
 
-    getFolders = () => {
-        let userId = this.state.userId;
-
+    getFolders = (userId) => {
         FolderApiServiceObject.getFolders(userId)
             .then(folders => this.setNewFolders(folders))
     };
 
     setNewFolders = (folders) => {
         this.setState({
-            folders
+            folders: folders
         })
     }
 
