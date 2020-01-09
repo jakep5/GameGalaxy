@@ -35,7 +35,8 @@ class GamesProvider extends Component {
             handleSignUp: this.handleSignUp,
             justSignedUp: this.state.justSignedUp,
             switchJustSignedUp: this.switchJustSignedUp,
-            handleGamesSearch: this.handleGamesSearch
+            handleGamesSearch: this.handleGamesSearch,
+            handleFolderSubmit: this.handleFolderSubmit
         }
 
         return (

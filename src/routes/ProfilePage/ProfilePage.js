@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
+import FolderDisplay from '../../components/FolderDisplay/FolderDisplay';
+import FolderGamesDisplay from '../../components/FolderGamesDisplay/FolderGamesDisplay';
 
 export default class ProfilePage extends Component {
 
@@ -43,20 +45,10 @@ export default class ProfilePage extends Component {
                             </div>
                         </div>
 
-                        <div className={styles.folderHolder}>
-                            <p className={styles.folderLabel}>My folders</p>
-                            <ul className={styles.folderList}>
-                                <li className={styles.folderItem}>Folder 1</li>
-                                <li className={styles.folderItem}>Folder 2</li>
-                                <li className={styles.folderItem}>Folder 3</li>
-                                <li className={styles.folderItem}>Folder 4</li>
-                            </ul>
-                            <button onClick={this.handleAddFolderClick} className={styles.addFolderButton}>Add folder</button>
-                        </div>
+                        <FolderDisplay />
 
-                        <div className={styles.itemsHolder}>
-                            <h1 className={styles.itemsLabel}>Games</h1>
-                        </div>
+                        <FolderGamesDisplay />
+                        
                     </section>
 
                 </main>

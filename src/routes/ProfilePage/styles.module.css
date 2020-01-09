@@ -79,29 +79,11 @@ div.profileImage {
   margin-right: 25px;
 }
 
-div.folderHolder {
-  display: block;
-  border: 1px solid black;
-  margin-top: 20px;
-}
 
 div.itemsHolder {
   display: block;
   border: 1px solid black;
   height: 500px;
-}
-ul.folderList {
-  list-style: none;
-}
-
-li {
-  position: relative;
-  right: 15px;
-  margin-top: 10px;
-}
-
-button.addFolderButton {
-  
 }
 
 @media only screen and (min-width: 1080px) {
@@ -112,17 +94,4 @@ button.addFolderButton {
     margin-top: 0;
   }
 
-  div.folderHolder {
-    height: 400px;
-    width: 350px;
-    float: left;
-    margin-top: 150px;
-  }
-
-  div.itemsHolder {
-    height: 800px;
-    float: right;
-    width: 750px;
-    margin-right: 0px;
-  }
 }

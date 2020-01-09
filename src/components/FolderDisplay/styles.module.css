@@ -1,0 +1,33 @@
+div.folderHolder {
+  display: block;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+ul.folderList {
+  list-style: none;
+}
+
+li {
+  position: relative;
+  right: 15px;
+  margin-top: 10px;
+}
+
+button.addFolderButton {
+
+}
+
+.addFolderLabel {
+    margin-right: 8px;
+}
+
+@media only screen and (min-width: 1080px) {
+    div.folderHolder {
+      height: 400px;
+      width: 350px;
+      float: left;
+      margin-top: 150px;
+    }
+}
+  
