@@ -59,13 +59,21 @@ const GameApiServiceObject = {
             })
     },
 
-    gamesSearch(game) {
-        let title = game.title
+    titleSearch(game) {
+        let title = game.title;
 
-        return fetch(`${config.GAME_API_BASE_URL}/games?name=${title}`, {
+        /* const proxyurl = 'http://localhost:8080/' */
+
+        const url = `${config.GAME_API_BASE_URL}/games`
+
+        return fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
             headers: {
-                'user-key': config.GAME_API_KEY
-            }
+                'user-key': config.GAME_API_KEY,
+                'Content-Type': 'application/raw'
+            },
+            body: `search ${title}; fields name; limit 50;`,
         })
             .then(res => {
                 if(!res.ok) {

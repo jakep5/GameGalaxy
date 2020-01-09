@@ -4,8 +4,21 @@ import { Link } from 'react-router-dom';
 
 export default class ProfilePage extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            addFolder: false,
+        }
+    }
+
     componentDidMount() {
         document.title = "Profile Page"
+    }
+
+    handleAddFolderClick = () => {
+        this.setState({
+            addFolder: !this.state.addFolder
+        })
     }
 
     render() {
@@ -38,6 +51,7 @@ export default class ProfilePage extends Component {
                                 <li className={styles.folderItem}>Folder 3</li>
                                 <li className={styles.folderItem}>Folder 4</li>
                             </ul>
+                            <button onClick={this.handleAddFolderClick} className={styles.addFolderButton}>Add folder</button>
                         </div>
 
                         <div className={styles.itemsHolder}>

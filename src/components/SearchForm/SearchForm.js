@@ -17,9 +17,10 @@ export default class SearchForm extends Component {
             "title": title,
         }
 
-        GameApiServiceObject(newItem)
+        GameApiServiceObject.titleSearch(newItem)
             .then(games => {
-                this.context.handleGameSearch(games)
+                console.log(games);
+                /* this.context.handleGameSearch(games) */
             })
     }
 
