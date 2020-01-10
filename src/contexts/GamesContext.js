@@ -23,12 +23,14 @@ class GamesProvider extends Component {
             justSignedUp: false,
             userId: null,
             folders: null,
+            platformFilters: [],
         }
     };
 
     handleGamesSearch = (games) => {
         this.setState({
-            games: games
+            games: games,
+            platformFilters: [],
         })
     };
 
@@ -53,6 +55,16 @@ class GamesProvider extends Component {
         })
     }
 
+    handlePlatformChange = (e) => {
+        if (!this.state.platformFilters.includes(e.target.value)) {
+            this.state.platformFilters.push(e.target.value);
+        } else {
+            this.state.platformFilters.splice(this.state.platformFilters.indexOf(e.target.value), 1)
+        }
+
+        console.log(this.state.platformFilters)
+    }
+
     render() {
 
         const contextValue = {
@@ -64,7 +76,8 @@ class GamesProvider extends Component {
             setUserId: this.setUserId,
             userId: this.state.userId,
             folders: this.state.folders,
-            getFolders: this.getFolders
+            getFolders: this.getFolders,
+            handlePlatformChange: this.handlePlatformChange,
         }
 
         return (
