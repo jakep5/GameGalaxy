@@ -62,27 +62,16 @@ const GameApiServiceObject = {
     titleSearch(game) {
         let title = game.title;
 
-        /* const proxyurl = 'http://localhost:8080/' */
+        const url = `http://localhost:8080`;
 
-        const url = `${config.GAME_API_BASE_URL}/games`
-
-        return fetch(url, {
-            method: 'POST',
-            mode: 'no-cors',
+        fetch(url, {
+            method: 'GET',
             headers: {
-                'user-key': config.GAME_API_KEY,
-                'Content-Type': 'application/raw'
-            },
-            body: `search ${title}; fields name; limit 50;`,
+                'gameTitle': title,
+            }
         })
-            .then(res => {
-                if(!res.ok) {
-                    return res.json().then(error => {
-                        throw error
-                    })
-                }
-                return res.json();
-            })
+            .then(response => response.json())
+            .then(responseJson => console.log(responseJson))
             .catch(error => {
                 console.log(error)
             })

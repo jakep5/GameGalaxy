@@ -19,10 +19,6 @@ export default class SearchForm extends Component {
         }
 
         GameApiServiceObject.titleSearch(newItem)
-            .then(games => {
-                console.log(games);
-                /* this.context.handleGameSearch(games) */
-            })
     }
 
     render() {
