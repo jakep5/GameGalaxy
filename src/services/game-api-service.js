@@ -60,11 +60,12 @@ const GameApiServiceObject = {
     },
 
     titleSearch(game) {
+
         let title = game.title;
 
         const url = `http://localhost:8080`;
 
-        fetch(url, {
+        fetch(url, title, {
             method: 'GET',
             headers: {
                 'gameTitle': title,
