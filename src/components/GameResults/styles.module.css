@@ -6,6 +6,10 @@ div.resultItem {
   margin-bottom: 45px;
 }
 
+h1.noGames {
+    
+}
+
 @media only screen and (min-width: 1080px) {
     div.resultItem {
       margin-right: 7%;

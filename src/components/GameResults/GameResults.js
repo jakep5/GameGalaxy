@@ -11,12 +11,16 @@ export default class GameResults extends Component {
                 {value => (
                     <>
                         {value.games !== null
-                        ? value.games.map((game) => {
-                            return <div className={styles.resultItem}>
-                                <p>{game.name}</p>
-                            </div>
-                        })
-                        :   <h1 className={styles.noGames}>Please click search to search for games!</h1>
+                            ? value.games.map((game) => {
+                                if (value.games == []) {
+                                    return <h1 className={styles.noGames}>No results</h1>
+                                } else {
+                                    return <div className={styles.resultItem}>
+                                        <p>{game.name}</p>
+                                    </div>
+                                }
+                            })
+                            :   <h1 className={styles.noGames}>Please click search to search for games!</h1>
                         }
                     </>
                 )}

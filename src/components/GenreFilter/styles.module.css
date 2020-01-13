@@ -4,13 +4,6 @@ input.inputCheck {
   left: 30px;
 }
 
-input.dsSelect {
-  position: relative;
-  bottom: 23px;
-  left: 30px;
-  margin-bottom: 50px;
-}
-
 @media only screen and (min-width: 1080px) {
   input.inputCheck {
     bottom: 0px;

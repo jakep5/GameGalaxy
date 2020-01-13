@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-import styles from './styles.module.css'
-import './styles.css'
-import jQuery from 'jquery'
-import $ from 'jquery'
-import { GamesConsumer } from '../../contexts/GamesContext'
+import React, { Component } from 'react';
+import styles from './styles.module.css';
+import './styles.css';
+import { GamesConsumer } from '../../contexts/GamesContext';
 
 export default class PlatformFilter extends Component {
 
@@ -20,11 +18,7 @@ export default class PlatformFilter extends Component {
         })
     }
 
-
-
     render() {
-
-
         return (
             <GamesConsumer>
                 {value => (
@@ -49,7 +43,7 @@ export default class PlatformFilter extends Component {
                                 <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="Nintendo Switch" type="checkbox" id="nintendoSwitchSelect" name="nintendoSwitchSelect" />
 
                                 <label htmlFor="nintendoDSSelect">Nintendo DS</label>
-                                <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="Nintendo DS" type="checkbox" id="nintendoDS" name="nintendoDSSelect"/>
+                                <input onChange={(e) => value.handlePlatformChange(e)} className={styles.dsSelect} value="Nintendo DS" type="checkbox" id="nintendoDS" name="nintendoDSSelect"/>
                             </div>
                         )
                         : null }

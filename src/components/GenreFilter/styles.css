@@ -11,7 +11,7 @@ button.collapsible {
   font-size: 15px;
 }
 
-div.platformHolder {
+div.genreHolder {
   height: 200px;
   width: 300px;
   justify-content: space-between;
@@ -24,7 +24,7 @@ div.platformHolder {
 }
 
 @media only screen and (min-width: 1080px) {
-  div.platformHolder {
+  div.genreHolder {
     flex-direction: row;
     width: 1200px;
     height: 100px;

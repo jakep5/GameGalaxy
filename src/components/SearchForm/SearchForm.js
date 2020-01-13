@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styles from './styles.module.css';
 import { GamesContext } from '../../contexts/GamesContext';
 import PlatformFilter from '../PlatformFilter/PlatformFilter';
+import GenreFilter from '../GenreFilter/GenreFilter';
+import ReviewFilter from '../ReviewFilter/ReviewFilter';
 import config from '../../config';
 import GameApiServiceObject from '../../services/game-api-service'
 
@@ -31,10 +33,17 @@ export default class SearchForm extends Component {
 
         const url = config.IGDB_BASE_URL;
 
+        let platformFilters = this.context.platformFilters;
+
+        let genreFilters = this.context.genreFilters;
+
+
         fetch(url, {
             method: 'GET',
             headers: {
                 'gameTitle': gameTitle,
+                'platformFilters': platformFilters,
+                'genreFilters': genreFilters,
             }
         })
             .then(response => response.json())
@@ -53,6 +62,10 @@ export default class SearchForm extends Component {
                 <input className={styles.nameInput} type="text" id="nameInput" name="nameInput" />
 
                 <PlatformFilter />
+
+                <GenreFilter />
+
+                <ReviewFilter />
 
             </form>
         )

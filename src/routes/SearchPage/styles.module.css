@@ -46,7 +46,8 @@ p.signOut {
 
 section.searchPage {
   display: block;
-  height: 450px;
+  min-height: 450px;
+  overflow-y: auto;
 }
 
 section.searchResults {
@@ -59,10 +60,6 @@ section:nth-child(even) {
   background-color: #ddd;
 }
 
-
-
-
-
 @media only screen and (min-width: 1080px) {
   section.searchPage {
     min-height: 0;
@@ -73,6 +70,5 @@ section:nth-child(even) {
     display: grid;
     grid-template-columns: 40% 40% 40%;
   }
-
 
 }

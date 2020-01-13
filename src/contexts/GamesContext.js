@@ -3,6 +3,8 @@ import GameApiServiceObject from '../services/game-api-service';
 import FolderApiServiceObject from '../services/folder-api-service';
 import {withRouter} from 'react-router-dom'
 import AuthApiServiceObject from '../services/auth-api-service';
+import { platformStore } from '../store';
+import { genreStore } from '../store';
 
 export const GamesContext = React.createContext();
 
@@ -24,6 +26,8 @@ class GamesProvider extends Component {
             userId: null,
             folders: null,
             platformFilters: [],
+            genreFilters: [],
+            reviewFilter: null,
         }
     };
 
@@ -56,13 +60,52 @@ class GamesProvider extends Component {
     }
 
     handlePlatformChange = (e) => {
-        if (!this.state.platformFilters.includes(e.target.value)) {
-            this.state.platformFilters.push(e.target.value);
+
+        let platform = e.target.value;
+
+        let platformId;
+
+        for(let i = 0; i < platformStore.length; i++) {
+            if(platformStore[i].name == platform) {
+                platformId = platformStore[i].id;
+            }
+        }
+
+        if (!this.state.platformFilters.includes(platformId)) {
+            this.state.platformFilters.push(platformId);
         } else {
-            this.state.platformFilters.splice(this.state.platformFilters.indexOf(e.target.value), 1)
+            this.state.platformFilters.splice(this.state.platformFilters.indexOf(platformId), 1)
         }
 
         console.log(this.state.platformFilters)
+    };
+
+    handleGenreChange = (e) => {
+        let genre = e.target.value;
+
+        let genreId;
+
+        for(let i = 0; i < genreStore.length; i++) {
+            if(genreStore[i].genre == genre) {
+                genreId = genreStore[i].id;
+            }
+        }
+
+        if (!this.state.genreFilters.includes(genreId)) {
+            this.state.genreFilters.push(genreId);
+        } else {
+            this.state.genreFilters.splice(this.state.genreFilters.indexOf(genreId), 1)
+        }
+
+        console.log(this.state.genreFilters);
+    };
+
+    handleReviewChange = (e) => {
+        this.setState({
+            reviewFilter: e.target.value
+        })
+
+        console.log(this.state.reviewFilter)
     }
 
     render() {
@@ -78,8 +121,13 @@ class GamesProvider extends Component {
             folders: this.state.folders,
             getFolders: this.getFolders,
             handlePlatformChange: this.handlePlatformChange,
+            handleGenreChange: this.handleGenreChange,
+            handleReviewChange: this.handleReviewChange,
             setNewGames: this.setNewGames,
-            games: this.state.games
+            games: this.state.games,
+            platformFilters: this.state.platformFilters,
+            genreFilters: this.state.genreFilters,
+            reviewFilter: this.state.reviewFilter
         }
 
         return (
