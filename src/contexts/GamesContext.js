@@ -17,7 +17,7 @@ class GamesProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            games: [],
+            games: null,
             userId: null,
             isLoading: false,
             justSignedUp: false,
@@ -27,12 +27,12 @@ class GamesProvider extends Component {
         }
     };
 
-    handleGamesSearch = (games) => {
+    setNewGames = (games) => {
+        console.log(games);
         this.setState({
-            games: games,
-            platformFilters: [],
+            games
         })
-    };
+    }
 
     setUserId = (userId) => {
         this.setState({
@@ -78,6 +78,8 @@ class GamesProvider extends Component {
             folders: this.state.folders,
             getFolders: this.getFolders,
             handlePlatformChange: this.handlePlatformChange,
+            setNewGames: this.setNewGames,
+            games: this.state.games
         }
 
         return (

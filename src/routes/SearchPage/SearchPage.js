@@ -3,15 +3,12 @@ import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import { GamesContext } from '../../contexts/GamesContext';
-import { GamesConsumer } from '../../contexts/GamesContext'
+import { GamesConsumer } from '../../contexts/GamesContext';
+import GameResults from '../../components/GameResults/GameResults';
 
 export default class SearchPage extends Component {
 
     static contextType = GamesContext;
-
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount = () => {
         document.title = "Search Page";
@@ -57,26 +54,7 @@ export default class SearchPage extends Component {
                                 <h1 className={styles.searchResultHeader}>Search Results:</h1>
 
                                 <div className={styles.searchResultHolder}>
-
-                                    <div className={styles.resultItem}>
-                                        <p>Game 1</p>
-                                    </div>
-                                    <div className={styles.resultItem}>
-                                        <p>Game 2</p>
-                                    </div>
-                                    <div className={styles.resultItem}>
-                                        <p>Game 3</p>
-                                    </div>
-                                    <div className={styles.resultItem}>
-                                        <p>Game 4</p>
-                                    </div>
-                                    <div className={styles.resultItem}>
-                                        <p>Game 5</p>
-                                    </div>
-                                    <div className={styles.resultItem}>
-                                        <p>Game 6</p>
-                                    </div>
-
+                                    <GameResults />
                                 </div>
 
 

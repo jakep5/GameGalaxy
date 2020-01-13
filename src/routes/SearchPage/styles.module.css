@@ -61,13 +61,7 @@ section:nth-child(even) {
 
 
 
-div.resultItem {
-  border: 1px solid black;
-  display: inline-block;
-  height: 200px;
-  width: 275px;
-  margin-bottom: 45px;
-}
+
 
 @media only screen and (min-width: 1080px) {
   section.searchPage {
@@ -80,8 +74,5 @@ div.resultItem {
     grid-template-columns: 40% 40% 40%;
   }
 
-  div.resultItem {
-    margin-right: 7%;
-    margin-left: 7%;
-  }
+
 }

@@ -1,5 +1,6 @@
 import config from '../config';
-import TokenServiceObject from './token-service'
+import TokenServiceObject from './token-service';
+import GamesContext from '../contexts/GamesContext';
 
 const GameApiServiceObject = {
     getGames(userId) {
@@ -58,27 +59,6 @@ const GameApiServiceObject = {
                 console.log(error)
             })
     },
-
-    titleSearch(game) {
-
-        let gameTitle = game.title;
-
-        console.log(gameTitle);
-
-        const url = `http://localhost:8080`;
-
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'gameTitle': gameTitle,
-            }
-        })
-            .then(response => response.json())
-            .then(responseJson => console.log(responseJson))
-            .catch(error => {
-                console.log(error)
-            })
-    }
 }
 
 export default GameApiServiceObject;

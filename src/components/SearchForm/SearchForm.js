@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import GamesContext from '../../contexts/GamesContext';
+import { GamesContext } from '../../contexts/GamesContext';
 import PlatformFilter from '../PlatformFilter/PlatformFilter';
+import config from '../../config';
 import GameApiServiceObject from '../../services/game-api-service'
 
 export default class SearchForm extends Component {
 
     static contextType = GamesContext;
-    
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            games: null
+        }
+    }
 
     handleSearchSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +25,23 @@ export default class SearchForm extends Component {
             "title": title,
         }
 
-        GameApiServiceObject.titleSearch(newItem)
+        let gameTitle = newItem.title;
+
+        console.log(gameTitle);
+
+        const url = config.IGDB_BASE_URL;
+
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'gameTitle': gameTitle,
+            }
+        })
+            .then(response => response.json())
+            .then(responseJson => this.context.setNewGames(responseJson))
+            .catch(error => {
+                console.log(error)
+        })
     }
 
     render() {
