@@ -29,13 +29,13 @@ export default class SearchForm extends Component {
 
         let gameTitle = newItem.title;
 
-        console.log(gameTitle);
-
         const url = config.IGDB_BASE_URL;
 
         let platformFilters = this.context.platformFilters;
 
         let genreFilters = this.context.genreFilters;
+
+        let reviewFilter = this.context.reviewFilter;
 
 
         fetch(url, {
@@ -44,6 +44,7 @@ export default class SearchForm extends Component {
                 'gameTitle': gameTitle,
                 'platformFilters': platformFilters,
                 'genreFilters': genreFilters,
+                'reviewFilter': reviewFilter
             }
         })
             .then(response => response.json())
@@ -61,11 +62,14 @@ export default class SearchForm extends Component {
                 <label className={styles.nameInputLabel} htmlFor="nameInput" id="nameInputLabel">Name of game:</label>
                 <input className={styles.nameInput} type="text" id="nameInput" name="nameInput" />
 
+                <button className={styles.searchFormSubmit} type="submit" htmlFor="searchForm">Search!</button>
+
                 <PlatformFilter />
 
                 <GenreFilter />
 
                 <ReviewFilter />
+                
 
             </form>
         )

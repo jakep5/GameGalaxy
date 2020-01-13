@@ -14,6 +14,9 @@ form.searchForm {
   margin-left: 5px;
 }
 
+button.searchFormSubmit {
+  margin-top: 25px;
+}
 
 @media only screen and (min-width: 1080px) {
     form.searchForm {

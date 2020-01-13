@@ -100,12 +100,10 @@ class GamesProvider extends Component {
         console.log(this.state.genreFilters);
     };
 
-    handleReviewChange = (e) => {
+    handleReviewChange = (score) => {
         this.setState({
-            reviewFilter: e.target.value
+            reviewFilter: score
         })
-
-        console.log(this.state.reviewFilter)
     }
 
     render() {

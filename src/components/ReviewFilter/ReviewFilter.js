@@ -12,6 +12,8 @@ export default class ReviewFilter extends Component {
         }
     }
 
+    static contextType = GamesContext;
+
     togglePanel = () => {
         this.setState({
             open: !this.state.open
@@ -25,6 +27,10 @@ export default class ReviewFilter extends Component {
     }
 
     render() {
+
+        const hiddenDisplay = {
+            display: 'none'
+        }
         return (
             <GamesConsumer>
             {value => (
@@ -43,7 +49,17 @@ export default class ReviewFilter extends Component {
                             </form>
                         </div>
                     )
-                    : null }
+                    : <div style={hiddenDisplay} className='reviewHolder'>
+
+                        <form onSubmit={this.handleReviewChange} id="reviewSetForm" className={styles.reviewSetForm}>
+
+                            <label htmlFor="reviewInput">Minimum review score (1-100):</label>
+                            <input className={styles.reviewInput}  type="number" min="1" max="100" id="reviewInput" name="reviewInput" />
+
+                            <button type="submit" htmlFor="reviewSetForm" className={styles.setButton}>Set</button>
+
+                        </form>
+                    </div> }
 
                 </>
             )}

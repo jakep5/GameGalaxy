@@ -1,6 +1,6 @@
 button.collapsible {
   color: white;
-  margin-top: 35px;
+  margin-top: 15px;
   background-color: rgb(36, 35, 35);
   text-align: left;
   cursor: pointer;
@@ -17,7 +17,7 @@ div.platformHolder {
   justify-content: space-between;
   flex-direction: column;
   margin-top: 5px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   display: flex;
   margin-left: calc(50% - 150px);
   transition: max-height 0.2s ease-out;
