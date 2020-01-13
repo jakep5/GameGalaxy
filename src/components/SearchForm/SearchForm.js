@@ -12,7 +12,7 @@ export default class SearchForm extends Component {
     handleSearchSubmit = (e) => {
         e.preventDefault();
 
-        const title = document.getElementById('nameInputLabel').value;
+        const title = document.getElementById('nameInput').value;
 
         const newItem = {
             "title": title,
