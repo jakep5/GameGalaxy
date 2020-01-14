@@ -650,41 +650,88 @@ export const platformStore = [
 ]
 
 export const genreStore = [
-    {
-        'genre': 'Adventure',
-        'id': 31
-    },
-    {
-        'genre': 'Strategy',
-        'id': 15
-    },
-    {
-        'genre': 'Shooter',
-        'id': 5
-    },
-    {
-        'genre': 'RPG',
-        'id': 12
-    },
-    {
-        'genre': 'Puzzle',
-        'id': 9
-    },
-    {
-        'genre': 'Racing',
-        'id': 10
-    },
-    {
-        'genre': 'Fighting',
-        'id': 4
-    },
-    {
-        'genre': 'RTS',
-        'id': 11
-    },
-    {
-        'genre': 'Indie',
-        'id': 32
-    }
-];
-
+  {
+    "id": 13,
+    "name": "Simulator"
+  },
+  {
+    "id": 24,
+    "name": "Tactical"
+  },
+  {
+    "id": 26,
+    "name": "Quiz/Trivia"
+  },
+  {
+    "id": 4,
+    "name": "Fighting"
+  },
+  {
+    "id": 15,
+    "name": "Strategy"
+  },
+  {
+    "id": 31,
+    "name": "Adventure"
+  },
+  {
+    "id": 12,
+    "name": "RPG"
+  },
+  {
+    "id": 5,
+    "name": "Shooter"
+  },
+  {
+    "id": 7,
+    "name": "Music"
+  },
+  {
+    "id": 32,
+    "name": "Indie"
+  },
+  {
+    "id": 16,
+    "name": "Turn-based strategy (TBS)"
+  },
+  {
+    "id": 30,
+    "name": "Pinball"
+  },
+  {
+    "id": 9,
+    "name": "Puzzle"
+  },
+  {
+    "id": 11,
+    "name": "RTS"
+  },
+  {
+    "id": 25,
+    "name": "Hack and slash/Beat 'em up"
+  },
+  {
+    "id": 34,
+    "name": "Visual Novel"
+  },
+  {
+    "id": 8,
+    "name": "Platform"
+  },
+  {
+    "id": 10,
+    "name": "Racing"
+  },
+  {
+    "id": 14,
+    "name": "Sport"
+  },
+  {
+    "id": 33,
+    "name": "Arcade"
+  },
+  {
+    "id": 2,
+    "name": "Point-and-click"
+  }
+]
