@@ -20,12 +20,6 @@ export default class ReviewFilter extends Component {
         })
     }
 
-    handleReviewChange = () => {
-        let score = document.getElementById('reviewInput').value;
-
-        this.context.handleReviewChange(score);
-    }
-
     render() {
 
         const hiddenDisplay = {
@@ -35,30 +29,18 @@ export default class ReviewFilter extends Component {
             <GamesConsumer>
             {value => (
                 <>
-                    <button onClick={(e) => this.togglePanel(e)} type="button" className='collapsible'>Platform (click to expand)</button>
+                    <button onClick={(e) => this.togglePanel(e)} type="button" className='collapsible'>Minimum review score (click to expand)</button>
                     {this.state.open ? (
                         <div className='reviewHolder'>
-
-                            <form onSubmit={this.handleReviewChange} id="reviewSetForm" className={styles.reviewSetForm}>
-
-                                <label htmlFor="reviewInput">Minimum review score (1-100):</label>
-                                <input className={styles.reviewInput}  type="number" min="1" max="100" id="reviewInput" name="reviewInput" />
-
-                                <button type="submit" htmlFor="reviewSetForm" className={styles.setButton}>Set</button>
-
-                            </form>
+                            <label htmlFor="reviewInput">Minimum review score (1-100):</label>
+                            <input onChange={(e) => value.handleReviewChange(e)} className={styles.reviewInput}  type="number" min="1" max="100" id="reviewInput" name="reviewInput" />
                         </div>
                     )
                     : <div style={hiddenDisplay} className='reviewHolder'>
 
-                        <form onSubmit={this.handleReviewChange} id="reviewSetForm" className={styles.reviewSetForm}>
+                        <label htmlFor="reviewInput">Minimum review score (1-100):</label>
+                        <input onChange={(e) => value.handleReviewChange(e)} className={styles.reviewInput}  type="number" min="1" max="100" id="reviewInput" name="reviewInput" />
 
-                            <label htmlFor="reviewInput">Minimum review score (1-100):</label>
-                            <input className={styles.reviewInput}  type="number" min="1" max="100" id="reviewInput" name="reviewInput" />
-
-                            <button type="submit" htmlFor="reviewSetForm" className={styles.setButton}>Set</button>
-
-                        </form>
                     </div> }
 
                 </>

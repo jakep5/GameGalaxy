@@ -20,7 +20,6 @@ class GamesProvider extends Component {
         super(props);
         this.state = {
             games: null,
-            userId: null,
             isLoading: false,
             justSignedUp: false,
             userId: null,
@@ -28,6 +27,9 @@ class GamesProvider extends Component {
             platformFilters: [],
             genreFilters: [],
             reviewFilter: null,
+            openFolderId: null,
+            openFolder: null,
+            folderGames: [],
         }
     };
 
@@ -36,16 +38,13 @@ class GamesProvider extends Component {
         this.setState({
             games
         })
-    }
-
-    setUserId = (userId) => {
-        this.setState({
-            userId: userId
-        });
     };
 
     handleFolderSubmit = (newFolder) => {
+        console.log('here');
+        this.setState({
 
+        })
     };
 
     getFolders = (userId) => {
@@ -57,6 +56,23 @@ class GamesProvider extends Component {
         this.setState({
             folders: folders
         })
+    };
+
+    deleteFolder = (deleteId) => {
+        
+    }
+
+    setOpenFolder = (folderId) => {
+        this.setState({
+            openFolderId: folderId
+        });
+
+        FolderApiServiceObject.getById(folderId)
+            .then(folder => {
+                this.setState({
+                    openFolder: folder,
+                })
+            })
     }
 
     handlePlatformChange = (e) => {
@@ -100,9 +116,9 @@ class GamesProvider extends Component {
         console.log(this.state.genreFilters);
     };
 
-    handleReviewChange = (score) => {
+    handleReviewChange = (e) => {
         this.setState({
-            reviewFilter: score
+            reviewFilter: e.target.value
         })
     }
 
@@ -118,6 +134,7 @@ class GamesProvider extends Component {
             userId: this.state.userId,
             folders: this.state.folders,
             getFolders: this.getFolders,
+            openFolder: this.state.openFolder,
             handlePlatformChange: this.handlePlatformChange,
             handleGenreChange: this.handleGenreChange,
             handleReviewChange: this.handleReviewChange,
@@ -125,7 +142,10 @@ class GamesProvider extends Component {
             games: this.state.games,
             platformFilters: this.state.platformFilters,
             genreFilters: this.state.genreFilters,
-            reviewFilter: this.state.reviewFilter
+            reviewFilter: this.state.reviewFilter,
+            setOpenFolder: this.setOpenFolder,
+            folderGames: this.state.folderGames,
+            deleteFolder: this.deleteFolder
         }
 
         return (

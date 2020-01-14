@@ -17,6 +17,21 @@ const FolderApiServiceObject = {
             )
     },
 
+    getById(folderId) {
+        let token = TokenServiceObject.getAuthToken();
+
+        return fetch(`${config.API_BASE_URL}/folders/folder/${folderId}`, {
+            headers: {
+                'Authorization': `bearer ${token}`
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ?res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
     postFolder(folderName, user_id) {
         let token = TokenServiceObject.getAuthToken();
         return fetch(`${config.API_BASE_URL}/folders/`, {
@@ -34,6 +49,28 @@ const FolderApiServiceObject = {
                 (!res.ok)
                     ? res.json().then(e => Promise.reject(e))
                     : res.json();
+            })
+    },
+
+    deleteFolder(deleteId) {
+        let token = TokenServiceObject.getAuthToken();
+        return fetch(`${config.API_BASE_URL}/folder/${deleteId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${token}`
+            }
+        })
+        .then(response => {
+                if(!response.ok) {
+                    return response.json().then(error => {
+                        throw error
+                    })
+                }
+                return response.json()
+            })
+            .catch(error => {
+                console.log(error)
             })
     }
 }

@@ -55,7 +55,7 @@ export const genreStore = [
         'id': 4
     },
     {
-        'genre': 'Real Time Strategy',
+        'genre': 'RTS',
         'id': 11
     },
     {

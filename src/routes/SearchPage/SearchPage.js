@@ -17,7 +17,7 @@ export default class SearchPage extends Component {
         let payload = this.parseJwt(token);
         let userId = payload.user_id;
 
-        this.context.setUserId(userId);
+        sessionStorage.setItem('user-id', userId);
     };
 
     parseJwt = (token) => {
