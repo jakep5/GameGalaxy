@@ -18,6 +18,8 @@ export default class SearchPage extends Component {
         let userId = payload.user_id;
 
         sessionStorage.setItem('user-id', userId);
+
+        this.context.getFolders(userId);
     };
 
     parseJwt = (token) => {

@@ -1,24 +1,33 @@
 div.resultItem {
   border: 1px solid black;
   display: inline-block;
-  height: 250px;
+  height: 350px;
   width: 275px;
   margin-bottom: 45px;
 }
 
 h1.gameTitle {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 p.noPlatform {
-    font-size: 12px;
-    
+  font-size: 12px;
 }   
 
 p.platformName {
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: 2px;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+div.platformHolder {
+  margin-top: 20px;
+}
+
+p.genreName {
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 2px;
 }
 
 @media only screen and (min-width: 1080px) {

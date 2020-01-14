@@ -28,9 +28,9 @@ export default class GameResults extends Component {
                             :   <h1 className={styles.noGames}>Please click search to search for games!</h1>
                         }
 
-                        {this.context.addFolder == 'true'
-                        ? <AddFolderWindow />
-                        : null}
+                        {value.addFolder == true &&
+                         <AddFolderWindow />
+                        }
                     </>
                 )}
             </GamesConsumer>
