@@ -48,8 +48,7 @@ export default class SearchForm extends Component {
             }
         })
             .then(response => response.json())
-            .then(responseJson => console.log(responseJson))
-/*             .then(responseJson => this.context.setNewGames(responseJson)) */
+            .then(responseJson => this.context.setNewGames(responseJson))
             .catch(error => {
                 console.log(error)
         })

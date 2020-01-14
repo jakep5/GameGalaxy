@@ -1,0 +1,29 @@
+div.resultItem {
+  border: 1px solid black;
+  display: inline-block;
+  height: 250px;
+  width: 275px;
+  margin-bottom: 45px;
+}
+
+h1.gameTitle {
+    font-size: 18px;
+}
+
+p.noPlatform {
+    font-size: 12px;
+    
+}   
+
+p.platformName {
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+@media only screen and (min-width: 1080px) {
+    div.resultItem {
+      margin-right: 7%;
+      margin-left: 7%;
+    }
+}

@@ -29,6 +29,7 @@ class GamesProvider extends Component {
             reviewFilter: null,
             openFolderId: null,
             openFolder: null,
+            addFolder: false,
             folderGames: [],
         }
     };
@@ -58,8 +59,14 @@ class GamesProvider extends Component {
         })
     };
 
+    handleAddFolderClick = () => {
+        this.setState({
+            addFolder: true
+        })
+    }
+
     deleteFolder = (deleteId) => {
-        
+
     }
 
     setOpenFolder = (folderId) => {
@@ -145,7 +152,9 @@ class GamesProvider extends Component {
             reviewFilter: this.state.reviewFilter,
             setOpenFolder: this.setOpenFolder,
             folderGames: this.state.folderGames,
-            deleteFolder: this.deleteFolder
+            deleteFolder: this.deleteFolder,
+            handleAddFolderClick: this.handleAddFolderClick,
+            addFolder: this.state.addFolder
         }
 
         return (

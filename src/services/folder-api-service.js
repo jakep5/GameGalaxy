@@ -63,11 +63,11 @@ const FolderApiServiceObject = {
         })
         .then(response => {
                 if(!response.ok) {
-                    return response.json().then(error => {
+                    response.send().then(error => {
                         throw error
                     })
                 }
-                return response.json()
+                return response
             })
             .catch(error => {
                 console.log(error)
