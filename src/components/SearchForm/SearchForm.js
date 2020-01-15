@@ -41,10 +41,13 @@ export default class SearchForm extends Component {
         fetch(url, {
             method: 'GET',
             headers: {
-                'gameTitle': gameTitle,
-                'platformFilters': platformFilters,
-                'genreFilters': genreFilters,
-                'reviewFilter': reviewFilter
+                "gameTitle": gameTitle,
+                "platformFilters": platformFilters,
+                "genreFilters": genreFilters,
+                "reviewFilter": reviewFilter,
+                "Access-Control-Allow-Headers": "gameTitle, platformFilters, genreFilters, reviewFilter",
+                "Access-Control-Allow-Origin": "https://game-galaxy.now.sh",
+                "Access-Control-Allow-Methods": "GET,POST,DELETE,PATCH"
             }
         })
             .then(response => response.json())
