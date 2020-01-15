@@ -16,12 +16,9 @@ export default class SignInPage extends Component {
     }
 
     handleLogInSuccess = (user_name) => {;
-
         const { history } = this.props;
 
         history.push('/search')
-
-        this.context.setCurrentUser(user_name)
     }
 
 
