@@ -46,7 +46,7 @@ export default class SearchForm extends Component {
                 "genreFilters": genreFilters,
                 "reviewFilter": reviewFilter,
                 "Access-Control-Allow-Headers": "gameTitle, platformFilters, genreFilters, reviewFilter",
-                "Access-Control-Allow-Origin": "https://game-galaxy.now.sh",
+                "Access-Control-Allow-Origin": "https://game-galaxy.jakepagel1.now.sh",
                 "Access-Control-Allow-Methods": "GET,POST,DELETE,PATCH"
             }
         })
