@@ -1,7 +1,6 @@
-
-
 h1.noGames {
-    
+    position: relative;
+    left: 75%;
 }
 
 @media only screen and (min-width: 1080px) {

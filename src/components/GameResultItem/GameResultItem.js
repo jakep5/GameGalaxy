@@ -13,14 +13,13 @@ export default class GameResultItem extends Component {
         }
     }
 
-    componentDidMount = () => {
-
-    }
-
     static contextType = GamesContext;
     
     addToFolderClick = (e) => {
-        this.context.handleAddFolderClick();
+        let gameTitle = e.target.getAttribute('id');
+        let gameId = e.target.getAttribute('name');
+
+        this.context.handleAddFolderClick(gameTitle, gameId);
     }
 
     render() {
@@ -74,9 +73,9 @@ export default class GameResultItem extends Component {
                 }
                 {this.props.rating == undefined
                 ? <p className={styles.noRating}>No ratings</p>
-                : <p className={styles.gameRating}>{this.props.rating.toFixed(2)}</p>
+                : <p className={styles.gameRating}>IGDB Rating: {this.props.rating.toFixed(2)}</p>
                 }
-                <button onClick={(e) => this.addToFolderClick(e)} className={styles.addToFolder}>Add to Folder</button>
+                <button id={this.props.name} name={this.props.id} onClick={(e) => this.addToFolderClick(e)} className={styles.addToFolder}>Add to Folder</button>
             </div>
         )
     }

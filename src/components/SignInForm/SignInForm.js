@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './styles.module.css'
 import BarLoader from 'react-spinners/BarLoader';
-import GamesContext from '../../contexts/GamesContext'
+import { GamesContext } from '../../contexts/GamesContext'
 import AuthApiServiceObject from '../../services/auth-api-service'
 import TokenServiceObject from '../../services/token-service';
 
@@ -38,8 +38,9 @@ export default class SignInForm extends Component {
                 this.setState({
                     isLoading: false
                 });
-                this.props.onLogInSuccess();
+                this.props.onLogInSuccess(user_name);
             })
+            .then(this.context.setCurrentUser(user_name.value))
             .catch(res => {
                 this.setState({
                     error: res.error,
@@ -76,6 +77,13 @@ export default class SignInForm extends Component {
                     <br />
                     <button type="submit" for="signInForm" className="signInButton">Sign In</button>
                 </form>
+
+
+                <h1 className={styles.demoAccountLabel}>Demo account:</h1>
+                <ul className={styles.demoAccount}>
+                    <li className={styles.demoUsername}>Username: testuser</li>
+                    <li className={styles.demoPassword}>Password: !Testpassword1</li>
+                </ul>
             </div>
         )
     }

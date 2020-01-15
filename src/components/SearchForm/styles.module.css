@@ -22,4 +22,8 @@ button.searchFormSubmit {
     form.searchForm {
       top: 50px;
     }
+    button.searchFormSubmit {
+      position: relative;
+      top: 15px;
+    }
 }

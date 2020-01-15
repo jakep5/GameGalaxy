@@ -67,7 +67,7 @@ export default class FolderDisplay extends Component {
             <GamesConsumer>
                 {value => (
                     <div className={styles.folderHolder}>
-                        <p className={styles.folderLabel}>My folders</p>
+                        <p className={styles.folderLabel}>My folders (click title to open)</p>
                         <ul className={styles.folderList}>
                             {value.folders == null
                             ? <p className={styles.noFolders}>No folders currently added</p>

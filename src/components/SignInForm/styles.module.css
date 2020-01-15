@@ -34,6 +34,10 @@ p.justSignedUp {
   color: rgb(1, 1, 114);
 }
 
+.demoPassword, .demoUsername {
+  padding-left: 0px;
+}
+
 @media only screen and (min-width: 400px) {
   div.signInHolder {
     width: 450px;

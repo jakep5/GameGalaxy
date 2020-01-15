@@ -1,0 +1,8 @@
+div.folderGameHolder {
+    display: block;
+    height: 250px;
+    width: 250px;
+    margin-left: calc(50% - 125px);
+    border: 1px solid black;
+    margin-bottom: 20px;
+}

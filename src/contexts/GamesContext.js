@@ -20,6 +20,7 @@ class GamesProvider extends Component {
         super(props);
         this.state = {
             games: null,
+            userGames: [],
             isLoading: false,
             justSignedUp: false,
             userId: null,
@@ -31,8 +32,18 @@ class GamesProvider extends Component {
             openFolder: null,
             addFolder: false,
             folderGames: [],
+            gameTitleToAdd: null,
+            gameIdToAdd: null,
+            folderToAddTo: null,
+            currentUser: null,
         }
     };
+
+    setCurrentUser = (user_name) => {
+        this.setState({
+            currentUser: user_name,
+        })
+    }
 
     setNewGames = (games) => {
         console.log(games);
@@ -51,7 +62,13 @@ class GamesProvider extends Component {
     getFolders = (userId) => {
         FolderApiServiceObject.getFolders(userId)
             .then(folders => this.setNewFolders(folders))
+        this.getUserGames(userId);
     };
+
+    getUserGames = (userId) => {
+        GameApiServiceObject.getGames(userId)
+            .then(games => this.setUserGames(games))
+    }
 
     setNewFolders = (folders) => {
         this.setState({
@@ -59,9 +76,36 @@ class GamesProvider extends Component {
         })
     };
 
-    handleAddFolderClick = () => {
+    setUserGames = (games) => {
         this.setState({
-            addFolder: true
+            userGames: games
+        })
+    }
+
+    handleAddFolderClick = (gameTitle, gameId) => {
+        this.setState({
+            addFolder: true,
+            gameTitleToAdd: gameTitle,
+            gameIdToAdd: gameId,
+        });
+
+    };
+
+    addToFolder = (folderId) => {
+        this.setState({
+            folderToAddTo: folderId,
+            addFolder: false,
+        });
+
+        GameApiServiceObject.postGame(this.state.gameTitleToAdd, this.state.gameIdToAdd, folderId)
+
+    }
+
+    closeWindow = () => {
+        this.setState({
+            addFolder: false,
+            gameIdToAdd: null,
+            gameTitleToAdd: null,
         })
     }
 
@@ -127,7 +171,7 @@ class GamesProvider extends Component {
         this.setState({
             reviewFilter: e.target.value
         })
-    }
+    };
 
     render() {
 
@@ -154,7 +198,13 @@ class GamesProvider extends Component {
             folderGames: this.state.folderGames,
             deleteFolder: this.deleteFolder,
             handleAddFolderClick: this.handleAddFolderClick,
-            addFolder: this.state.addFolder
+            addFolder: this.state.addFolder,
+            closeWindow: this.closeWindow,
+            addToFolder: this.addToFolder,
+            folderToAddTo: this.state.folderToAddTo,
+            userGames: this.state.userGames,
+            setCurrentUser: this.setCurrentUser,
+            currentUser: this.state.currentUser
         }
 
         return (

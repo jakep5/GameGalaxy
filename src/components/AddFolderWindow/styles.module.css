@@ -9,3 +9,12 @@ div.addFolderWindow {
     color: black;
     border: 1px solid black;
 }
+
+h1.addFolderHeader {
+    font-size: 18px;
+}
+
+button.closeWindow {
+    position: relative;
+    left: 130px;
+}

@@ -22,6 +22,7 @@ export default class GameResults extends Component {
                                                 genres={game.genres}
                                                 platforms={game.platforms}
                                                 rating={game.rating}
+                                                id={game.id}
                                             />
                                 }
                             })

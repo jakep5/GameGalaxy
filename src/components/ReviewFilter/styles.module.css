@@ -10,11 +10,7 @@ button.setButton {
 @media only screen and (min-width: 1080px) {
   input.reviewInput {
     bottom: 0px;
-    top: 15px;
-  }
-
-  button.setButton {
-
+    top: 0px;
   }
 
 }

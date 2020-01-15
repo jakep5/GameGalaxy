@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
 import FolderDisplay from '../../components/FolderDisplay/FolderDisplay';
 import FolderGamesDisplay from '../../components/FolderGamesDisplay/FolderGamesDisplay';
+import { GamesConsumer } from '../../contexts/GamesContext';
 
 export default class ProfilePage extends Component {
 
@@ -25,35 +26,40 @@ export default class ProfilePage extends Component {
 
     render() {
         return (
-            <>
-                <nav className={styles.nav} role="navigation">
-                    <Link to="/">
-                        <p className={styles.signOut}>Sign Out</p>
-                    </Link>
-                    
-                    <Link to="/search">
-                        <p className={styles.returnToSearch}>Back to Search</p>
-                    </Link>
-                </nav>
-                <main className={styles.main} role="main">
+            <GamesConsumer>
+                {value => (
+                    <>
+                        <nav className={styles.nav} role="navigation">
+                            <Link to="/">
+                                <p className={styles.signOut}>Sign Out</p>
+                            </Link>
 
-                    <section className={styles.profileSection} role="banner">
-                        <div role="presentation" className={styles.profileMain}>
-                            <p className={styles.userName}>jakepagel1</p>
-                            <div className={styles.profileImage}>
-                                Image goes here
-                            </div>
-                        </div>
+                            <Link to="/search">
+                                <p className={styles.returnToSearch}>Back to Search</p>
+                            </Link>
+                        </nav>
+                        <main className={styles.main} role="main">
 
-                        <FolderDisplay />
+                            <section className={styles.profileSection} role="banner">
+                                <div role="presentation" className={styles.profileMain}>
+                                    <p className={styles.userName}>{value.currentUser}</p>
+                                    <div className={styles.profileImage}>
+                                        Image goes here
+                                    </div>
+                                </div>
 
-                        <FolderGamesDisplay />
-                        
-                    </section>
+                                <FolderDisplay />
 
-                </main>
-                <footer className={styles.footer} role="content-info">Footer</footer>
-            </>
+                                <FolderGamesDisplay />
+
+                            </section>
+
+                        </main>
+                        <footer className={styles.footer} role="content-info">Footer</footer>
+                    </>
+                )}
+                
+            </GamesConsumer>     
         )
     }
 }
