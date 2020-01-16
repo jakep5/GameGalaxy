@@ -4,6 +4,7 @@ import BarLoader from 'react-spinners/BarLoader';
 import { GamesContext } from '../../contexts/GamesContext'
 import AuthApiServiceObject from '../../services/auth-api-service'
 import TokenServiceObject from '../../services/token-service';
+import { css } from '@emotion/core';
 
 export default class SignInForm extends Component {
 
@@ -51,7 +52,15 @@ export default class SignInForm extends Component {
 
     render() {
 
+        const override = css`
+            display: block;
+            margin-top: 50%;
+            border-color: grey;
+        `;
+
         let justSignedUp = this.props.justSignedUp;
+
+        let isLoading = this.state.isLoading;
 
         const { error } = this.state;
 
@@ -77,6 +86,16 @@ export default class SignInForm extends Component {
                     <br />
                     <button type="submit" for="signInForm" className="signInButton">Sign In</button>
                 </form>
+
+                <div className={styles.loadingHolder}>
+                    <BarLoader
+                        css={override}
+                        sizeUnit={"px"}
+                        size={75}
+                        color={"#808080"}
+                        loading={isLoading}
+                    />
+                </div>
 
 
                 <h1 className={styles.demoAccountLabel}>Demo account:</h1>
