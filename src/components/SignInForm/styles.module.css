@@ -38,6 +38,10 @@ p.justSignedUp {
   padding-left: 0px;
 }
 
+div.loadingHolder {
+  margin-left: 0%;
+}
+
 @media only screen and (min-width: 400px) {
   div.signInHolder {
     width: 450px;

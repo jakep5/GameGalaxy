@@ -8,11 +8,15 @@ div.signUpHolder {
 }
 
 .signUpButton {
-  margin-top: 15%;
+  margin-top: 7%;
 }
 
 p.error {
     color: rgb(134, 2, 2);
+}
+
+div.loadingHolder {
+  margin-left: 0%;
 }
 
 @media only screen and (min-width: 400px) {

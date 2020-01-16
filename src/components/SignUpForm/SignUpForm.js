@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import styles from './styles.module.css'
-import GamesContext from '../../contexts/GamesContext'
+import GamesContext from '../../contexts/GamesContext';
+import BeatLoader from 'react-spinners/BeatLoader';
 import AuthApiServiceObject from '../../services/auth-api-service';
 import TokenServiceObject from '../../services/token-service';
+import { css} from '@emotion/core';
 
 export default class SignUpForm extends Component {
 
@@ -52,7 +54,15 @@ export default class SignUpForm extends Component {
 
     render() {
 
+        const override = css`
+            display: block;
+            margin-top: 5%;
+            border-color: grey;
+        `;
+
         const { error } = this.state;
+
+        let isLoading = this.state.isLoading
 
         return (
             <div role="presentation" className={styles.signUpHolder}>
@@ -65,16 +75,29 @@ export default class SignUpForm extends Component {
                     </div>
 
                     <label for="user_name">Username:</label>
-                    <input type="text" name="user_name" className={styles.signUpUsername} id="signUpUsername" />
+                    <input type="text" placeholder="username" name="user_name" className={styles.signUpUsername} id="signUpUsername" />
 
                     <br/>
 
                     <label for="password">Password:</label>
-                    <input type="password" name="password" className={styles.signUpPassword} id="signUpPassword" />
+                    <input type="password" placeholder="password" name="password" className={styles.signUpPassword} id="signUpPassword" />
 
                     <br />
 
+                    <div className={styles.loadingHolder}>
+                        <BeatLoader
+                            css={override}
+                            sizeUnit={"px"}
+                            size={15}
+                            color={"#808080"}
+                            loading={isLoading}
+                        />
+
+                    </div>
+
                     <button type="submit" for="signUpForm" className={styles.signUpButton}>Sign Up</button>
+
+                    
 
                 </form>
             </div>

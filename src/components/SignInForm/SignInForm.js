@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './styles.module.css'
-import BarLoader from 'react-spinners/BarLoader';
+import BeatLoader from 'react-spinners/BeatLoader';
 import { GamesContext } from '../../contexts/GamesContext'
 import AuthApiServiceObject from '../../services/auth-api-service'
 import TokenServiceObject from '../../services/token-service';
@@ -54,7 +54,7 @@ export default class SignInForm extends Component {
 
         const override = css`
             display: block;
-            margin-top: 50%;
+            margin-top: 5%;
             border-color: grey;
         `;
 
@@ -88,10 +88,10 @@ export default class SignInForm extends Component {
                 </form>
 
                 <div className={styles.loadingHolder}>
-                    <BarLoader
+                    <BeatLoader
                         css={override}
                         sizeUnit={"px"}
-                        size={75}
+                        size={15}
                         color={"#808080"}
                         loading={isLoading}
                     />
