@@ -18,3 +18,7 @@ button.closeWindow {
     position: relative;
     left: 130px;
 }
+
+p.folderTitle:hover {
+    cursor: pointer;
+}

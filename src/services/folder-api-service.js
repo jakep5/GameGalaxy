@@ -54,7 +54,7 @@ const FolderApiServiceObject = {
 
     deleteFolder(deleteId) {
         let token = TokenServiceObject.getAuthToken();
-        return fetch(`${config.API_BASE_URL}/folder/${deleteId}`, {
+        return fetch(`${config.API_BASE_URL}/folders/folder/${deleteId}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
@@ -62,11 +62,6 @@ const FolderApiServiceObject = {
             }
         })
         .then(response => {
-                if(!response.ok) {
-                    response.send().then(error => {
-                        throw error
-                    })
-                }
                 return response
             })
             .catch(error => {
