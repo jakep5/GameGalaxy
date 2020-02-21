@@ -6,3 +6,9 @@ div.folderGameHolder {
     border: 1px solid black;
     margin-bottom: 20px;
 }
+
+button.deleteGameButton {
+    display: block;
+    padding: 5px 20px;
+    margin-left: calc(50% - 40px);
+}

@@ -67,6 +67,32 @@ const GameApiServiceObject = {
                 console.log(error)
             })
     },
-}
+
+    toggleCompleted(gameId, toggleCompleted) {
+        let token = TokenServiceObject.getAuthToken();
+
+        return fetch(`${config.API_BASE_URL}/games/${gameId}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                completed: toggleCompleted
+            }),
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${token}`
+            }
+        })
+            .then(res => {
+                if(!res.ok) {
+                    return res.json().then(error => {
+                        throw error
+                    })
+                }
+                return res.json()
+            })
+            .catch(error => {
+                console.log(error)
+            });
+    },
+};
 
 export default GameApiServiceObject;

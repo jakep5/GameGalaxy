@@ -62,10 +62,6 @@ class GamesProvider extends Component {
         })
     };
 
-    getFolders = (userId) => {
-        this.getUserGames(userId);
-    };
-
     getUserGames = (userId) => {
         GameApiServiceObject.getGames(userId)
             .then(games => this.setUserGames(games))
@@ -195,6 +191,18 @@ class GamesProvider extends Component {
         this.setState({
             isLoading: !this.state.isLoading
         })
+    };
+
+    toggleCompleted = (toggleId, userId) => {
+        this.state.userGames.map((game, i) => {
+            if (game.id == toggleId) {
+
+                game.completed = !game.completed;
+
+                GameApiServiceObject.toggleCompleted(toggleId, !game.completed)
+/*                     .then(this.getUserGames(userId)) */
+            };
+        });
     }
 
     render() {
@@ -233,7 +241,8 @@ class GamesProvider extends Component {
             setFolders: this.setFolders,
             setNewFolder: this.setNewFolder,
             toggleLoading: this.toggleLoading,
-            isLoading: this.state.isLoading
+            isLoading: this.state.isLoading,
+            toggleCompleted: this.toggleCompleted
         }
 
         return (

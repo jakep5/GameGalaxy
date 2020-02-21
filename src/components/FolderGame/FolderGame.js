@@ -21,6 +21,16 @@ export default class FolderGame extends Component {
         GameApiServiceObject.deleteGame(deleteId)
             .then(this.context.getUserGames(userId))
     }
+
+    handleCheckCompleted = (e) => {
+        e.preventDefault();
+
+        let toggleId = e.target.getAttribute('name');
+
+        let userId = sessionStorage.getItem('user-id');
+
+        this.context.toggleCompleted(toggleId, userId);
+    }
     
     render() {
         return (
@@ -29,6 +39,7 @@ export default class FolderGame extends Component {
                     <div className={styles.folderGameHolder}>
                         <h1 className={styles.folderGameName}>{this.props.title}</h1>
                         <button className={styles.deleteGameButton} name={this.props.gameId} onClick={(e) => this.deleteGame(e)}>Delete</button>
+                        <button className={styles.completeButton} name={this.props.gameId} onClick={(e) => this.handleCheckCompleted(e)}>Mark as Completed</button>
                     </div>
                 )}
             </GamesConsumer>                 

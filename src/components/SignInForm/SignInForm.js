@@ -33,6 +33,7 @@ export default class SignInForm extends Component {
             password: password.value
         })
             .then(res => {
+                this.context.setCurrentUser(user_name.value);
                 user_name.value = '';
                 password.value = '';
                 TokenServiceObject.saveAuthToken(res.authToken);
@@ -41,7 +42,6 @@ export default class SignInForm extends Component {
                 });
                 this.props.onLogInSuccess(user_name);
             })
-            .then(this.context.setCurrentUser(user_name.value))
             .catch(res => {
                 this.setState({
                     error: res.error,
