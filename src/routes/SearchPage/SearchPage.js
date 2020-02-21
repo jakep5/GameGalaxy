@@ -12,26 +12,11 @@ export default class SearchPage extends Component {
 
     static contextType = GamesContext;
 
-    componentDidMount = () => {
-        document.title = "Search Page";
+    componentWillMount = () => {
 
-        const token = sessionStorage.getItem('game-galaxy-token-key');
-        let payload = this.parseJwt(token);
-        let userId = payload.user_id;
+        let userId = sessionStorage.getItem('user-id');
 
-        sessionStorage.setItem('user-id', userId);
-
-        this.context.getFolders(userId);
-    };
-
-    parseJwt = (token) => {
-        let base64Url = token.split('.')[1];
-        let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-
-        return JSON.parse(jsonPayload);
+        this.context.setFolders(userId);
     }
 
     render() {

@@ -63,7 +63,6 @@ class GamesProvider extends Component {
     };
 
     getFolders = (userId) => {
-       
         this.getUserGames(userId);
     };
 
