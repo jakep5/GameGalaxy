@@ -4,6 +4,7 @@ import { GamesContext } from '../../contexts/GamesContext';
 import PlatformFilter from '../PlatformFilter/PlatformFilter';
 import GenreFilter from '../GenreFilter/GenreFilter';
 import ReviewFilter from '../ReviewFilter/ReviewFilter';
+import BeatLoader from 'react-spinners/BeatLoader';
 import config from '../../config';
 
 export default class SearchForm extends Component {
@@ -13,7 +14,8 @@ export default class SearchForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            games: null
+            games: null,
+            isLoading: false,
         }
     }
 
@@ -35,6 +37,8 @@ export default class SearchForm extends Component {
         let genreFilters = this.context.genreFilters;
 
         let reviewFilter = this.context.reviewFilter;
+
+        this.context.toggleLoading();
 
 
         fetch(url, {

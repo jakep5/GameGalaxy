@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import { GamesContext } from '../../contexts/GamesContext';
 import { GamesConsumer } from '../../contexts/GamesContext';
+import BeatLoader from 'react-spinners/BeatLoader';
 import GameResults from '../../components/GameResults/GameResults';
+import { css } from '@emotion/core';
 
 export default class SearchPage extends Component {
 
@@ -33,6 +35,13 @@ export default class SearchPage extends Component {
     }
 
     render() {
+
+        const override = css`
+            display: block;
+            margin-top: 5%;
+            border-color: grey;
+        `;
+
         return (
             <GamesConsumer>
                 {value => (
@@ -54,6 +63,16 @@ export default class SearchPage extends Component {
 
                             <section className={styles.searchResults}>
                                 <h1 className={styles.searchResultHeader}>Search Results:</h1>
+
+                                <div className={styles.loadingHolder}>
+                                    <BeatLoader
+                                        css={override}
+                                        sizeUnit={"px"}
+                                        size={15}
+                                        color={"#808080"}
+                                        loading={value.isLoading}
+                                    />
+                                </div>
 
                                 <div className={styles.searchResultHolder}>
                                     <GameResults />

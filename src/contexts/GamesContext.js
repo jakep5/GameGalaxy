@@ -36,6 +36,7 @@ class GamesProvider extends Component {
             gameIdToAdd: null,
             folderToAddTo: null,
             currentUser: null,
+            isLoading: false,
         }
     };
 
@@ -49,7 +50,9 @@ class GamesProvider extends Component {
         console.log(games);
         this.setState({
             games
-        })
+        });
+
+        this.toggleLoading();
     };
 
     handleFolderSubmit = (newFolder) => {
@@ -189,6 +192,12 @@ class GamesProvider extends Component {
         })
     };
 
+    toggleLoading = () => {
+        this.setState({
+            isLoading: !this.state.isLoading
+        })
+    }
+
     render() {
 
         const contextValue = {
@@ -223,7 +232,9 @@ class GamesProvider extends Component {
             setCurrentUser: this.setCurrentUser,
             currentUser: this.state.currentUser,
             setFolders: this.setFolders,
-            setNewFolder: this.setNewFolder
+            setNewFolder: this.setNewFolder,
+            toggleLoading: this.toggleLoading,
+            isLoading: this.state.isLoading
         }
 
         return (
