@@ -1,7 +1,11 @@
 import config from '../config';
 import TokenServiceObject from './token-service';
+import GamesContext from '../contexts/GamesContext';
+
+
 
 const FolderApiServiceObject = {
+
     getFolders(userId) {
         let token = TokenServiceObject.getAuthToken();
 
@@ -62,11 +66,16 @@ const FolderApiServiceObject = {
             }
         })
         .then(response => {
-                return response
-            })
-            .catch(error => {
-                console.log(error)
-            })
+            if(!response.ok) {
+                    return response.json().then(error => {
+                        throw error
+                    })
+            }
+            return response.json()
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 }
 

@@ -12,6 +12,7 @@ export default class FolderDisplay extends Component {
         super(props);
         this.state = {
             addFolder: false,
+            userFolders: [],
         }
     }
     
@@ -19,9 +20,10 @@ export default class FolderDisplay extends Component {
 
     componentDidMount = () => {
         let userId = sessionStorage.getItem('user-id');
-        this.context.getFolders(userId);
-    }
 
+        this.context.setFolders(userId);
+    }
+    
     handleAddFolderClick = () => {
         this.setState({
             addFolder: !this.state.addFolder,
@@ -32,10 +34,14 @@ export default class FolderDisplay extends Component {
         e.preventDefault();
 
         let folderName = document.getElementById('folderName').value;
-        let user_id = sessionStorage.getItem('user-id');
+        let userId = sessionStorage.getItem('user-id');
 
-        FolderApiServiceObject.postFolder(folderName, user_id)
-            .then(this.context.getFolders(user_id))
+        let newFolder = {
+            name: folderName,
+            user_id: userId
+        }
+
+        this.context.setNewFolder(newFolder);
     }
 
     openFolder = (e) => {
@@ -53,16 +59,18 @@ export default class FolderDisplay extends Component {
     deleteFolder = (e) => {
         e.preventDefault();
 
-        let userId = sessionStorage.getItem('user-id');
-
         let deleteId = e.target.getAttribute('name');
 
-        FolderApiServiceObject.deleteFolder(deleteId)
-            .then(this.context.getFolders(userId))
+        this.context.deleteFolder(deleteId)
     }
 
 
     render() {
+
+        let userId = sessionStorage.getItem('user-id');
+
+        this.context.setFolders(userId);
+
         return (
             <GamesConsumer>
                 {value => (

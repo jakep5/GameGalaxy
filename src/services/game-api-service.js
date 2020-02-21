@@ -12,10 +12,10 @@ const GameApiServiceObject = {
         })
             .then(response => {
                 if (!response.ok) {
-                    response.json().then(e => Promise.reject(e))
+                    response.json().then(e => Promise.reject(e));
                 } else {
-                    let responseJson = response.json()
-                    return responseJson
+                    let responseJson = response.json();
+                    return responseJson;
                 }
             })
 

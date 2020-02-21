@@ -5,7 +5,6 @@ import PlatformFilter from '../PlatformFilter/PlatformFilter';
 import GenreFilter from '../GenreFilter/GenreFilter';
 import ReviewFilter from '../ReviewFilter/ReviewFilter';
 import config from '../../config';
-import GameApiServiceObject from '../../services/game-api-service'
 
 export default class SearchForm extends Component {
 
@@ -55,6 +54,26 @@ export default class SearchForm extends Component {
             .catch(error => {
                 console.log(error)
         })
+
+        this.coverArtSearch(title);
+    }
+
+    coverArtSearch(title) {
+        let coverArtUrl = config.TWITCH_BASE_URL;
+
+        let queryString = encodeURIComponent(title);
+
+        console.log(process.env.REACT)
+
+        fetch(coverArtUrl + queryString, {
+            method: 'GET',
+            'Client-ID': config.TWITCH_CLIENT_ID,
+        })
+            .then(response => response.json())
+            .then(responseJson => console.log(responseJson))
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     render() {

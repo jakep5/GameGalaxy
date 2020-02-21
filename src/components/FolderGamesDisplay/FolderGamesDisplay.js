@@ -29,6 +29,7 @@ export default class FolderGamesDisplay extends Component {
                                         title={game.title}
                                         completed={game.completed}
                                         igdbId={game.igdb_id}
+                                        gameId={game.id}
                                     />
                                 }
                                 })

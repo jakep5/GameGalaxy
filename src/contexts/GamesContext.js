@@ -24,7 +24,7 @@ class GamesProvider extends Component {
             isLoading: false,
             justSignedUp: false,
             userId: null,
-            folders: null,
+            folders: [],
             platformFilters: [],
             genreFilters: [],
             reviewFilter: null,
@@ -60,8 +60,7 @@ class GamesProvider extends Component {
     };
 
     getFolders = (userId) => {
-        FolderApiServiceObject.getFolders(userId)
-            .then(folders => this.setNewFolders(folders))
+       
         this.getUserGames(userId);
     };
 
@@ -70,13 +69,25 @@ class GamesProvider extends Component {
             .then(games => this.setUserGames(games))
     }
 
-    setNewFolders = (folders) => {
-        this.setState({
-            folders: folders
-        })
+    setFolders = (userId) => {
+        FolderApiServiceObject.getFolders(userId)
+            .then(foldersRes => {
+                this.setState({
+                    folders: foldersRes
+                })
+            })
     };
 
+    setNewFolder = (newFolder) => {
+        this.setState({
+            folders: [...this.state.folders, newFolder]
+        });
+
+        FolderApiServiceObject.postFolder(newFolder.name, newFolder.user_id)
+    }
+
     setUserGames = (games) => {
+        console.log('here');
         this.setState({
             userGames: games
         })
@@ -110,12 +121,17 @@ class GamesProvider extends Component {
     }
 
     deleteFolder = (deleteId) => {
-
+        const afterDeleteFolders = this.state.folders.filter(fldr =>
+            fldr.id !== deleteId);
+        this.setState({
+            folders: afterDeleteFolders
+        });
+        FolderApiServiceObject.deleteFolder(deleteId);
     }
 
     setOpenFolder = (folderId) => {
         this.setState({
-            openFolderId: folderId
+            openFolderId: folderId,
         });
 
         FolderApiServiceObject.getById(folderId)
@@ -185,6 +201,7 @@ class GamesProvider extends Component {
             userId: this.state.userId,
             folders: this.state.folders,
             getFolders: this.getFolders,
+            getUserGames: this.getUserGames,
             openFolder: this.state.openFolder,
             handlePlatformChange: this.handlePlatformChange,
             handleGenreChange: this.handleGenreChange,
@@ -204,7 +221,9 @@ class GamesProvider extends Component {
             folderToAddTo: this.state.folderToAddTo,
             userGames: this.state.userGames,
             setCurrentUser: this.setCurrentUser,
-            currentUser: this.state.currentUser
+            currentUser: this.state.currentUser,
+            setFolders: this.setFolders,
+            setNewFolder: this.setNewFolder
         }
 
         return (
