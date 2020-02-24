@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './styles.module.css';
 import { GamesContext, GamesConsumer } from '../../contexts/GamesContext';
 import GameApiServiceObject from '../../services/game-api-service';
+import CompletedIcon from '../CompletedIcon/CompletedIcon';
 
 export default class FolderGame extends Component {
 
@@ -40,6 +41,10 @@ export default class FolderGame extends Component {
                         <h1 className={styles.folderGameName}>{this.props.title}</h1>
                         <button className={styles.deleteGameButton} name={this.props.gameId} onClick={(e) => this.deleteGame(e)}>Delete</button>
                         <button className={styles.completeButton} name={this.props.gameId} onClick={(e) => this.handleCheckCompleted(e)}>Mark as Completed</button>
+
+                        {this.props.completed
+                        ? <CompletedIcon />
+                        : null}
                     </div>
                 )}
             </GamesConsumer>                 
