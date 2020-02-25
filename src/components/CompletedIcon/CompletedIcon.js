@@ -17,8 +17,7 @@ export default class CompletedIcon extends Component {
                         <FontAwesomeIcon icon={faCheck} />
                     </div>
                 )}
-            </GamesConsumer>
-            
+            </GamesConsumer>          
         )
     }
 }

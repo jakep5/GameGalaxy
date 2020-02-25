@@ -1,30 +1,39 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
+import Nav from '../../components/Nav/Nav';
+import $ from 'jquery';
 
 export default class LandingPage extends Component {
 
     componentDidMount() {
-        document.title = "Landing Page"
+        document.title = "Game Galaxy"
+        $(window).scroll(function(){
+            $("#title").css("opacity", 1 - $(window).scrollTop() / 400);
+        });
+
+        $(window).scroll(function(){
+            $("#header").css("opacity", 1 - $(window).scrollTop() / 2000);
+        });
+    };
+
+    handleCallToActionClick = (e) => {
+        window.location.replace('/signIn');
     }
 
     render() {
         return (
         <>
-            <nav className={styles.nav} role="navigation">
-
-                <Link to="/signIn">
-                    <p className={styles.signIn}>Sign In</p>
-                </Link>
-
-                <Link to="/signUp">
-                    <p className={styles.signUp}>Sign Up</p>
-                </Link>
-                    
-            </nav>
+    
+            <Nav />
+            
             <main className={styles.main} role="main">
-                <header className={styles.header} role="banner">
-                    <h1>Game Galaxy</h1>
+                <header className={styles.header} id='header' role="banner">
+                    <div className={styles.title}>
+                        <h1 id='title' className={styles.mainTitle}>Game Galaxy</h1>
+                    </div>
+
+                    <button onClick={(e) => this.handleCallToActionClick(e)} className={styles.callToAction}>Create an Account</button>      
                 </header>
 
                 <section className={styles.section}>

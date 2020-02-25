@@ -16,7 +16,16 @@ body {
   width: 100%;
 }
 
+main {
+  height: 100%;
+  width: 100%;
+}
+
 div.root {
   height: 100%;
   width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
 }

@@ -49,6 +49,8 @@ export default class GameResultItem extends Component {
                         genreArray.push(genreStore[i].name)
                     }
                 }
+
+                console.log(genreArray);
             })
         }
 
@@ -67,7 +69,7 @@ export default class GameResultItem extends Component {
                 ?   <p className={styles.noPlatform}>No platform information</p>
                 :   <div className={styles.platformHolder}>
                         {platformArray.map(platformName => {
-                            return <p className={styles.platformName}>{platformName}</p>
+                            return <p className={styles.platformName}>{platformName} </p>
                         })}
                     </div>    
                 }

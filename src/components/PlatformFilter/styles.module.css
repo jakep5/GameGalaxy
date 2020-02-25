@@ -2,13 +2,40 @@ input.inputCheck {
   position: relative;
   bottom: 23px;
   left: 30px;
+  display: inline-block;
 }
 
-input.dsSelect {
+div.platformHolder {
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+  justify-content: space-between;
+  flex-direction: column;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  transition: max-height 0.2s ease-out;
   position: relative;
-  bottom: 23px;
-  left: 30px;
-  margin-bottom: 50px;
+  top: 25%;
+  left: -23%;
+}
+
+label {
+  margin-top: 0px;
+}
+
+button.platformCollapse {
+  color: white;
+  margin-top: 15px;
+  background-color: rgb(36, 35, 35);
+  cursor: pointer;
+  height: 50px;
+  width: 15%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  display: block;
+  position: relative;
+  left: 5%;
 }
 
 @media only screen and (min-width: 1080px) {
@@ -17,4 +44,5 @@ input.dsSelect {
     top: 7px;
     left: -25px;
   }
+
 }

@@ -29,9 +29,9 @@ export default class ReviewFilter extends Component {
             <GamesConsumer>
             {value => (
                 <>
-                    <button onClick={(e) => this.togglePanel(e)} type="button" className='collapsible'>Minimum review score (click to expand)</button>
+                    <button onClick={(e) => this.togglePanel(e)} type="button" className={styles.reviewCollapse}>Minimum review score (click to expand)</button>
                     {this.state.open ? (
-                        <div className='reviewHolder'>
+                        <div className={styles.reviewHolder}>
                             <label htmlFor="reviewInput">Minimum review score (1-100):</label>
                             <input onChange={(e) => value.handleReviewChange(e)} className={styles.reviewInput}  type="number" min="1" max="100" id="reviewInput" name="reviewInput" />
                         </div>

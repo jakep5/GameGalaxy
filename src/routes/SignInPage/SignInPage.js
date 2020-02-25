@@ -10,9 +10,6 @@ export default class SignInPage extends Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            justSignedUp: false
-        }
     }
 
     handleLogInSuccess = (user_name) => {;

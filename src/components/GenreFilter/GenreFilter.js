@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import './styles.css';
 import { GamesConsumer } from '../../contexts/GamesContext';
 import { GamesContext } from '../../contexts/GamesContext';
 
@@ -28,9 +27,9 @@ export default class GenreFilter extends Component {
             <GamesConsumer>
                 {value => (
                     <>
-                        <button onClick={(e) => this.togglePanel(e)} type="button" className='collapsible'>Genre (click to expand)</button>
+                        <button onClick={(e) => this.togglePanel(e)} type="button" className={styles.genreCollapse}>Genre (click to expand)</button>
                         {this.state.open ? (
-                            <div className='genreHolder'>
+                            <div className={styles.genreHolder}>
 
                                 <label htmlFor="adventureSelect">Adventure</label>
                                 <input onChange={(e) => value.handleGenreChange(e)} className={styles.inputCheck} value="Adventure" type="checkbox" id="adventureSelect" name="adventureSelect"/>

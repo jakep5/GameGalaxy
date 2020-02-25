@@ -25,7 +25,7 @@ export default class SignUpForm extends Component {
     handleSignUpAuth = (e) => {
         e.preventDefault();
 
-        let {user_name, password} = e.target;
+        var {user_name, password} = e.target;
 
         this.setState({
             error: null,
@@ -39,17 +39,18 @@ export default class SignUpForm extends Component {
             .then(res => {
                 user_name.value = '';
                 password.value = '';
-                this.props.onRegistrationSuccess();
                 this.setState({
                     isLoading: false
                 })
             })
+            .then(this.props.onRegistrationSuccess(user_name.value, password.value))
             .catch(res => {
                 this.setState({
                     error: res.error,
                     isLoading: false
                 })
         })
+
     };
 
     render() {
@@ -97,7 +98,15 @@ export default class SignUpForm extends Component {
 
                     <button type="submit" for="signUpForm" className={styles.signUpButton}>Sign Up</button>
 
-                    
+                    <div className={styles.passwordRequirementsHolder}>
+                        <h1 className={styles.passwordRequirementsHeader}>Password requirements:</h1>
+                        <ul className={styles.passwordRequirements}>
+                            <li>Must contain 1 upper case letter</li>
+                            <li>Must contain 1 lower case letter</li>
+                            <li>Must contain 1 number</li>
+                            <li>Must contain 1 special character</li>
+                        </ul>
+                    </div>
 
                 </form>
             </div>

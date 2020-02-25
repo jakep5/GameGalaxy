@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import FolderDisplay from '../../components/FolderDisplay/FolderDisplay';
 import FolderGamesDisplay from '../../components/FolderGamesDisplay/FolderGamesDisplay';
 import { GamesConsumer, GamesContext } from '../../contexts/GamesContext';
+import ProfileImage from '../../components/ProfileImage/ProfileImage';
+import ImageUpload from '../../components/ImageUpload/ImageUpload';
 
 export default class ProfilePage extends Component {
 
@@ -53,7 +55,7 @@ export default class ProfilePage extends Component {
                     <>
                         <nav className={styles.nav} role="navigation">
                             <Link to="/">
-                                <p className={styles.signOut}>Sign Out</p>
+                                <p className={styles.signOut} onClick={(e) => this.context.handleSignOut(e)}>Sign Out</p>
                             </Link>
 
                             <Link to="/search">
@@ -65,9 +67,10 @@ export default class ProfilePage extends Component {
                             <section className={styles.profileSection} role="banner">
                                 <div role="presentation" className={styles.profileMain}>
                                     <p className={styles.userName}>{value.currentUser}</p>
-                                    <div className={styles.profileImage}>
-                                        Image goes here
-                                    </div>
+
+                                    <ProfileImage />
+
+                                    <ImageUpload />
                                 </div>
 
                                 <FolderDisplay />

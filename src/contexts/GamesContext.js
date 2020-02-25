@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import AuthApiServiceObject from '../services/auth-api-service';
 import { platformStore } from '../store';
 import { genreStore } from '../store';
+import UsersApiServiceObject from '../services/users-api-service';
 
 export const GamesContext = React.createContext();
 
@@ -19,10 +20,10 @@ class GamesProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            games: null,
+            games: [],
             userGames: [],
             isLoading: false,
-            justSignedUp: false,
+            justSignedUp: true,
             userId: null,
             folders: [],
             platformFilters: [],
@@ -37,6 +38,7 @@ class GamesProvider extends Component {
             folderToAddTo: null,
             currentUser: null,
             isLoading: false,
+            profileUrl: null,
         }
     };
 
@@ -167,16 +169,17 @@ class GamesProvider extends Component {
         let genreId;
 
         for(let i = 0; i < genreStore.length; i++) {
-            if(genreStore[i].genre == genre) {
+
+            if (genreStore[i].name == genre) {
                 genreId = genreStore[i].id;
-            }
-        }
+            } 
+        };
 
         if (!this.state.genreFilters.includes(genreId)) {
             this.state.genreFilters.push(genreId);
         } else {
             this.state.genreFilters.splice(this.state.genreFilters.indexOf(genreId), 1)
-        }
+        };
 
         console.log(this.state.genreFilters);
     };
@@ -203,6 +206,35 @@ class GamesProvider extends Component {
 /*                     .then(this.getUserGames(userId)) */
             };
         });
+    };
+
+    setUserImage = (url) => {
+        let userId = sessionStorage.getItem('user-id');
+        this.setState({
+            profileUrl: url,
+        });
+
+        UsersApiServiceObject.setProfileImage(url, userId);
+    };
+
+    handleSignOut = (e) => {
+        sessionStorage.removeItem('user-id');
+
+        sessionStorage.removeItem('game-galaxy-token-key');
+
+        this.setState({
+            justSignedUp: false
+        })
+    };
+
+    handleSignUp = () => {
+
+    }
+
+    toggleJustSignedUp = () => {
+        this.setState({
+            justSignedUp: false,
+        })
     }
 
     render() {
@@ -210,7 +242,6 @@ class GamesProvider extends Component {
         const contextValue = {
             handleSignUp: this.handleSignUp,
             justSignedUp: this.state.justSignedUp,
-            switchJustSignedUp: this.switchJustSignedUp,
             handleGamesSearch: this.handleGamesSearch,
             handleFolderSubmit: this.handleFolderSubmit,
             setUserId: this.setUserId,
@@ -242,7 +273,11 @@ class GamesProvider extends Component {
             setNewFolder: this.setNewFolder,
             toggleLoading: this.toggleLoading,
             isLoading: this.state.isLoading,
-            toggleCompleted: this.toggleCompleted
+            toggleCompleted: this.toggleCompleted,
+            setUserImage: this.setUserImage,
+            profileUrl: this.state.profileUrl,
+            handleSignOut: this.handleSignOut,
+            toggleJustSignedUp: this.toggleJustSignedUp
         }
 
         return (

@@ -1,20 +1,35 @@
 div.signInHolder {
   display: block;
-  border: 1px solid black;
   width: 300px;
   height: 400px;
   margin-top: 75px;
   margin-left: calc(50% - 150px);
+  border-radius: 25px;
+  background-color: white;
+}
+
+ul.demoAccount {
+  list-style-type: none;
+}
+
+div.demoHolder {
+  margin-top: 40px;
+}
+
+h1.demoAccountLabel {
+  font-size: 25px;
+}
+
+li.demoUsername {
+  font-size: 15px;
+}
+
+li.demoPassword {
+  font-size: 15px;
 }
 
 .signInLegend {
   margin-left: 0px;
-}
-
-input.signInUsername {
-  display: block;
-  position: relative;
-  top: 50px;
 }
 
 .signInButton {
@@ -31,15 +46,86 @@ p.error {
 }
 
 p.justSignedUp {
-  color: rgb(1, 1, 114);
+  color: red;
 }
 
 .demoPassword, .demoUsername {
   padding-left: 0px;
 }
 
+label.userNameLabel {
+  display: block;
+  margin-top: 20px;
+}
+
+input.signInUsername {
+  -webkit-appearance: none;
+  border: 1px solid rgb(199, 198, 198);
+  background-color: rgb(199, 198, 198);
+  display: inline-block;
+  height: 30px;
+  width: 50%;
+  border-radius: 10px;
+  transition: width 0.5s, box-shadow 0.5s;
+  -webkit-transition: width 0.5s, box-shadow 0.5s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+
+
+input.signInUsername:focus {
+  width: 65%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+input.signInPassword {
+  -webkit-appearance: none;
+  border: 1px solid rgb(199, 198, 198);
+  background-color: rgb(199, 198, 198);
+  display: inline-block;
+  height: 30px;
+  width: 50%;
+  border-radius: 10px;
+  transition: width 0.5s, box-shadow 0.5s;
+  -webkit-transition: width 0.5s, box-shadow 0.5s;
+}
+
+input.signInPassword:focus {
+  width: 65%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+::placeholder {
+  margin-left: 15px;
+}
+
+label.passwordLabel {
+  display: block;
+  margin-top: 30px;
+}
+
 div.loadingHolder {
   margin-left: 0%;
+}
+
+button.signInButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: grey;
+  padding: 20px 40px;
+  border-radius: 50px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin-top: 40px;
+}
+
+button.signInButton:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 75px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 75px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 400px) {

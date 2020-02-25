@@ -19,6 +19,22 @@ div.loadingHolder {
   margin-left: 0%;
 }
 
+h1.passwordRequirementsHeader {
+  font-size: 20px;
+}
+
+ul.passwordRequirements {
+  list-style-type: none;
+}
+
+li {
+  font-size: 15px;
+}
+
+div.passwordRequirementsHolder {
+  margin-top: 100px;
+}
+
 @media only screen and (min-width: 400px) {
   div.signUpHolder {
     width: 450px;

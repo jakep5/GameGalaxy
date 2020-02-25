@@ -46,7 +46,7 @@ p.signOut {
 
 section.searchPage {
   display: block;
-  min-height: 450px;
+  min-height: 700px;
   overflow-y: auto;
 }
 
@@ -63,7 +63,7 @@ section:nth-child(even) {
 @media only screen and (min-width: 1080px) {
   section.searchPage {
     min-height: 0;
-    height: 250px;
+    height: 400px;
   }
 
   div.searchResultHolder {

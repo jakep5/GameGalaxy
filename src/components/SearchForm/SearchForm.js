@@ -59,10 +59,10 @@ export default class SearchForm extends Component {
                 console.log(error)
         })
 
-        this.coverArtSearch(title);
+     /*    this.coverArtSearch(title); */
     }
 
-    coverArtSearch(title) {
+    /* coverArtSearch(title) {
         let coverArtUrl = config.TWITCH_BASE_URL;
 
         let queryString = encodeURIComponent(title);
@@ -78,7 +78,7 @@ export default class SearchForm extends Component {
             .catch(error => {
                 console.log(error);
             })
-    }
+    } */
 
     render() {
         return (
@@ -90,13 +90,14 @@ export default class SearchForm extends Component {
 
                 <button className={styles.searchFormSubmit} type="submit" htmlFor="searchForm">Search!</button>
 
-                <PlatformFilter />
+                <div className={styles.filtersHolder}>
+                    <PlatformFilter />
 
-                <GenreFilter />
+                    <GenreFilter />
 
-                <ReviewFilter />
-                
-
+                    <ReviewFilter />
+                </div>
+                    
             </form>
         )
     }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import './styles.css';
 import { GamesConsumer } from '../../contexts/GamesContext';
 
 export default class PlatformFilter extends Component {
@@ -28,9 +27,9 @@ export default class PlatformFilter extends Component {
             <GamesConsumer>
                 {value => (
                     <>
-                        <button onClick={(e) => this.togglePanel(e)} type="button" className='collapsible'>Platform (click to expand)</button>
+                        <button onClick={(e) => this.togglePanel(e)} type="button" className={styles.platformCollapse}>Platform (click to expand)</button>
                         {this.state.open ? (
-                            <div className='platformHolder'>
+                            <div className={styles.platformHolder}>
 
                                 <label htmlFor="xboxOneSelect">Xbox One</label>
                                 <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="Xbox One" type="checkbox" id="xboxOneSelect" name="xboxOneSelect"/>
