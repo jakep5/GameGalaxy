@@ -3,7 +3,7 @@ div.addFolderWindow {
     height: 350px;
     width: 300px;
     position: fixed;
-    top: 350px;
+    top: 30%;
     left: calc(50% - 150px);
     background-color: white;
     color: black;
@@ -17,6 +17,14 @@ h1.addFolderHeader {
 button.closeWindow {
     position: relative;
     left: 130px;
+}
+
+button.closeWindow:hover {
+    cursor: pointer;
+}
+
+p.folderTitle {
+    display: block;
 }
 
 p.folderTitle:hover {

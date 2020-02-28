@@ -4,6 +4,7 @@ import { GamesContext } from '../../contexts/GamesContext';
 import { GamesConsumer } from '../../contexts/GamesContext';
 import GameResultItem from '../GameResultItem/GameResultItem';
 import AddFolderWindow from '../AddFolderWindow/AddFolderWindow'
+import FolderSuccessPopup from '../FolderSuccessPopup/FolderSuccessPopup';
 
 
 export default class GameResults extends Component {
@@ -31,6 +32,10 @@ export default class GameResults extends Component {
 
                         {value.addFolder == true &&
                          <AddFolderWindow />
+                        }
+
+                        {value.successMessage == true &&
+                        <FolderSuccessPopup />
                         }
                     </>
                 )}

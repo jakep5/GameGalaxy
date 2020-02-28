@@ -1,5 +1,4 @@
 div.itemsHolder {
-  display: block;
   border: 1px solid black;
   height: 500px;
   overflow-y: auto;
@@ -11,5 +10,6 @@ div.itemsHolder {
       float: right;
       width: 750px;
       margin-right: 0px;
+      margin-top: 120px;
     }
 }

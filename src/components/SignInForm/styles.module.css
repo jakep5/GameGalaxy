@@ -2,7 +2,8 @@ div.signInHolder {
   display: block;
   width: 300px;
   height: 400px;
-  margin-top: 75px;
+  position: relative;
+  top: 200px;
   margin-left: calc(50% - 150px);
   border-radius: 25px;
   background-color: white;
@@ -17,7 +18,8 @@ div.demoHolder {
 }
 
 h1.demoAccountLabel {
-  font-size: 25px;
+  font-size: 17px;
+  margin-top: -15px;
 }
 
 li.demoUsername {
@@ -47,6 +49,7 @@ p.error {
 
 p.justSignedUp {
   color: red;
+  font-size: 15px;
 }
 
 .demoPassword, .demoUsername {

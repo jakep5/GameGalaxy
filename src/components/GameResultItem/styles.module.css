@@ -32,6 +32,10 @@ p.genreName {
   margin-right: 3px;
 }
 
+p.gameRating {
+  display: block;
+}
+
 @media only screen and (min-width: 1080px) {
     div.resultItem {
       margin-right: 7%;

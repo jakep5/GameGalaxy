@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 import SignInForm from '../../components/SignInForm/SignInForm';
-import GamesContext from '../../contexts/GamesContext'
+import GamesContext from '../../contexts/GamesContext';
+import SignInNav from '../../components/SignInNav/SignInNav';
 import { Link } from 'react-router-dom';
 
 export default class SignInPage extends Component {
@@ -27,12 +28,7 @@ export default class SignInPage extends Component {
 
         return (
             <>
-                <nav className={styles.nav} role="navigation">
-                    <Link to="/signUp">
-                        <p className={styles.signUpLink}>Sign Up</p>
-                    </Link>
-                    
-                </nav>
+                <SignInNav />
 
                 <main className={styles.main} role="main">
 
@@ -41,7 +37,6 @@ export default class SignInPage extends Component {
                     </section>
 
                 </main>
-                <footer className={styles.footer} role="contentinfo">Footer</footer>
             </>
         )
   }

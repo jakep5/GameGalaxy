@@ -1,6 +1,6 @@
 form.searchForm {
   position: relative;
-  top: 20px;
+  top: 150px;
 }
 
 .nameInputLabel {
@@ -15,10 +15,10 @@ form.searchForm {
   top: -15px;
   margin-left: 5px;
   height: 50px;
-  width: 25%;
+  width: 75%;
   border-radius: 15px;
   display: block;
-  margin-left: calc(50% - 12.5%);
+  margin-left: calc(50% - 37.5%);
   font-size: 30px;
 /*   transition: width 0.5s;
   -webkit-transition: width 0.5s; */
@@ -47,11 +47,17 @@ div.filtersHolder {
 }
 
 @media only screen and (min-width: 1080px) {
-    form.searchForm {
-      top: 50px;
-    }
-    button.searchFormSubmit {
-      position: relative;
-      top: 15px;
-    }
+  form.searchForm {
+    top: 150px;
+  }
+
+  button.searchFormSubmit {
+    position: relative;
+    top: 15px;
+  }
+
+  .nameInput {
+    width: 30%;
+    margin-left: calc(50% - 15%);
+  }
 }

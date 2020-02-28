@@ -86,7 +86,7 @@ export default class SearchForm extends Component {
             <form onSubmit={(e) => this.handleSearchSubmit(e)} className={styles.searchForm} id="searchForm">
 
                 <label className={styles.nameInputLabel} htmlFor="nameInput" id="nameInputLabel">Name of game:</label>
-                <input className={styles.nameInput} type="text" id="nameInput" name="nameInput" />
+                <input className={styles.nameInput} type="text" id="nameInput" name="nameInput" autoComplete='off'/>
 
                 <button className={styles.searchFormSubmit} type="submit" htmlFor="searchForm">Search!</button>
 

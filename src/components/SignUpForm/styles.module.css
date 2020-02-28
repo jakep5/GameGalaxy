@@ -1,22 +1,91 @@
 div.signUpHolder {
   display: block;
-  border: 1px solid black;
   width: 300px;
   height: 400px;
-  margin-top: 75px;
+  position: relative;
+  top: 150px;
   margin-left: calc(50% - 150px);
-}
-
-.signUpButton {
-  margin-top: 7%;
+  border-radius: 25px;
+  background-color: white;
 }
 
 p.error {
     color: rgb(134, 2, 2);
 }
 
+label.usernameLabel {
+  display: block;
+  margin-top: 20px;
+}
+
+input.signUpUsername {
+  -webkit-appearance: none;
+  border: 1px solid rgb(199, 198, 198);
+  background-color: rgb(199, 198, 198);
+  display: inline-block;
+  height: 30px;
+  width: 50%;
+  border-radius: 10px;
+  transition: width 0.5s, box-shadow 0.5s;
+  -webkit-transition: width 0.5s, box-shadow 0.5s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+
+input.signUpUsername:focus {
+  width: 65%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+input.signUpPassword {
+  -webkit-appearance: none;
+  border: 1px solid rgb(199, 198, 198);
+  background-color: rgb(199, 198, 198);
+  display: inline-block;
+  height: 30px;
+  width: 50%;
+  border-radius: 10px;
+  transition: width 0.5s, box-shadow 0.5s;
+  -webkit-transition: width 0.5s, box-shadow 0.5s;
+}
+
+input.signUpPassword:focus {
+  width: 65%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+::placeholder {
+  margin-left: 15px;
+}
+
+label.passwordLabel {
+  display: block;
+  margin-top: 30px;
+}
+
+
 div.loadingHolder {
   margin-left: 0%;
+}
+
+button.signUpButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: grey;
+  padding: 20px 40px;
+  border-radius: 50px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin-top: 40px;
+}
+
+button.signUpButton:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 75px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 75px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
 }
 
 h1.passwordRequirementsHeader {
@@ -28,17 +97,17 @@ ul.passwordRequirements {
 }
 
 li {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 div.passwordRequirementsHolder {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 @media only screen and (min-width: 400px) {
   div.signUpHolder {
     width: 450px;
-    height: 500px;
+    height: 600px;
     margin-left: calc(50% - 225px);
   }
 }

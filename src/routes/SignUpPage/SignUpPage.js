@@ -4,6 +4,7 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import { GamesContext } from '../../contexts/GamesContext';
 import AuthApiServiceObject from '../../services/auth-api-service';
 import TokenServiceObject from '../../services/token-service';
+import SignUpNav from '../../components/SignUpNav/SignUpNav';
 import { Link } from 'react-router-dom';
 
 export default class SignUpPage extends Component {
@@ -26,18 +27,11 @@ export default class SignUpPage extends Component {
         document.title = "Sign Up Page"
     };
 
-    handleSignInClick = () => {
-        this.context.toggleJustSignedUp();
-    }
-
     render() {
         return (
         <>
-            <nav className={styles.nav} role="navigation">
-                <Link to="/signIn" onClick={() => this.handleSignInClick()}>
-                    Sign In
-                </Link>
-            </nav>
+            <SignUpNav />
+
             <main className={styles.main} role="main">
 
                 <section className={styles.signUpWrapper} role="banner">
@@ -45,7 +39,6 @@ export default class SignUpPage extends Component {
                 </section>
 
             </main>
-            <footer className={styles.footer} role="content-info">Footer</footer>
         </>
         )
     }

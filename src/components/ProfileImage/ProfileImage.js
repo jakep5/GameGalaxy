@@ -7,13 +7,16 @@ export default class ProfileImage extends Component {
         return (
             <GamesConsumer>
                 {value => (
+                <>
+                    {value.profileUrl ==null 
+                    
+                    ? 
                     <div className={styles.imageHolder}>
-                        {value.profileUrl == null 
-                        ? <p className={styles.noImage}>No image uploaded</p>
-                        : <image className={styles.profileImage} src={value.profileUrl} alt='Profile Image' />
-                        }
-                        
+                        <p className={styles.noImage}>No image uploaded</p>
                     </div>
+                    : <image className={styles.profileImage} src={value.profileUrl} alt='Profile Image' />
+                    }
+                </>
                 )}
             </GamesConsumer>
             

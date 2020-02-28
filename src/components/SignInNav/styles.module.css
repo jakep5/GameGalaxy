@@ -13,6 +13,22 @@ nav {
   background-color: white;
 }
 
+.siteLogo {
+  display: inline-block;
+  font-size: 45px;
+  margin-top: 5px;
+  position: relative;
+  right: 50px;
+}
+
+.site-logo:hover {
+  cursor: pointer;
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
 .navbar-default{
   transition:500ms ease;
   background:white;
@@ -26,10 +42,9 @@ p {
     display: inline-block;
 }
 
-p.signIn {
+p.returnHome {
     display: inline-block;
-    margin-left: 5%;
-    margin-top: 0%;
+    margin-top: 15px;
     position: relative;
     font-size: 17px;
 }
@@ -42,4 +57,4 @@ p.signUp {
     position: relative;
     font-size: 17px;
 }
-
+  

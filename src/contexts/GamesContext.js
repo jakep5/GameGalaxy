@@ -39,6 +39,8 @@ class GamesProvider extends Component {
             currentUser: null,
             isLoading: false,
             profileUrl: null,
+            focusedFolder: null,
+            successMessage: false,
         }
     };
 
@@ -102,10 +104,18 @@ class GamesProvider extends Component {
 
     };
 
-    addToFolder = (folderId) => {
+    addToFolder = (folderId, folderName) => {
         this.setState({
             folderToAddTo: folderId,
+            focusedFolder: folderName,
             addFolder: false,
+            successMessage: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    successMessage: false,
+                })
+            }, 2000);
         });
 
         GameApiServiceObject.postGame(this.state.gameTitleToAdd, this.state.gameIdToAdd, folderId)
@@ -277,7 +287,10 @@ class GamesProvider extends Component {
             setUserImage: this.setUserImage,
             profileUrl: this.state.profileUrl,
             handleSignOut: this.handleSignOut,
-            toggleJustSignedUp: this.toggleJustSignedUp
+            toggleJustSignedUp: this.toggleJustSignedUp,
+            focusedFolder: this.state.focusedFolder,
+            successMessage: this.state.successMessage
+
         }
 
         return (

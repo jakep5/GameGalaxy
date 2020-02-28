@@ -6,17 +6,42 @@ import { GamesContext } from '../../contexts/GamesContext';
 import { GamesConsumer } from '../../contexts/GamesContext';
 import BeatLoader from 'react-spinners/BeatLoader';
 import GameResults from '../../components/GameResults/GameResults';
+import SearchPageNav from '../../components/SearchPageNav/SearchPageNav';
 import { css } from '@emotion/core';
 
 export default class SearchPage extends Component {
 
     static contextType = GamesContext;
 
+    parseJwt = (token) => {
+        let base64Url = token.split('.')[1];
+        let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    };
+
     componentWillMount = () => {
+
+        document.title = 'Search Page';
+
+        const token = sessionStorage.getItem('game-galaxy-token-key');
+        let payload = this.parseJwt(token);
+
+        let tempUserId = payload.user_id;
+
+        sessionStorage.setItem('user-id', tempUserId);
 
         let userId = sessionStorage.getItem('user-id');
 
         this.context.setFolders(userId);
+    }
+
+    returnToTop = (e) => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0; 
     }
 
     render() {
@@ -31,15 +56,8 @@ export default class SearchPage extends Component {
             <GamesConsumer>
                 {value => (
                     <>
-                        <nav className={styles.nav} role="navigation">
-                            <Link to="/">
-                                <p className={styles.signOut}>Sign Out</p>
-                            </Link>
-                            
-                            <Link to="/profile">
-                                <p className={styles.profile}>My Profile</p>
-                            </Link>
-                        </nav>
+                        <SearchPageNav />
+                        
                         <main className={styles.main} role="main">
 
                             <section className={styles.searchPage}>
@@ -67,7 +85,9 @@ export default class SearchPage extends Component {
                             </section>
 
                         </main>
-                        <footer className={styles.footer} role="content-info">Footer</footer>
+                        <footer className={styles.footer} role="content-info" >
+                            <p className={styles.returnToTop} onClick={(e) => this.returnToTop(e)}>Return to Top</p>
+                        </footer>
                     </>
                 )}
             </GamesConsumer>

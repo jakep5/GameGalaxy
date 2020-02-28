@@ -40,7 +40,6 @@
 
 section.profileSection {
   height: 100%;
-  padding: 6% 0;
   background-color: #bbb;
   overflow-y: auto;
 }
@@ -73,8 +72,8 @@ div.profileMain {
   div.profileMain {
     float: left;
     height: 750px;
-    width: 400px;
-    margin-top: 0;
+    width: 600px;
+    margin-top: 120px;
   }
 
 }

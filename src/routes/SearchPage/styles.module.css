@@ -13,6 +13,7 @@
   position: fixed;
   bottom: 0px;
   width: 100%;
+  background-color: #aaa;
 }
 
 .nav {
@@ -56,8 +57,14 @@ section.searchResults {
   padding: 2% 0;
 }
 
-section:nth-child(even) {
-  background-color: #ddd;
+
+p.returnToTop:hover {
+  cursor: pointer;
+}
+
+p.returnToTop {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (min-width: 1080px) {

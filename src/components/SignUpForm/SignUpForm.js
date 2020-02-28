@@ -75,12 +75,12 @@ export default class SignUpForm extends Component {
                     {error && <p className={styles.error}>{error}</p>}
                     </div>
 
-                    <label for="user_name">Username:</label>
+                    <label for="user_name" className={styles.usernameLabel}>Username:</label>
                     <input type="text" placeholder="username" name="user_name" className={styles.signUpUsername} id="signUpUsername" />
 
                     <br/>
 
-                    <label for="password">Password:</label>
+                    <label for="password" className={styles.passwordLabel}>Password:</label>
                     <input type="password" placeholder="password" name="password" className={styles.signUpPassword} id="signUpPassword" />
 
                     <br />

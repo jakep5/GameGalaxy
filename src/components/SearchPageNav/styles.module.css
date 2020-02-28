@@ -1,0 +1,54 @@
+.nav {
+  position: fixed;
+  text-align: right;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  height: 6%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(180, 180, 180);
+}
+
+a { color: inherit; } 
+
+.siteLogo {
+  display: inline-block;
+  font-size: 45px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.navbar-default{
+  transition:500ms ease;
+  background:white;
+}
+
+.navbar-default.scrolled{
+  background:#000;
+}
+
+p {
+    display: inline-block;
+}
+
+p.signOut {
+    display: inline-block;
+    margin-top: 15px;
+    position: relative;
+    font-size: 17px;
+}
+
+p.profile {
+    display: inline-block;
+    margin-right: 6%;
+    margin-top: 0%;
+    margin-bottom: -.5%;
+    position: relative;
+    font-size: 17px;
+}
+
+  
