@@ -76,7 +76,7 @@ export default class SignUpForm extends Component {
                     </div>
 
                     <label for="user_name" className={styles.usernameLabel}>Username:</label>
-                    <input type="text" placeholder="username" name="user_name" className={styles.signUpUsername} id="signUpUsername" />
+                    <input type="text" placeholder="username" name="user_name" className={styles.signUpUsername} id="signUpUsername" autoComplete='off'/>
 
                     <br/>
 
@@ -101,10 +101,10 @@ export default class SignUpForm extends Component {
                     <div className={styles.passwordRequirementsHolder}>
                         <h1 className={styles.passwordRequirementsHeader}>Password requirements:</h1>
                         <ul className={styles.passwordRequirements}>
-                            <li>Must contain 1 upper case letter</li>
-                            <li>Must contain 1 lower case letter</li>
-                            <li>Must contain 1 number</li>
-                            <li>Must contain 1 special character</li>
+                            <li className={styles.passwordRequirementsItem}>Must contain 1 upper case letter</li>
+                            <li className={styles.passwordRequirementsItem}>Must contain 1 lower case letter</li>
+                            <li className={styles.passwordRequirementsItem}>Must contain 1 number</li>
+                            <li className={styles.passwordRequirementsItem}>Must contain 1 special character</li>
                         </ul>
                     </div>
 

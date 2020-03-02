@@ -1,48 +1,33 @@
-input.inputCheck {
-  position: relative;
-  bottom: 23px;
-  left: 30px;
-  display: inline-block;
+input.inputCheck:hover {
+  cursor: pointer;
 }
 
 div.platformHolder {
   height: 500px;
-  width: 500px;
-  border: 1px solid black;
+  width: 300px;
   justify-content: space-between;
-  flex-direction: column;
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  transition: max-height 0.2s ease-out;
+  display: flex;
   position: relative;
-  top: 25%;
-  left: -23%;
+  top: 10%;
+  right: 10%;
 }
 
-label {
-  margin-top: 0px;
-}
-
-button.platformCollapse {
-  color: white;
-  margin-top: 15px;
-  background-color: rgb(36, 35, 35);
-  cursor: pointer;
-  height: 50px;
-  width: 15%;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  display: block;
+h1.platformFilterLabel {
+  font-size: 25px;
   position: relative;
   left: 5%;
+  text-decoration: underline;
 }
 
+ul.platformFiltersList {
+  list-style: none;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+
 @media only screen and (min-width: 1080px) {
-  input.inputCheck {
-    bottom: 0px;
-    top: 7px;
-    left: -25px;
-  }
 
 }

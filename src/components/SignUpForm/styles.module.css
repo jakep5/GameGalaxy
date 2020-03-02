@@ -15,7 +15,16 @@ p.error {
 
 label.usernameLabel {
   display: block;
-  margin-top: 20px;
+  margin-top: 40px;
+  font-family: 'Merriweather';
+  font-size: 15px;
+}
+
+legend.signUpLegend {
+  position: relative;
+  top: 10px;
+  font-size: 20px;
+  font-family: 'Merriweather';
 }
 
 input.signUpUsername {
@@ -29,10 +38,15 @@ input.signUpUsername {
   transition: width 0.5s, box-shadow 0.5s;
   -webkit-transition: width 0.5s, box-shadow 0.5s;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+  caret-color: grey;
+  font-family: 'Merriweather';
+  position: relative;
+  text-indent: 8px;
 }
 
 input.signUpUsername:focus {
   width: 65%;
+  height: 40px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
@@ -46,20 +60,31 @@ input.signUpPassword {
   border-radius: 10px;
   transition: width 0.5s, box-shadow 0.5s;
   -webkit-transition: width 0.5s, box-shadow 0.5s;
+  caret-color: grey;
+  text-indent: 8px;
 }
 
 input.signUpPassword:focus {
   width: 65%;
+  height: 40px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-::placeholder {
-  margin-left: 15px;
+input.signUpUsername::placeholder {
+  position: relative;
+  font-family: 'Merriweather';
+}
+
+input.signUpPassword::placeholder {
+  position: relative;
+  font-family: 'Merriweather';
 }
 
 label.passwordLabel {
   display: block;
   margin-top: 30px;
+  font-family: 'Merriweather';
+  font-size: 15px;
 }
 
 
@@ -78,6 +103,7 @@ button.signUpButton {
   border: none;
   transition: all 0.4s ease 0s;
   margin-top: 40px;
+  font-family: 'Merriweather';
 }
 
 button.signUpButton:hover {
@@ -90,13 +116,16 @@ button.signUpButton:hover {
 
 h1.passwordRequirementsHeader {
   font-size: 20px;
+  font-family: 'Merriweather';
 }
 
 ul.passwordRequirements {
   list-style-type: none;
+  font-family: 'Merriweather';
+  margin-right: 40px;
 }
 
-li {
+li.passwordRequirementsItem {
   font-size: 12px;
 }
 
@@ -107,7 +136,7 @@ div.passwordRequirementsHolder {
 @media only screen and (min-width: 400px) {
   div.signUpHolder {
     width: 450px;
-    height: 600px;
+    height: 550px;
     margin-left: calc(50% - 225px);
   }
 }

@@ -32,6 +32,7 @@ li.demoPassword {
 
 .signInLegend {
   margin-left: 0px;
+  font-family: 'Merriweather';
 }
 
 .signInButton {
@@ -59,6 +60,8 @@ p.justSignedUp {
 label.userNameLabel {
   display: block;
   margin-top: 20px;
+  font-size: 15px;
+  font-family: 'Merriweather';
 }
 
 input.signInUsername {
@@ -72,11 +75,15 @@ input.signInUsername {
   transition: width 0.5s, box-shadow 0.5s;
   -webkit-transition: width 0.5s, box-shadow 0.5s;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+  text-indent: 5px;
+  caret-color: grey;
+  font-family: 'Merriweather';
 }
 
 
 input.signInUsername:focus {
   width: 65%;
+  height: 40px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
@@ -90,10 +97,14 @@ input.signInPassword {
   border-radius: 10px;
   transition: width 0.5s, box-shadow 0.5s;
   -webkit-transition: width 0.5s, box-shadow 0.5s;
+  text-indent: 5px;
+  caret-color: grey;
+  font-family: 'Merriweather';
 }
 
 input.signInPassword:focus {
   width: 65%;
+  height: 40px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
@@ -104,6 +115,8 @@ input.signInPassword:focus {
 label.passwordLabel {
   display: block;
   margin-top: 30px;
+  font-family: 'Merriweather';
+  font-size: 15px;
 }
 
 div.loadingHolder {
@@ -131,10 +144,20 @@ button.signInButton:hover {
   cursor: pointer;
 }
 
+h1.demoAccountLabel {
+  font-family: 'Merriweather';
+}
+
+ul.demoAccount {
+  font-family: 'Merriweather';
+  font-size: 10px;
+  margin-right: 40px;
+}
+
 @media only screen and (min-width: 400px) {
   div.signInHolder {
     width: 450px;
-    height: 500px;
+    height: 520px;
     margin-left: calc(50% - 225px);
   }
 }

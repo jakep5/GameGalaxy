@@ -24,13 +24,13 @@ export default class SearchPageNav extends Component {
                 {value => (
                     <nav className={styles.nav}>
                         <Link to="/" style={{ textDecoration: 'none' }}>
-                            <p className={styles.signOut} onClick={(e) => value.handleSignOut(e)}>Sign Out</p>
+                            <a className='hvr-bounce-to-bottom' onClick={(e) => value.handleSignOut(e)}>Sign Out</a>
                         </Link>
 
                         <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo}/>
                         
                         <Link to="/profile" style={{ textDecoration: 'none' }}>
-                            <p className={styles.profile}>My Profile</p>
+                            <a className='hvr-bounce-to-bottom'>My Profile</a>
                         </Link>  
                     </nav>
                 )}

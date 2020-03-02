@@ -15,7 +15,7 @@ export default class GameResults extends Component {
                     <>
                         {value.games !== []
                             ? value.games.map((game) => {
-                                if (value.games == []) {
+                                if (game == undefined) {
                                     return <h1 className={styles.noGames}>No results</h1>
                                 } else {
                                     return <GameResultItem 

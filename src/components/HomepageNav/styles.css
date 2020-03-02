@@ -6,6 +6,7 @@
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
   top: 10px;
+  color: rgb(0, 89, 255);
   margin-left: 15px;
   margin-right: 15px;
   -webkit-transition-property: color;
@@ -21,7 +22,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(167, 167, 167);
+  background: rgb(0, 89, 255);
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;

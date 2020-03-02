@@ -24,7 +24,7 @@ export default class ProfileNav extends Component {
                 {value => (
                     <nav className={styles.nav}>
                         <Link to="/" style={{ textDecoration: 'none' }}>
-                            <p className={styles.signOut} onClick={(e) => value.handleSignOut(e)}>Sign Out</p>
+                            <a className='hvr-bounce-to-bottom' onClick={(e) => value.handleSignOut(e)}>Sign Out</a>
                         </Link>
 
                         <Link to='/search' style={{ textDecoration: 'none' }}>
@@ -32,7 +32,7 @@ export default class ProfileNav extends Component {
                         </Link>
 
                         <Link to="/search" style={{ textDecoration: 'none' }}>
-                            <p className={styles.backToSearch}>Back to Search</p>
+                            <a className='hvr-bounce-to-bottom'>Back to Search</a>
                         </Link>  
                     </nav>
                 )}

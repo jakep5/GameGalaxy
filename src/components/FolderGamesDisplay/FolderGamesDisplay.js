@@ -15,10 +15,15 @@ export default class FolderGamesDisplay extends Component {
             <GamesConsumer>
                 {value => (
                         <div className={styles.itemsHolder}>
-                            <h1 className={styles.itemsLabel}>Games</h1>
+                            
+                            
                             {value.openFolder == null
-                            ?   <h1 className={styles.mustOpenFolder}>No folder open</h1>
-                            :   <h1 className={styles.folderName}>Open folder: {value.openFolder.name}</h1>
+                            ?   <>
+                                    <h1 className={styles.itemsLabel}>Games</h1>
+                                    <h2 className={styles.mustOpenFolder}>No folder open</h2>
+                                </>
+                            :   
+                                <h1 className={styles.itemsLabel}>Games in '{value.openFolder.name}'</h1>
                             }
                             
                             {value.userGames.map(game => {

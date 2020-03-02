@@ -87,7 +87,7 @@ export default class SignInForm extends Component {
                             </div>
 
                             <label className={styles.userNameLabel} for="user_name">Username</label>
-                            <input className={styles.signInUsername} type="text" name="user_name" id="signInUsername" placeholder="username" />
+                            <input className={styles.signInUsername} type="text" name="user_name" id="signInUsername" placeholder="username" autoComplete='off'/>
                             <br />
                             <label className={styles.passwordLabel} for="password">Password</label>
                             <input className={styles.signInPassword} type="password" name="password" id="signInPassword" placeholder="password"/>
@@ -106,7 +106,7 @@ export default class SignInForm extends Component {
                         </div>
 
                         <div className={styles.demoHolder}>
-                        <h1 className={styles.demoAccountLabel}>Demo account:</h1>
+                            <h1 className={styles.demoAccountLabel}>Demo account:</h1>
                             <ul className={styles.demoAccount}>
                                 <li className={styles.demoUsername}>Username: testuser</li>
                                 <li className={styles.demoPassword}>Password: !Testpassword1</li>

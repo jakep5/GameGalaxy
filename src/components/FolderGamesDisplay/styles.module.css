@@ -4,6 +4,15 @@ div.itemsHolder {
   overflow-y: auto;
 }
 
+h1.itemsLabel {
+  font-family: 'Merriweather';
+  text-decoration: underline;
+}
+
+h2.mustOpenFolder {
+  font-family: 'Merriweather';
+}
+
 @media only screen and (min-width: 1080px) { 
     div.itemsHolder {
       height: 800px;
