@@ -67,10 +67,6 @@ export default class FolderDisplay extends Component {
 
     render() {
 
-        let userId = sessionStorage.getItem('user-id');
-
-        this.context.setFolders(userId);
-
         return (
             <GamesConsumer>
                 {value => (
