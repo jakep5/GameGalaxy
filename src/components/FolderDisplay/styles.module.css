@@ -1,9 +1,9 @@
 div.folderHolder {
   display: block;
-  border: 1px solid black;
   margin-top: 20px;
   overflow-y: auto; 
   color: rgb(0, 89, 255);
+  box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
 }
 
 p.folderLabel {
@@ -54,7 +54,7 @@ button.deleteFolder:hover {
   transition: all 0.4s ease 0s;
 }
 
-button.addFolderButton:hover {
+button.addFolderButton:hover, button.submitFolderButton:hover {
   cursor: pointer;
 }
 
@@ -62,7 +62,7 @@ button.addFolderButton:hover {
     margin-right: 8px;
 }
 
-button.addFolderButton {
+button.addFolderButton, button.submitFolderButton {
   color: rgb(0, 89, 255);
   text-transform: uppercase;
   text-decoration: none;
@@ -76,11 +76,15 @@ button.addFolderButton {
   left: 10px;
 }
 
-button.addFolderButton:hover {
+button.addFolderButton:hover, button.submitFolderButton:hover {
   color: #ffffff !important;
   background: rgb(0, 89, 255);
   border-color: rgb(0, 89, 255);
   transition: all 0.4s ease 0s;
+}
+
+button.submitFolderButton {
+  padding: 7px !important;
 }
 
 
@@ -90,11 +94,11 @@ button.addFolderButton:hover {
       height: 500px;
       width: 400px;
       float: left;
-      margin-top: 370px;
+      margin-top: 260px;
       position: relative;
       right: 510px;
       background-color: white;
-      overflow: scroll;
+      overflow: auto;
     }
 }
   

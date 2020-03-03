@@ -13,21 +13,18 @@ export default class GameResults extends Component {
             <GamesConsumer>
                 {value => (
                     <>
-                        {value.games !== []
-                            ? value.games.map((game) => {
-                                if (game == undefined) {
-                                    return <h1 className={styles.noGames}>No results</h1>
-                                } else {
-                                    return <GameResultItem 
-                                                name={game.name}
-                                                genres={game.genres}
-                                                platforms={game.platforms}
-                                                rating={game.rating}
-                                                id={game.id}
-                                            />
-                                }
+                        {value.games !==[] 
+                        ?
+                            value.games.map((game) => {
+                                return <GameResultItem 
+                                            name={game.name}
+                                            genres={game.genres}
+                                            platforms={game.platforms}
+                                            rating={game.rating}
+                                            id={game.id}
+                                        />
                             })
-                            :   <h1 className={styles.noGames}>Please click search to search for games!</h1>
+                        : <h1 className={styles.noGames}>No results</h1>
                         }
 
                         {value.addFolder == true &&

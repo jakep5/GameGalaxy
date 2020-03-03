@@ -14,19 +14,7 @@ nav {
 }
 
 .siteLogo {
-  display: inline-block;
-  font-size: 45px;
-  margin-top: 5px;
-  position: relative;
-  right: 50px;
-}
-
-.site-logo:hover {
-  cursor: pointer;
-}
-
-svg:hover {
-  cursor: pointer;
+  display: none;
 }
 
 .navbar-default{
@@ -56,5 +44,23 @@ p.signUp {
     margin-bottom: -.5%;
     position: relative;
     font-size: 17px;
+}
+
+@media only screen and (min-width: 450px) {
+  .siteLogo {
+    display: inline-block;
+    font-size: 45px;
+    margin-top: 5px;
+    position: relative;
+    right: 50px;
+  }
+
+  .site-logo:hover {
+    cursor: pointer;
+  }
+
+  svg:hover {
+    cursor: pointer;
+  }
 }
   

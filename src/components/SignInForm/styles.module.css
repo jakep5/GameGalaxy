@@ -1,10 +1,10 @@
 div.signInHolder {
   display: block;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 500px;
   position: relative;
-  top: 200px;
-  margin-left: calc(50% - 150px);
+  top: 120px;
+  margin-left: calc(50% - 175px);
   border-radius: 25px;
   background-color: white;
 }
@@ -154,10 +154,15 @@ ul.demoAccount {
   margin-right: 40px;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 450px) {
   div.signInHolder {
+    display: block;
     width: 450px;
     height: 520px;
+    position: relative;
+    top: 200px;
     margin-left: calc(50% - 225px);
+    border-radius: 25px;
+    background-color: white;
   }
 }

@@ -8,8 +8,17 @@ import BeatLoader from 'react-spinners/BeatLoader';
 import GameResults from '../../components/GameResults/GameResults';
 import SearchPageNav from '../../components/SearchPageNav/SearchPageNav';
 import { css } from '@emotion/core';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class SearchPage extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            showArrow: false
+        }
+    }
 
     static contextType = GamesContext;
 
@@ -44,6 +53,12 @@ export default class SearchPage extends Component {
         document.documentElement.scrollTop = 0; 
     }
 
+    setIsShown = (boolean) => {
+        this.setState({
+            showArrow: boolean
+        })
+    }
+
     render() {
 
         const override = css`
@@ -51,6 +66,8 @@ export default class SearchPage extends Component {
             margin-top: 5%;
             border-color: grey;
         `;
+
+        const showArrow = this.state.showArrow;
 
         return (
             <GamesConsumer>
@@ -86,7 +103,13 @@ export default class SearchPage extends Component {
 
                         </main>
                         <footer className={styles.footer} role="content-info" >
-                            <p className={styles.returnToTop} onClick={(e) => this.returnToTop(e)}>Return to Top</p>
+                            <p 
+                                onMouseEnter={() => this.setIsShown(true)}
+                                onMouseLeave={() => this.setIsShown(false)}
+                                className={styles.returnToTop} 
+                                onClick={(e) => this.returnToTop(e)}
+                            >Return to Top</p>
+                            {showArrow && <FontAwesomeIcon icon={faArrowUp} className={styles.arrowUp}/>}
                         </footer>
                     </>
                 )}

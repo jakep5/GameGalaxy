@@ -3,11 +3,19 @@ form.searchForm {
   top: 150px;
 }
 
+input[type=text] {   
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .nameInputLabel {
   position: relative;
   top: -50px;
   font-size: 35px;
   display: block;
+  font-family: 'Merriweather';
+  color: rgb(0, 140, 255);
 }
 
 .nameInput {
@@ -17,9 +25,13 @@ form.searchForm {
   height: 50px;
   width: 75%;
   border-radius: 15px;
+  border-color: rgb(0, 140, 255);
   display: block;
   margin-left: calc(50% - 37.5%);
   font-size: 30px;
+  font-family: 'Merriweather';
+  text-indent: 10px;
+  color: rgb(0, 140, 255)
 /*   transition: width 0.5s;
   -webkit-transition: width 0.5s; */
 }
@@ -28,24 +40,119 @@ form.searchForm {
   width: 50%;
 } */
 
-button.searchFormSubmit {
-  margin-top: 0px;
-  position: relative;
-  padding: 10px 50px;
-  left: calc(50% - 72.5px);
-  display: block;
-}
+
 
 div.filtersHolder {
   display: block;
-  height: 500px;
-  width: calc(100% - 2px);
+  height: 900px;
+  width: 400px;
   margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
+}
+
+.searchButton {
+  --offset: 10px;
+  --border-size: 2px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  left: 4px;
+  padding: 1.7em 3.2em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgb(0, 140, 255);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 1;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  -webkit-transition: background 0.8s ease;
+  transition: background 0.8s ease;
+}
+
+.searchButtonHorizontal, .searchButtonVertical {
+  position: absolute;
+  top: var(--horizontal-offset, 0);
+  right: var(--vertical-offset, 0);
+  bottom: var(--horizontal-offset, 0);
+  left: var(--vertical-offset, 0);
+  -webkit-transition: -webkit-transform 0.8s ease;
+  transition: -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+  will-change: transform;
+}
+.searchButtonHorizontal::before, .searchButtonVertical::before {
+  content: "";
+  position: absolute;
+  border: inherit;
+}
+.searchButtonHorizontal {
+  --vertical-offset: calc(var(--offset) * -1);
+  border-top: var(--border-size) solid currentcolor;
+  border-bottom: var(--border-size) solid currentcolor;
+}
+.searchButtonHorizontal::before {
+  top: calc(var(--vertical-offset) - var(--border-size));
+  bottom: calc(var(--vertical-offset) - var(--border-size));
+  left: calc(var(--vertical-offset) * -1);
+  right: calc(var(--vertical-offset) * -1);
+}
+.searchButton:hover .searchButtonHorizontal {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.searchButtonVertical {
+  --horizontal-offset: calc(var(--offset) * -1);
+  border-left: var(--border-size) solid currentcolor;
+  border-right: var(--border-size) solid currentcolor;
+}
+.searchButtonVertical::before {
+  top: calc(var(--horizontal-offset) * -1);
+  bottom: calc(var(--horizontal-offset) * -1);
+  left: calc(var(--horizontal-offset) - var(--border-size));
+  right: calc(var(--horizontal-offset) - var(--border-size));
+}
+.searchButton:hover .searchButtonVertical {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+div.scrollToResultsHolder {
+  display: inline-block;
+  border: none;
+  height: 50px;
+  width: 100px;
+  position: fixed;
+  right: 0px;
+  top: 75px;
+  z-index: 10;
+  background-color: white;
+}
+
+
+@media only screen and (min-width: 450px) {
+  div.scrollToResultsHolder {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1080px) {
+
+  div.filtersHolder {
+    display: block;
+    height: 500px;
+    width: calc(100% - 2px);
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
   form.searchForm {
     top: 150px;
   }

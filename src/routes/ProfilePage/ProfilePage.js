@@ -7,6 +7,7 @@ import { GamesConsumer, GamesContext } from '../../contexts/GamesContext';
 import ProfileImage from '../../components/ProfileImage/ProfileImage';
 import ProfileNav from '../../components/ProfileNav/ProfileNav'
 import ImageUpload from '../../components/ImageUpload/ImageUpload';
+import ProfileStats from '../../components/ProfileStats/ProfileStats';
 
 export default class ProfilePage extends Component {
 
@@ -21,10 +22,11 @@ export default class ProfilePage extends Component {
 
     
 
-    componentDidMount() {
+    componentDidMount = () => {
         document.title = "Profile Page";
 
         let userId = sessionStorage.getItem('user-id');
+
 
         this.context.getUserGames(userId);
     }
@@ -46,12 +48,10 @@ export default class ProfilePage extends Component {
 
                             <section className={styles.profileSection} role="banner">
                                 <div role="presentation" className={styles.profileMain}>
-                                    <p className={styles.userName}>{value.currentUser}</p>
-
-                                    <ProfileImage />
-
-                                    <ImageUpload />
+                                    <h1 className={styles.userName}>{value.currentUser}</h1>
                                 </div>
+
+                                <ProfileStats />
 
                                 <FolderDisplay />
 
@@ -60,7 +60,7 @@ export default class ProfilePage extends Component {
                             </section>
 
                         </main>
-                        <footer className={styles.footer} role="content-info">Footer</footer>
+
                     </>
                 )}
                 

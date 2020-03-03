@@ -1,0 +1,25 @@
+p.gamesSaved, p.gamesSavedCount, p.gamesCompleted, p.gamesCompletedCount {
+    color: rgb(0, 89, 255);
+    font-family: 'Merriweather';
+}
+
+p.gamesSavedCount {
+    position: relative;
+    left: 15px;
+}
+
+p.gamesCompleted {
+    position: relative;
+    top: 50px;
+    right: 150px;
+}
+
+p.gamesCompletedCount {
+    position: relative;
+    left: 15px;
+}
+div.profileStats {
+    position: relative;
+    top: 190px;
+    right: 52%;
+}

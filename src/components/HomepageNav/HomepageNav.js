@@ -24,13 +24,13 @@ export default class HomepageNav extends Component {
         return (
             <nav className={styles.nav} id='navbar'>
                 <Link to="/signIn" onClick={() => this.handleSignInClick()} style={{ textDecoration: 'none' }}>
-                    <a className='hvr-bounce-to-bottom'>Sign In</a>
+                    <a className='hvr-float-shadow'>Sign In</a>
                 </Link>
 
                 <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo}/>
 
                 <Link to="/signUp" style={{ textDecoration: 'none' }}>
-                    <a className='hvr-bounce-to-bottom'>Sign Up</a>
+                    <a className='hvr-float-shadow'>Sign Up</a>
                 </Link>  
             </nav>
         )

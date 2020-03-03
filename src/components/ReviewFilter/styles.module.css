@@ -1,5 +1,17 @@
 input.reviewInput {
-  margin-top: -100px;
+  font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
+  position: relative;
+  bottom: 150px;
+  left: 60px;
+}
+
+label.reviewInputLabel {
+  font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
+  position: relative;
+  bottom: 150px;
+  left: 60px;
 }
 
 button.setButton {
@@ -19,13 +31,30 @@ div.reviewHolder {
 }
 
 h1.reviewFilterTitle {
+  text-decoration: underline;
+  font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
   font-size: 25px;
   position: relative;
-  left: 13%;
-  text-decoration: underline;
+  right: 15px;
 }
 
 @media only screen and (min-width: 1080px) {
+  h1.reviewFilterTitle {
+    font-size: 25px;
+    position: relative;
+    left: 13%;
+    right: 0px;
+  }
 
+  label.reviewInputLabel {
+    bottom: 0px;
+    left: 0px;
+  }
 
+  input.reviewInput {
+    margin-top: -100px;
+    bottom: 0px;
+    left: 0px;
+  }
 }

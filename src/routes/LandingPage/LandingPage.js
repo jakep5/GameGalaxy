@@ -3,9 +3,18 @@ import styles from './styles.module.css';
 import { Link } from 'react-router-dom';
 import { GamesContext } from '../../contexts/GamesContext'
 import HomepageNav from '../../components/HomepageNav/HomepageNav';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'; 
 import $ from 'jquery';
 
 export default class LandingPage extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            showArrow: false
+        }
+    }
 
     componentDidMount() {
         document.title = 'Game Galaxy'
@@ -26,14 +35,23 @@ export default class LandingPage extends Component {
 
     handleCallToActionClick = (e) => {
         this.context.toggleJustSignedUp();
-    }
+    };
 
     returnToTop = (e) => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0; 
+    };
+
+    setIsShown = (boolean) => {
+        this.setState({
+            showArrow: boolean
+        })
     }
 
     render() {
+
+        const showArrow = this.state.showArrow;
+
         return (
         <>
     
@@ -76,7 +94,13 @@ export default class LandingPage extends Component {
                 </section>
             </main>
             <footer className={styles.footer} role="content-info" >
-                <p className={styles.returnToTop} onClick={(e) => this.returnToTop(e)}>Return to Top</p>
+                <p 
+                    onMouseEnter={() => this.setIsShown(true)}
+                    onMouseLeave={() => this.setIsShown(false)}
+                    className={styles.returnToTop} 
+                    onClick={(e) => this.returnToTop(e)}
+                >Return to Top</p>
+                {showArrow && <FontAwesomeIcon icon={faArrowUp} className={styles.arrowUpLanding}/>}
             </footer>
         </>
         )

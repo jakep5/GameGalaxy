@@ -82,23 +82,32 @@ export default class SearchForm extends Component {
 
     render() {
         return (
-
-            <form onSubmit={(e) => this.handleSearchSubmit(e)} className={styles.searchForm} id="searchForm">
-
-                <label className={styles.nameInputLabel} htmlFor="nameInput" id="nameInputLabel">Name of game:</label>
-                <input className={styles.nameInput} type="text" id="nameInput" name="nameInput" autoComplete='off'/>
-
-                <button className={styles.searchFormSubmit} type="submit" htmlFor="searchForm">Search!</button>
-
-                <div className={styles.filtersHolder}>
-                    <PlatformFilter />
-
-                    <GenreFilter />
-
-                    <ReviewFilter />
+            <>
+                <div className={styles.scrollToResultsHolder}>
+                    <button className={styles.scrollToResults}>Scroll to results</button>
                 </div>
-                    
-            </form>
+
+                <form onSubmit={(e) => this.handleSearchSubmit(e)} className={styles.searchForm} id="searchForm">
+
+                    <label className={styles.nameInputLabel} htmlFor="nameInput" id="nameInputLabel">Name of game:</label>
+                    <input className={styles.nameInput} type="text" id="nameInput" name="nameInput" autoComplete='off'/>
+
+                    <button id='callToActionButton' type='submit' htmlFor='searchForm' className={styles.searchButton}>
+                        Search
+                        <div className={styles.searchButtonHorizontal}></div>
+                        <div className={styles.searchButtonVertical}></div>
+                    </button> 
+
+                    <div className={styles.filtersHolder}>
+                        <PlatformFilter />
+
+                        <GenreFilter />
+
+                        <ReviewFilter />
+                    </div>
+                        
+                </form>
+            </>
         )
     }
 }

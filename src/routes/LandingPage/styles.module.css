@@ -21,7 +21,7 @@ h1.mainTitle {
   font-size: 100px;
   color: white;
   opacity: 1;
-  margin-top: 15%;
+  margin-top: 250px;
   font-family: 'Merriweather';
 }
 
@@ -29,6 +29,8 @@ h2.landingText {
   font-size: 30px;
   font-weight: lighter;
   margin-top: 200px;
+  margin-right: 40px;
+  margin-left: 40px;
   font-family: 'Pacifico';
   color: rgb(4, 103, 184);
 }
@@ -115,15 +117,26 @@ p.signUpLink {
 .footer {
   position: fixed;
   bottom: 0px;
-  padding: 0% 0;
+  padding: 0.25% 0;
   width: 100%;
-  background-color: #aaa;
+  background-color: white;
+  box-shadow: 0px -2px 7px 0px rgba(0,0,0,0.4);
 }
 
 p.returnToTop:hover {
   cursor: pointer;
 }
 
+p.returnToTop {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.arrowUpLanding {
+  position: relative;
+  left: 10px;
+  font-weight: lighter;
+}
 
 @media only screen and (min-width: 400px) {
   div.signInHolder {

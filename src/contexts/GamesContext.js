@@ -41,13 +41,16 @@ class GamesProvider extends Component {
             profileUrl: null,
             focusedFolder: null,
             successMessage: false,
+            noResults: false,
         }
     };
 
     setCurrentUser = (user_name) => {
         this.setState({
             currentUser: user_name,
-        })
+        });
+
+        sessionStorage.setItem('current-user', user_name);
     }
 
     setNewGames = (games) => {
@@ -91,7 +94,8 @@ class GamesProvider extends Component {
     setUserGames = (games) => {
         console.log('here');
         this.setState({
-            userGames: games
+            userGames: games,
+            currentUser: sessionStorage.getItem('current-user')
         })
     }
 
@@ -232,8 +236,11 @@ class GamesProvider extends Component {
 
         sessionStorage.removeItem('game-galaxy-token-key');
 
+        sessionStorage.removeItem('current-user');
+
         this.setState({
-            justSignedUp: false
+            justSignedUp: false,
+            currentUser: null
         })
     };
 
@@ -244,6 +251,12 @@ class GamesProvider extends Component {
     toggleJustSignedUp = () => {
         this.setState({
             justSignedUp: false,
+        })
+    }
+
+    toggleNoResuts = () => {
+        this.setState({
+            noResults: !this.state.noResults
         })
     }
 
@@ -289,7 +302,9 @@ class GamesProvider extends Component {
             handleSignOut: this.handleSignOut,
             toggleJustSignedUp: this.toggleJustSignedUp,
             focusedFolder: this.state.focusedFolder,
-            successMessage: this.state.successMessage
+            successMessage: this.state.successMessage,
+            noResults: this.state.noResults,
+            toggleNoResults: this.toggleNoResuts,
 
         }
 
