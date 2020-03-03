@@ -46,18 +46,18 @@ export default class SearchPage extends Component {
         let userId = sessionStorage.getItem('user-id');
 
         this.context.setFolders(userId);
-    }
+    };
 
     returnToTop = (e) => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0; 
-    }
+    };
 
     setIsShown = (boolean) => {
         this.setState({
             showArrow: boolean
         })
-    }
+    };
 
     render() {
 
