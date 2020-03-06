@@ -9,6 +9,11 @@ div.folderHolder {
   bottom: 250px;
 }
 
+input.newFolderInput {
+  color: rgb(0, 89, 255);
+  font-family: 'Merriweather';
+}
+
 p.folderLabel {
   font-family: 'Merriweather';
   text-decoration: underline;
@@ -100,11 +105,11 @@ button.submitFolderButton {
 @media only screen and (min-width: 1080px) {
     div.folderHolder {
       height: 500px;
-      width: 400px;
+      width: 450px;
       float: left;
       margin-top: 620px;
       position: relative;
-      right: 510px;
+      right: 525px;
       background-color: white;
       overflow: auto;
       box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
