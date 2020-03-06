@@ -50,7 +50,6 @@ export default class GameResultItem extends Component {
                     }
                 }
 
-                console.log(genreArray);
             })
         }
 

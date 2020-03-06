@@ -54,7 +54,6 @@ class GamesProvider extends Component {
     }
 
     setNewGames = (games) => {
-        console.log(games);
         this.setState({
             games
         });
@@ -63,7 +62,6 @@ class GamesProvider extends Component {
     };
 
     handleFolderSubmit = (newFolder) => {
-        console.log('here');
         this.setState({
 
         })
@@ -92,7 +90,6 @@ class GamesProvider extends Component {
     }
 
     setUserGames = (games) => {
-        console.log('here');
         this.setState({
             userGames: games,
             currentUser: sessionStorage.getItem('current-user')
@@ -143,6 +140,16 @@ class GamesProvider extends Component {
         FolderApiServiceObject.deleteFolder(deleteId);
     }
 
+    deleteGame = (gameId) => {
+        
+        const afterDeleteGames = this.state.userGames.filter(gme => 
+            gme.id !== parseInt(gameId));
+        this.setState({
+            userGames: afterDeleteGames
+        });
+        GameApiServiceObject.deleteGame(gameId);
+    }
+
     setOpenFolder = (folderId) => {
         this.setState({
             openFolderId: folderId,
@@ -174,7 +181,6 @@ class GamesProvider extends Component {
             this.state.platformFilters.splice(this.state.platformFilters.indexOf(platformId), 1)
         }
 
-        console.log(this.state.platformFilters)
     };
 
     handleGenreChange = (e) => {
@@ -195,7 +201,6 @@ class GamesProvider extends Component {
             this.state.genreFilters.splice(this.state.genreFilters.indexOf(genreId), 1)
         };
 
-        console.log(this.state.genreFilters);
     };
 
     handleReviewChange = (e) => {
@@ -305,6 +310,7 @@ class GamesProvider extends Component {
             successMessage: this.state.successMessage,
             noResults: this.state.noResults,
             toggleNoResults: this.toggleNoResuts,
+            deleteGame: this.deleteGame
 
         }
 

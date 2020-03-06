@@ -17,10 +17,8 @@ export default class FolderGame extends Component {
 
         let deleteId = e.target.getAttribute('name');
 
-        let userId = sessionStorage.getItem('user-id');
+        this.context.deleteGame(deleteId);
 
-        GameApiServiceObject.deleteGame(deleteId)
-            .then(this.context.getUserGames(userId))
     }
 
     handleCheckCompleted = (e) => {
