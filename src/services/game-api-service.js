@@ -70,6 +70,8 @@ const GameApiServiceObject = {
 
     toggleCompleted(gameId, toggleCompleted) {
         let token = TokenServiceObject.getAuthToken();
+        
+        console.log(gameId, toggleCompleted);
 
         return fetch(`${config.API_BASE_URL}/games/${gameId}`, {
             method: 'PATCH',

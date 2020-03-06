@@ -1,10 +1,10 @@
 div.signUpHolder {
   display: block;
-  width: 350px;
-  height: 525px;
+  width: 300px;
+  height: 500px;
   position: relative;
-  top: 125px;
-  margin-left: calc(50% - 175px);
+  top: 60px;
+  margin-left: calc(50% - 150px);
   border-radius: 25px;
   background-color: white;
 }
@@ -23,8 +23,9 @@ label.usernameLabel {
 legend.signUpLegend {
   position: relative;
   top: 10px;
-  font-size: 20px;
-  font-family: 'Merriweather';
+  font-size: 23px;
+  font-family: 'Pacifico';
+  color: rgb(0, 140, 255);
 }
 
 input.signUpUsername {
@@ -117,12 +118,16 @@ button.signUpButton:hover {
 h1.passwordRequirementsHeader {
   font-size: 20px;
   font-family: 'Merriweather';
+  position: relative;
+  bottom: 20px;
 }
 
 ul.passwordRequirements {
   list-style-type: none;
   font-family: 'Merriweather';
   margin-right: 40px;
+  position: relative;
+  bottom: 30px;
 }
 
 li.passwordRequirementsItem {
@@ -131,6 +136,27 @@ li.passwordRequirementsItem {
 
 div.passwordRequirementsHolder {
   margin-top: 50px;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 450px) {
+  div.signUpHolder {
+    display: block;
+    width: 350px;
+    height: 525px;
+    position: relative;
+    top: 125px;
+    margin-left: calc(50% - 175px);
+    border-radius: 25px;
+    background-color: white;
+  }
+
+  ul.passwordRequirements {
+    bottom: 0px;
+  }
+
+  h1.passwordRequirementsHeader {
+    bottom: 0px;
+  }
 }
 
 @media only screen and (min-width: 450px) {
@@ -143,5 +169,13 @@ div.passwordRequirementsHolder {
     top: 150px;
     border-radius: 25px;
     background-color: white;
+  }
+
+  ul.passwordRequirements {
+    bottom: 0px;
+  }
+
+  h1.passwordRequirementsHeader {
+    bottom: 0px;
   }
 }

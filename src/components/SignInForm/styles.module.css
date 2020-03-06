@@ -1,10 +1,10 @@
 div.signInHolder {
   display: block;
-  width: 350px;
+  width: 300px;
   height: 500px;
   position: relative;
-  top: 120px;
-  margin-left: calc(50% - 175px);
+  top: 60px;
+  margin-left: calc(50% - 150px);
   border-radius: 25px;
   background-color: white;
 }
@@ -33,6 +33,9 @@ li.demoPassword {
 .signInLegend {
   margin-left: 0px;
   font-family: 'Merriweather';
+  color: rgb(0, 140, 255);
+  font-family: 'Pacifico';
+  font-size: 25px;
 }
 
 .signInButton {
@@ -154,13 +157,26 @@ ul.demoAccount {
   margin-right: 40px;
 }
 
+@media only screen and (min-width: 350px) and (max-width: 450px) {
+  div.signInHolder {
+    display: block;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    top: 120px;
+    margin-left: calc(50% - 175px);
+    border-radius: 25px;
+    background-color: white;
+  }
+}
+
 @media only screen and (min-width: 450px) {
   div.signInHolder {
     display: block;
     width: 450px;
     height: 520px;
     position: relative;
-    top: 200px;
+    top: 150px;
     margin-left: calc(50% - 225px);
     border-radius: 25px;
     background-color: white;

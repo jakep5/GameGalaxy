@@ -1,9 +1,11 @@
 div.itemsHolder {
   border: 1px solid black;
   height: 500px;
+  position: relative;
+  bottom: 130px;
   overflow-y: auto;
   background-color: white;
-  box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+  border: none;
 }
 
 h1.itemsLabel {
@@ -18,11 +20,47 @@ h2.mustOpenFolder {
 }
 
 @media only screen and (min-width: 1080px) { 
-    div.itemsHolder {
-      height: 800px;
-      float: right;
-      width: 750px;
-      margin-right: 0px;
-      margin-top: 0px;
-    }
+  div.itemsHolder {
+    height: 800px;
+    float: right;
+    width: 750px;
+    margin-right: 0px;
+    margin-top: 150px;
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+  }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1500px) {
+  div.itemsHolder {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1219px) {
+  div.itemsHolder {
+    position: relative;
+    bottom: 1180px;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 1219px) and (max-width: 1769px) {
+  div.itemsHolder {
+    position: relative;
+    bottom: 1150px;
+  }
+}
+
+@media only screen and (min-width: 1769px) and (max-width: 1969px) {
+  div.itemsHolder {
+    position: relative;
+    bottom: 210px;
+  }
+}
+
+@media only screen and (min-width: 1969px) {
+  div.itemsHolder {
+    position: relative;
+    bottom: 35px;
+  }
 }

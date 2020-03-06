@@ -1,9 +1,12 @@
 div.folderHolder {
-  display: block;
+  display: inline-block;
   margin-top: 20px;
   overflow-y: auto; 
   color: rgb(0, 89, 255);
-  box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+  border: none;
+  background-color: white;
+  position: relative;
+  bottom: 250px;
 }
 
 p.folderLabel {
@@ -42,7 +45,7 @@ button.deleteFolder {
   transition: all 0.4s ease 0s;
   font-family: 'Merriweather';
   position: relative;
-  left: 125px;
+  left: 90px;
   bottom: 32px;
 }
 
@@ -87,6 +90,11 @@ button.submitFolderButton {
   padding: 7px !important;
 }
 
+@media only screen and (min-width: 350px) and (max-width: 1080px) {
+  div.folderHolder {
+    bottom: 150px;
+  }
+}
 
 
 @media only screen and (min-width: 1080px) {
@@ -94,11 +102,23 @@ button.submitFolderButton {
       height: 500px;
       width: 400px;
       float: left;
-      margin-top: 260px;
+      margin-top: 620px;
       position: relative;
       right: 510px;
       background-color: white;
       overflow: auto;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
     }
+
+    button.deleteFolder {
+      left: 125px;
+    }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1219px) {
+  div.folderHolder {
+    position: relative;
+    bottom: 428px;
+  }
 }
   

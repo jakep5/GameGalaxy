@@ -19,6 +19,10 @@ export default class SearchForm extends Component {
         }
     }
 
+    scrollToResults = (e) => {
+        document.getElementById('searchResults').scrollIntoView();
+    }
+
     handleSearchSubmit = (e) => {
         e.preventDefault();
 
@@ -84,7 +88,7 @@ export default class SearchForm extends Component {
         return (
             <>
                 <div className={styles.scrollToResultsHolder}>
-                    <button className={styles.scrollToResults}>Scroll to results</button>
+                    <button onClick={(e) => this.scrollToResults(e)} className={styles.scrollToResults}>Scroll to results</button>
                 </div>
 
                 <form onSubmit={(e) => this.handleSearchSubmit(e)} className={styles.searchForm} id="searchForm">

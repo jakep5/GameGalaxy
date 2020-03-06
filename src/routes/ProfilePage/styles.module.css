@@ -42,21 +42,18 @@
 section.profileSection {
   height: 100%;
   overflow-y: auto;
-  background-image: url('http://getwallpapers.com/wallpaper/full/b/6/a/1198344-free-download-4k-galaxy-wallpaper-2560x1440-phone.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: white;
+  
 }
 
 .profileMain {
-  border: 1px solid black;
   display: flex;
-  height: 100px;
+  height: 250px;
   width: 100%;
   justify-content: space-between;
   margin-top: 5.5%;
   background-color: white;
-  box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+  border: none;
 }
 
 h1.userName {
@@ -79,12 +76,33 @@ div.profileMain {
   margin-top: 50px;
 }
 
+@media only screen and (min-width: 350px) and (max-width: 1080px) {
+  .profileMain {
+    display: flex;
+    height: 250px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5.5%;
+    background-color: white;
+    border: none;
+  }
+}
+
 @media only screen and (min-width: 1080px) {
   div.profileMain {
     float: left;
     height: 750px;
     width: 600px;
     margin-top: 120px;
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+    border: 1px solid black;
+  }
+
+  section.profileSection {
+    background-image: url('http://getwallpapers.com/wallpaper/full/b/6/a/1198344-free-download-4k-galaxy-wallpaper-2560x1440-phone.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
 }

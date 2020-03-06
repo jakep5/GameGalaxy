@@ -81,7 +81,7 @@ export default class SearchPage extends Component {
                                 <SearchForm />
                             </section>
 
-                            <section className={styles.searchResults}>
+                            <section id='searchResults' className={styles.searchResults}>
                                 <h1 className={styles.searchResultHeader}>Search Results:</h1>
 
                                 <div className={styles.loadingHolder}>

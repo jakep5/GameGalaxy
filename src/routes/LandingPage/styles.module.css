@@ -18,10 +18,10 @@ header {
 
 h1.mainTitle {
   display: inline-block;
-  font-size: 100px;
+  font-size: 80px;
   color: white;
   opacity: 1;
-  margin-top: 250px;
+  margin-top: 70px;
   font-family: 'Merriweather';
 }
 
@@ -121,6 +121,9 @@ p.signUpLink {
   width: 100%;
   background-color: white;
   box-shadow: 0px -2px 7px 0px rgba(0,0,0,0.4);
+  font-family: 'Merriweather';
+  font-weight: lighter;
+  color: rgb(4, 103, 184);
 }
 
 p.returnToTop:hover {
@@ -145,3 +148,20 @@ p.returnToTop {
     margin-left: calc(50% - 225px);
   }
 }
+
+@media only screen and (min-width: 350px) and (max-width: 760px) {
+  h1.mainTitle {
+    margin-top: 100px;
+    font-size: 100px;
+  }
+}
+/** iPad and Above */
+
+@media only screen and (min-width: 760px) {
+  h1.mainTitle {
+    margin-top: 250px;
+    font-size: 100px;
+  }
+}
+
+/**/
