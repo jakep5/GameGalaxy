@@ -19,8 +19,6 @@ export default class ProfileImage extends Component {
                 </>
                 )}
             </GamesConsumer>
-            
-            
-        )
-    }
-}
+        );
+    };
+};

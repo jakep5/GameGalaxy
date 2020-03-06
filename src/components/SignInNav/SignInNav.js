@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 import {GamesContext} from '../../contexts/GamesContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'; 
-import $ from 'jquery';
 
 export default class SignInNav extends Component {
 
@@ -18,26 +17,26 @@ export default class SignInNav extends Component {
         window.location = '/';
 
         this.context.toggleJustSignedUp();
-    }
+    };
 
     render() {
         return (
             <nav className={styles.nav}>
 
                 <Link to="/" style={{ textDecoration: 'none' }}>
-                    <a className='hvr-float-shadow'>Return to Homepage</a>
+                    <a className='hvr-float-shadow' href='#'>Return to Homepage</a>
                 </Link> 
 
                 <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo} onClick={(e) => this.handleIconClick(e)}/>
 
                 <Link to="/signUp" style={{ textDecoration: 'none' }}>
-                    <a className='hvr-float-shadow'>Sign Up</a>
+                    <a className='hvr-float-shadow' href='signUp'>Sign Up</a>
                 </Link>
 
                 
 
                  
             </nav>
-        )
-    }
-}
+        );
+    };
+};

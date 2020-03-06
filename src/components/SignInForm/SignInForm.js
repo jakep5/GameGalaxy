@@ -16,7 +16,7 @@ export default class SignInForm extends Component {
             error: null,
             isLoading: false
         }
-    }
+    };
 
     handleLogInAuth = (e) => {
         e.preventDefault();
@@ -48,7 +48,7 @@ export default class SignInForm extends Component {
                     isLoading: false
                 })
             })
-    }
+    };
 
     render() {
 
@@ -115,6 +115,6 @@ export default class SignInForm extends Component {
                     </div>
                 )}
             </GamesConsumer>     
-        )
-    }
-}
+        );
+    };
+};

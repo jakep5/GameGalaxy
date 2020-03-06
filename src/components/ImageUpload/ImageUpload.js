@@ -9,13 +9,13 @@ export default class ImageUpload extends Component {
         this.state = {
             imageUrl: null,
         }
-    }
+    };
 
     static contextType = GamesContext;
 
     checkUploadResult = (result) => {
         this.context.setUserImage(result[0].secure_url)
-    }
+    };
 
     showUploadWidget = () => {
         window.cloudinary.openUploadWidget({
@@ -30,8 +30,6 @@ export default class ImageUpload extends Component {
     };
     
     render() {
-
-
         return (
             <div className={styles.uploadHolder}>
                 <button 
@@ -41,6 +39,6 @@ export default class ImageUpload extends Component {
                     Upload Profile Image
                 </button>
             </div>
-        )
-    }
-}
+        );
+    };
+};

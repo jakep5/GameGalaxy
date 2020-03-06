@@ -1,83 +1,83 @@
 p.gamesSaved, p.gamesSavedCount, p.gamesCompleted, p.gamesCompletedCount {
-    color: rgb(0, 89, 255);
-    font-family: 'Merriweather';
+  color: rgb(0, 89, 255);
+  font-family: 'Merriweather';
 }
 
 p.gamesSavedCount {
-    position: relative;
-    left: 15px;
+  position: relative;
+  left: 15px;
 }
 
 p.gamesCompleted {
-    position: relative;
-    bottom: 70px;
- 
+  position: relative;
+  bottom: 70px;
+
 }
 
 p.gamesCompletedCount {
-    position: relative;
-    left: 10px;
+  position: relative;
+  left: 10px;
 }
 
 div.profileStats {
-    display: inline-block;
-    position: relative;
-    bottom: 190px;
-    width: 100%;
-    height: 100px;
+  display: inline-block;
+  position: relative;
+  bottom: 190px;
+  width: 100%;
+  height: 100px;
 }
 
 @media only screen and (min-width: 350px) and (max-width: 1080px) {
-    div.profileStats {
-        display: inline-block;
-        position: relative;
-        bottom: 170px;
-        left: 20%;
-    }
+  div.profileStats {
+    display: inline-block;
+    position: relative;
+    bottom: 170px;
+    left: 20%;
+  }
 
-    p.gamesCompleted {
-        position: relative;
-        top: 50px;
-        right: 150px;
-        bottom: 0px;
-    }
+  p.gamesCompleted {
+    position: relative;
+    top: 50px;
+    right: 150px;
+    bottom: 0px;
+  }
 
-    p.gamesCompletedCount {
-        position: relative;
-        left: 15px;
-    }
+  p.gamesCompletedCount {
+    position: relative;
+    left: 15px;
+  }
 }
 
 @media only screen and (min-width: 350px) and (max-width: 364px) {
-    div.profileStats {
-        width: 100vw;
-    }
+  div.profileStats {
+    width: 100vw;
+  }
 }
 
 /* iPad Styles */ 
 @media only screen and (min-width: 768px) {
-    div.profileStats {
-        left: 95px;
-        width: 100%;
-    }
+  div.profileStats {
+    left: 95px;
+    width: 100%;
+  }
 }
 
 /**/
 
 
 @media only screen and (min-width: 1080px) {
-    div.profileStats {
-        display: inline-block;
-        height: 100px;
-        bottom: 0px;
-        top: 200px;
-        left: -60% !important;
-        width: 200px;
-    }
+  div.profileStats {
+    display: inline-block;
+    height: 100px;
+    bottom: 0px;
+    top: 200px;
+    left: -60% !important;
+    width: 200px;
+  }
 }
 
 @media only screen and (min-width: 1969px) {
-    div.profileStats {
-        left: -45vw !important;
-    }
+  div.profileStats {
+    left: -45vw !important;
+  }
 }

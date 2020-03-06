@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 import { GamesConsumer } from '../../contexts/GamesContext';
-import { GamesContext } from '../../contexts/GamesContext';
 
 export default class GenreFilter extends Component {
 
@@ -10,19 +9,16 @@ export default class GenreFilter extends Component {
         this.state = {
             open: false
         }
-    }
+    };
 
     togglePanel = (e) => {
         this.setState({
             open: !this.state.open
         })
-    }
+    };
 
     render() {
 
-        const hiddenStyle = {
-            display: 'none'
-        }
         return (
             <GamesConsumer>
                 {value => (
@@ -69,12 +65,9 @@ export default class GenreFilter extends Component {
                                     </li>
                                 </ul>                        
                             </div>
-                        
-
                     </>
                 )}
-
                 </GamesConsumer>
-        )
-    }
-}
+        );
+    };
+};

@@ -27,23 +27,23 @@ nav {
 }
 
 p {
-    display: inline-block;
+  display: inline-block;
 }
 
 p.returnHome {
-    display: inline-block;
-    margin-top: 15px;
-    position: relative;
-    font-size: 17px;
+  display: inline-block;
+  margin-top: 15px;
+  position: relative;
+  font-size: 17px;
 }
 
 p.signUp {
-    display: inline-block;
-    margin-right: 6%;
-    margin-top: 0%;
-    margin-bottom: -.5%;
-    position: relative;
-    font-size: 17px;
+  display: inline-block;
+  margin-right: 6%;
+  margin-top: 0%;
+  margin-bottom: -.5%;
+  position: relative;
+  font-size: 17px;
 }
 
 @media only screen and (min-width: 450px) {

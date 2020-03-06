@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css'
 import { GamesContext, GamesConsumer } from '../../contexts/GamesContext';
-import FolderApiServiceObject from '../../services/folder-api-service';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'; 
 
 
 export default class FolderDisplay extends Component {
@@ -13,8 +10,8 @@ export default class FolderDisplay extends Component {
         this.state = {
             addFolder: false,
             userFolders: [],
-        }
-    }
+        };
+    };
     
     static contextType = GamesContext;
 
@@ -22,13 +19,13 @@ export default class FolderDisplay extends Component {
         let userId = sessionStorage.getItem('user-id');
 
         this.context.setFolders(userId);
-    }
+    };
     
     handleAddFolderClick = () => {
         this.setState({
             addFolder: !this.state.addFolder,
-        })
-    }
+        });
+    };
 
     handleFolderSubmit = (e) => {
         e.preventDefault();
@@ -39,7 +36,7 @@ export default class FolderDisplay extends Component {
         let newFolder = {
             name: folderName,
             user_id: userId
-        }
+        };
 
         this.context.setNewFolder(newFolder);
     }
@@ -50,19 +47,15 @@ export default class FolderDisplay extends Component {
         let openId = e.target.getAttribute('name');
 
         this.context.setOpenFolder(openId);
-
-/*         let folderId = document.getElementById(e.target.)
- */
-/*         this.context.setOpenFolder()
-*/    }
+    };
 
     deleteFolder = (e) => {
         e.preventDefault();
 
         let deleteId = e.target.getAttribute('name');
 
-        this.context.deleteFolder(deleteId)
-    }
+        this.context.deleteFolder(deleteId);
+    };
 
 
     render() {
@@ -100,6 +93,6 @@ export default class FolderDisplay extends Component {
                     </div>
                 )}
             </GamesConsumer>
-        )
-    }
-}
+        );
+    };
+};

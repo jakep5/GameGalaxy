@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import { Link } from 'react-router-dom';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import { GamesContext } from '../../contexts/GamesContext';
 import { GamesConsumer } from '../../contexts/GamesContext';
@@ -18,7 +17,7 @@ export default class SearchPage extends Component {
         this.state = {
             showArrow: false
         }
-    }
+    };
 
     static contextType = GamesContext;
 
@@ -94,7 +93,7 @@ export default class SearchPage extends Component {
                                     />
                                 </div>
 
-                                <div className={styles.searchResultHolder}>
+                                <div id='searchResultHolder' id="searchResultHolder" className={styles.searchResultHolder}>
                                     <GameResults />
                                 </div>
 
@@ -102,8 +101,8 @@ export default class SearchPage extends Component {
                             </section>
 
                         </main>
-                        <footer className={styles.footer} role="content-info" >
-                            <p 
+                        <footer className={styles.footer} role="navigation" >
+                            <p  role='button'
                                 onMouseEnter={() => this.setIsShown(true)}
                                 onMouseLeave={() => this.setIsShown(false)}
                                 className={styles.returnToTop} 
@@ -114,6 +113,6 @@ export default class SearchPage extends Component {
                     </>
                 )}
             </GamesConsumer>
-        )
-    }
+        );
+    };
 }

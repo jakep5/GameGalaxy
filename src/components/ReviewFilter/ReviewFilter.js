@@ -10,7 +10,7 @@ export default class ReviewFilter extends Component {
         this.state = {
             open: false
         }
-    }
+    };
 
     static contextType = GamesContext;
 
@@ -18,13 +18,9 @@ export default class ReviewFilter extends Component {
         this.setState({
             open: !this.state.open
         })
-    }
+    };
 
     render() {
-
-        const hiddenDisplay = {
-            display: 'none'
-        }
         return (
             <GamesConsumer>
             {value => (
@@ -37,8 +33,7 @@ export default class ReviewFilter extends Component {
 
                 </>
             )}
-
             </GamesConsumer>
-        )
-    }
-}
+        );
+    };
+};

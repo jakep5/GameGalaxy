@@ -1,6 +1,5 @@
 import config from '../config';
 import TokenServiceObject from './token-service';
-import GamesContext from '../contexts/GamesContext';
 
 const GameApiServiceObject = {
     getGames(userId) {

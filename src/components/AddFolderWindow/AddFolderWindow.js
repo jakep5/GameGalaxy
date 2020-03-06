@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import FolderApiServiceObject from '../../services/folder-api-service';
 import { GamesConsumer } from '../../contexts/GamesContext';
 import { GamesContext } from '../../contexts/GamesContext';
 
 export default class AddFolderWindow extends Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     static contextType = GamesContext;
 

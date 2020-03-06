@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 import { GamesContext, GamesConsumer } from '../../contexts/GamesContext';
-import GameApiServiceObject from '../../services/game-api-service';
 import CompletedIcon from '../CompletedIcon/CompletedIcon';
 
 export default class FolderGame extends Component {
-
-    constructor(props) {
-        super(props);
-    };
 
     static contextType = GamesContext;
 
@@ -18,8 +13,7 @@ export default class FolderGame extends Component {
         let deleteId = e.target.getAttribute('name');
 
         this.context.deleteGame(deleteId);
-
-    }
+    };
 
     handleCheckCompleted = (e) => {
         e.preventDefault();
@@ -29,7 +23,7 @@ export default class FolderGame extends Component {
         let userId = sessionStorage.getItem('user-id');
 
         this.context.toggleCompleted(toggleId, userId);
-    }
+    };
     
     render() {
         return (
@@ -46,6 +40,6 @@ export default class FolderGame extends Component {
                     </div>
                 )}
             </GamesConsumer>                 
-        )
-    }
-}
+        );
+    };
+};

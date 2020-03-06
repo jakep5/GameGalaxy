@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import { Link } from 'react-router-dom';
 import FolderDisplay from '../../components/FolderDisplay/FolderDisplay';
 import FolderGamesDisplay from '../../components/FolderGamesDisplay/FolderGamesDisplay';
 import { GamesConsumer, GamesContext } from '../../contexts/GamesContext';
-import ProfileImage from '../../components/ProfileImage/ProfileImage';
 import ProfileNav from '../../components/ProfileNav/ProfileNav'
-import ImageUpload from '../../components/ImageUpload/ImageUpload';
 import ProfileStats from '../../components/ProfileStats/ProfileStats';
 
 export default class ProfilePage extends Component {
@@ -20,8 +17,6 @@ export default class ProfilePage extends Component {
 
     static contextType = GamesContext;
 
-    
-
     componentDidMount = () => {
         document.title = "Profile Page";
 
@@ -29,13 +24,13 @@ export default class ProfilePage extends Component {
 
 
         this.context.getUserGames(userId);
-    }
+    };
 
     handleAddFolderClick = () => {
         this.setState({
             addFolder: !this.state.addFolder
         })
-    }
+    };
 
     render() {
         return (
@@ -60,11 +55,9 @@ export default class ProfilePage extends Component {
                             </section>
 
                         </main>
-
                     </>
                 )}
-                
             </GamesConsumer>     
-        )
-    }
-}
+        );
+    };
+};

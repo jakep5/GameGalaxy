@@ -30,26 +30,26 @@
 }
 
 a {
-    display: inline-block;
+  display: inline-block;
 }
 
 a.signIn {
-    display: inline-block;
-    margin-left: 5%;
-    position: relative;
-    font-size: 17px;
-    width: 60px;
-    top: 10px;
+  display: inline-block;
+  margin-left: 5%;
+  position: relative;
+  font-size: 17px;
+  width: 60px;
+  top: 10px;
 }
 
 a.signUp {
-    display: inline-block;
-    margin-right: 6%;
-    margin-bottom: -.5%;
-    position: relative;
-    font-size: 17px;
-    width: 60px;
-    top: 10px;
+  display: inline-block;
+  margin-right: 6%;
+  margin-bottom: -.5%;
+  position: relative;
+  font-size: 17px;
+  width: 60px;
+  top: 10px;
 }
 
 

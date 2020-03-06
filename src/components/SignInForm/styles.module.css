@@ -53,7 +53,8 @@ p.error {
 
 p.justSignedUp {
   color: red;
-  font-size: 15px;
+  font-family: 'Merriweather';
+  font-size: 14px;
 }
 
 .demoPassword, .demoUsername {

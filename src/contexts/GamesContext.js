@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import GameApiServiceObject from '../services/game-api-service';
 import FolderApiServiceObject from '../services/folder-api-service';
 import {withRouter} from 'react-router-dom'
-import AuthApiServiceObject from '../services/auth-api-service';
 import { platformStore } from '../store';
 import { genreStore } from '../store';
 import UsersApiServiceObject from '../services/users-api-service';
@@ -20,9 +19,8 @@ class GamesProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            games: [],
+            games: null,
             userGames: [],
-            isLoading: false,
             justSignedUp: true,
             userId: null,
             folders: [],
@@ -54,6 +52,7 @@ class GamesProvider extends Component {
     }
 
     setNewGames = (games) => {
+        console.log(games);
         this.setState({
             games
         });
@@ -61,16 +60,10 @@ class GamesProvider extends Component {
         this.toggleLoading();
     };
 
-    handleFolderSubmit = (newFolder) => {
-        this.setState({
-
-        })
-    };
-
     getUserGames = (userId) => {
         GameApiServiceObject.getGames(userId)
             .then(games => this.setUserGames(games))
-    }
+    };
 
     setFolders = (userId) => {
         FolderApiServiceObject.getFolders(userId)
@@ -78,7 +71,7 @@ class GamesProvider extends Component {
                 this.setState({
                     folders: foldersRes
                 })
-            })
+            });
     };
 
     setNewFolder = (newFolder) => {
@@ -86,15 +79,15 @@ class GamesProvider extends Component {
             folders: [...this.state.folders, newFolder]
         });
 
-        FolderApiServiceObject.postFolder(newFolder.name, newFolder.user_id)
+        FolderApiServiceObject.postFolder(newFolder.name, newFolder.user_id);
     }
 
     setUserGames = (games) => {
         this.setState({
             userGames: games,
             currentUser: sessionStorage.getItem('current-user')
-        })
-    }
+        });
+    };
 
     handleAddFolderClick = (gameTitle, gameId) => {
         this.setState({
@@ -102,7 +95,6 @@ class GamesProvider extends Component {
             gameTitleToAdd: gameTitle,
             gameIdToAdd: gameId,
         });
-
     };
 
     addToFolder = (folderId, folderName) => {
@@ -119,8 +111,7 @@ class GamesProvider extends Component {
             }, 2000);
         });
 
-        GameApiServiceObject.postGame(this.state.gameTitleToAdd, this.state.gameIdToAdd, folderId)
-
+        GameApiServiceObject.postGame(this.state.gameTitleToAdd, this.state.gameIdToAdd, folderId);
     }
 
     closeWindow = () => {
@@ -128,8 +119,8 @@ class GamesProvider extends Component {
             addFolder: false,
             gameIdToAdd: null,
             gameTitleToAdd: null,
-        })
-    }
+        });
+    };
 
     deleteFolder = (deleteId) => {
         const afterDeleteFolders = this.state.folders.filter(fldr =>
@@ -138,17 +129,16 @@ class GamesProvider extends Component {
             folders: afterDeleteFolders
         });
         FolderApiServiceObject.deleteFolder(deleteId);
-    }
+    };
 
     deleteGame = (gameId) => {
-        
         const afterDeleteGames = this.state.userGames.filter(gme => 
             gme.id !== parseInt(gameId));
         this.setState({
             userGames: afterDeleteGames
         });
         GameApiServiceObject.deleteGame(gameId);
-    }
+    };
 
     setOpenFolder = (folderId) => {
         this.setState({
@@ -160,26 +150,30 @@ class GamesProvider extends Component {
                 this.setState({
                     openFolder: folder,
                 })
-            })
-    }
+            });
+    };
 
     handlePlatformChange = (e) => {
 
         let platform = e.target.value;
 
+        console.log(platform);
+
         let platformId;
 
         for(let i = 0; i < platformStore.length; i++) {
-            if(platformStore[i].name == platform) {
+            if(platformStore[i].name === platform) {
                 platformId = platformStore[i].id;
             }
-        }
+        };
 
         if (!this.state.platformFilters.includes(platformId)) {
             this.state.platformFilters.push(platformId);
         } else {
             this.state.platformFilters.splice(this.state.platformFilters.indexOf(platformId), 1)
-        }
+        };
+
+        console.log(this.state.platformFilters);
 
     };
 
@@ -190,40 +184,44 @@ class GamesProvider extends Component {
 
         for(let i = 0; i < genreStore.length; i++) {
 
-            if (genreStore[i].name == genre) {
+            if (genreStore[i].name === genre) {
                 genreId = genreStore[i].id;
-            } 
+            }
         };
 
         if (!this.state.genreFilters.includes(genreId)) {
             this.state.genreFilters.push(genreId);
         } else {
-            this.state.genreFilters.splice(this.state.genreFilters.indexOf(genreId), 1)
+            this.state.genreFilters.splice(this.state.genreFilters.indexOf(genreId), 1);
         };
+
+        console.log(this.state.genreFilters);
 
     };
 
     handleReviewChange = (e) => {
         this.setState({
             reviewFilter: e.target.value
-        })
+        });
     };
 
     toggleLoading = () => {
         this.setState({
             isLoading: !this.state.isLoading
-        })
+        });
     };
 
     toggleCompleted = (toggleId, userId) => {
         this.state.userGames.map((game, i) => {
-            if (game.id == toggleId) {
+            if (game.id === toggleId) {
 
                 game.completed = !game.completed;
 
                 GameApiServiceObject.toggleCompleted(toggleId, !game.completed)
 /*                     .then(this.getUserGames(userId)) */
             };
+
+            return null;
         });
     };
 
@@ -246,24 +244,21 @@ class GamesProvider extends Component {
         this.setState({
             justSignedUp: false,
             currentUser: null
-        })
+        });
     };
 
-    handleSignUp = () => {
-
-    }
 
     toggleJustSignedUp = () => {
         this.setState({
             justSignedUp: false,
-        })
-    }
+        });
+    };
 
     toggleNoResuts = () => {
         this.setState({
             noResults: !this.state.noResults
-        })
-    }
+        });
+    };
 
     render() {
 
@@ -311,7 +306,6 @@ class GamesProvider extends Component {
             noResults: this.state.noResults,
             toggleNoResults: this.toggleNoResuts,
             deleteGame: this.deleteGame
-
         }
 
         return (

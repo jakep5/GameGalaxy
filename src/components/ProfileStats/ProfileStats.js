@@ -11,13 +11,15 @@ export default class ProfileStats extends Component {
         let count = 0;
 
         this.context.userGames.map(game => {
-            if (game.completed == true) {
+            if (game.completed === true) {
                 count += 1;
             }
+
+            return ;count;
         })
 
         return count;
-    }
+    };
     
     render() {
 
@@ -38,7 +40,6 @@ export default class ProfileStats extends Component {
                     </div>
                 )}
             </GamesConsumer>
-            
-        )
-    }
-}
+        );
+    };
+};

@@ -1,15 +1,13 @@
 div.successPopup {
-    display: block;
-    height: 100px;
-    width: 300px;
-    position: fixed;
-    top: 50%;
-    left: calc(50% - 150px);
-    background-color: white;
-    color: rgb(0, 140, 255);
-    font-family: 'Merriweather';
-    border: none;
-    box-shadow: 1px 5px 21px 5px rgba(0,0,0,0.75)
-    ;
-
+  display: block;
+  height: 100px;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 150px);
+  background-color: white;
+  color: rgb(0, 140, 255);
+  font-family: 'Merriweather';
+  border: none;
+  box-shadow: 1px 5px 21px 5px rgba(0,0,0,0.75);
 }

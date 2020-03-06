@@ -3,7 +3,6 @@ import styles from './styles.module.css'
 import GamesContext from '../../contexts/GamesContext';
 import BeatLoader from 'react-spinners/BeatLoader';
 import AuthApiServiceObject from '../../services/auth-api-service';
-import TokenServiceObject from '../../services/token-service';
 import { css} from '@emotion/core';
 
 export default class SignUpForm extends Component {
@@ -19,8 +18,8 @@ export default class SignUpForm extends Component {
         this.state = {
             error: null,
             isLoading: false
-        }
-    }
+        };
+    };
 
     handleSignUpAuth = (e) => {
         e.preventDefault();
@@ -30,7 +29,7 @@ export default class SignUpForm extends Component {
         this.setState({
             error: null,
             isLoading: true
-        })
+        });
 
         AuthApiServiceObject.registerUser({
             user_name: user_name.value,
@@ -49,7 +48,7 @@ export default class SignUpForm extends Component {
                     error: res.error,
                     isLoading: false
                 })
-        })
+        });
 
     };
 
@@ -107,9 +106,9 @@ export default class SignUpForm extends Component {
                             <li className={styles.passwordRequirementsItem}>Must contain 1 special character</li>
                         </ul>
                     </div>
-
+                    
                 </form>
             </div>
-        )
-    }
-}
+        );
+    };
+};

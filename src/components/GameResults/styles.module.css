@@ -1,11 +1,11 @@
 h1.noGames {
-    position: relative;
-    left: 75%;
+  position: relative;
+  left: 75%;
 }
 
 @media only screen and (min-width: 1080px) {
-    div.resultItem {
-      margin-right: 7%;
-      margin-left: 7%;
-    }
+  div.resultItem {
+    margin-right: 7%;
+    margin-left: 7%;
+  }
 }

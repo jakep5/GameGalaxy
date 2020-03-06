@@ -1,51 +1,51 @@
 div.folderGameHolder {
-    display: block;
-    height: 300px;
-    width: 250px;
-    margin-left: calc(50% - 125px);
-    border: 2px solid rgb(0, 89, 255);
-    margin-bottom: 20px;
-    overflow: auto;
+  display: block;
+  height: 300px;
+  width: 250px;
+  margin-left: calc(50% - 125px);
+  border: 2px solid rgb(0, 89, 255);
+  margin-bottom: 20px;
+  overflow: auto;
 }
 
 button.deleteGameButton {
-    display: block;
-    padding: 5px 20px;
-    background: transparent;
-    border: 4px solid rgb(0, 89, 255);
-    color: rgb(0, 89, 255);
-    margin-left: calc(50% - 40px);
-    font-family: 'Merriweather';
+  display: block;
+  padding: 5px 20px;
+  background: transparent;
+  border: 4px solid rgb(0, 89, 255);
+  color: rgb(0, 89, 255);
+  margin-left: calc(50% - 40px);
+  font-family: 'Merriweather';
 }
 
 button.deleteGameButton:hover {
-    cursor: pointer;
-    color: #ffffff !important;
-    background: rgb(0, 89, 255);
-    border-color: rgb(0, 89, 255);
-    transition: all 0.4s ease 0s;
+  cursor: pointer;
+  color: #ffffff !important;
+  background: rgb(0, 89, 255);
+  border-color: rgb(0, 89, 255);
+  transition: all 0.4s ease 0s;
 }
 
 button.completeButton:hover {
-    cursor: pointer;
-    color: #ffffff !important;
-    background: rgb(0, 89, 255);
-    border-color: rgb(0, 89, 255);
-    transition: all 0.4s ease 0s;
+  cursor: pointer;
+  color: #ffffff !important;
+  background: rgb(0, 89, 255);
+  border-color: rgb(0, 89, 255);
+  transition: all 0.4s ease 0s;
 }
 
 button.completeButton {
-    display: inline-block;
-    background: transparent;
-    padding: 4px 20px;
-    border: 4px solid rgb(0, 89, 255);
-    color: rgb(0, 89, 255);
-    font-family: 'Merriweather';
+  display: inline-block;
+  background: transparent;
+  padding: 4px 20px;
+  border: 4px solid rgb(0, 89, 255);
+  color: rgb(0, 89, 255);
+  font-family: 'Merriweather';
 }
 
 h1.folderGameName {
-    font-family: 'Merriweather';
-    margin-left: 10px;
-    margin-right: 10px;
-    color: rgb(0, 89, 255);
+  font-family: 'Merriweather';
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgb(0, 89, 255);
 }

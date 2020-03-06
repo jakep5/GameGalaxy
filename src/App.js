@@ -8,38 +8,37 @@ import ProfilePage from './routes/ProfilePage/ProfilePage';
 
 
 function App() {
-  return (
-    <>
-        <Switch>
-        <Route
-            exact
-            path={"/"}
-            component={LandingPage}
-        />
-        <Route
-            exact
-            path={"/signIn"}
-            component={SignInPage}
-        />
-        <Route
-            exact
-            path={"/signUp"}
-            component={SignUpPage}
-        />
-        <Route
-            exact
-            path={"/search"}
-            component={SearchPage}
-        />
-        <Route
-            exact
-            path={"/profile"}
-            component={ProfilePage}
-        />
-        </Switch>
-    </>
-    
-  );
+    return (
+        <>
+            <Switch>
+            <Route
+                exact
+                path={"/"}
+                component={LandingPage}
+            />
+            <Route
+                exact
+                path={"/signIn"}
+                component={SignInPage}
+            />
+            <Route
+                exact
+                path={"/signUp"}
+                component={SignUpPage}
+            />
+            <Route
+                exact
+                path={"/search"}
+                component={SearchPage}
+            />
+            <Route
+                exact
+                path={"/profile"}
+                component={ProfilePage}
+            />
+            </Switch>
+        </>
+    );
 }
 
 export default App;

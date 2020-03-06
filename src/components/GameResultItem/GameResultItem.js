@@ -11,7 +11,7 @@ export default class GameResultItem extends Component {
             platforms: this.props.platforms,
             genres: this.props.genres
         }
-    }
+    };
 
     static contextType = GamesContext;
     
@@ -20,38 +20,40 @@ export default class GameResultItem extends Component {
         let gameId = e.target.getAttribute('name');
 
         this.context.handleAddFolderClick(gameTitle, gameId);
-    }
+    };
 
     render() {
 
         let platformArray = [];
 
-        if (this.state.platforms == undefined) {
-            platformArray = 'No platform information'
+        if (this.state.platforms === undefined) {
+            platformArray = 'No platform information';
         } else {
             this.state.platforms.map(platformId => {
                 for(let i = 0; i < platformStore.length; i++) {
-                    if(platformStore[i].id == platformId) {
+                    if(platformStore[i].id === platformId) {
                         platformArray.push(platformStore[i].name);
-                    }
-                }
-            })
-        }
+                    };
+                };
+
+                return null;
+            });
+        };
 
         let genreArray = [];
 
-        if(this.state.genres == undefined) {
+        if(this.state.genres === undefined) {
             genreArray = 'No genre information';
         } else {
             this.state.genres.map(genreId => {
                 for(let i = 0; i < genreStore.length; i++) {
-                    if (genreStore[i].id == genreId) {
+                    if (genreStore[i].id === genreId) {
                         genreArray.push(genreStore[i].name)
                     }
                 }
-
+                return null;
             })
-        }
+        };
 
         return (
             <div className={styles.resultItem}>
@@ -68,16 +70,16 @@ export default class GameResultItem extends Component {
                 ?   <p className={styles.noPlatform}>No platform information</p>
                 :   <div className={styles.platformHolder}>
                         {platformArray.map(platformName => {
-                            return <p className={styles.platformName}>{platformName} </p>
+                            return <p className={styles.platformName}>{platformName}</p>
                         })}
                     </div>    
                 }
-                {this.props.rating == undefined
+                {this.props.rating === undefined
                 ? <p className={styles.noRating}>No ratings</p>
                 : <p className={styles.gameRating}>IGDB Rating: {this.props.rating.toFixed(2)}</p>
                 }
                 <button id={this.props.name} name={this.props.id} onClick={(e) => this.addToFolderClick(e)} className={styles.addToFolder}>Add to Folder</button>
             </div>
-        )
-    }
-}
+        );
+    };
+};

@@ -9,8 +9,6 @@ export default class FolderGamesDisplay extends Component {
     static contextType = GamesContext;
 
     render() {
-
-        
         return (
             <GamesConsumer>
                 {value => (
@@ -27,9 +25,9 @@ export default class FolderGamesDisplay extends Component {
                             }
                             
                             {value.userGames.map(game => {
-                                if(value.openFolder == null) {
+                                if(value.openFolder === null) {
                                     return null;
-                                } else if (game.folder_id == value.openFolder.id) { 
+                                } else if (game.folder_id === value.openFolder.id) { 
                                     return <FolderGame
                                         title={game.title}
                                         completed={game.completed}
@@ -37,12 +35,12 @@ export default class FolderGamesDisplay extends Component {
                                         gameId={game.id}
                                     />
                                 }
-                                })
-                            }
+                                return null;
+                            })}
                         </div>
                 )}
             </GamesConsumer>
             
-        )
-    }
-}
+        );
+    };
+};

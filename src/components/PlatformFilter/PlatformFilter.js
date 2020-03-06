@@ -9,13 +9,9 @@ export default class PlatformFilter extends Component {
         this.state = {
             open: false
         }
-    }
+    };
 
     render() {
-
-        const hiddenStyle = {
-            display: 'none'
-        }
 
         return (
             <GamesConsumer>
@@ -33,12 +29,12 @@ export default class PlatformFilter extends Component {
 
                                 <li className={styles.platformFilterItem}>
                                     <label htmlFor="playstation4Select">Playstation 4</label>
-                                    <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="Playstation 4" type="checkbox" id="playstation4Select" name="playstation4Select" />
+                                    <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="PlayStation 4" type="checkbox" id="playstation4Select" name="playstation4Select" />
                                 </li>
 
                                 <li className={styles.platformFilterItem}>
                                     <label htmlFor="playstation3Select">Playstation 3</label>
-                                    <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="Playstation 3" type="checkbox" id="playstation3Select" name="playstation3Select" />
+                                    <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="PlayStation 3" type="checkbox" id="playstation3Select" name="playstation3Select" />
                                 </li>
 
                                 <li className={styles.platformFilterItem}>
@@ -53,7 +49,7 @@ export default class PlatformFilter extends Component {
 
                                 <li className={styles.platformFilterItem}>
                                     <label htmlFor="nintendoDSSelect">Nintendo DS</label>
-                                    <input onChange={(e) => value.handlePlatformChange(e)} className={styles.dsSelect} value="Nintendo DS" type="checkbox" id="nintendoDS" name="nintendoDSSelect"/>
+                                    <input onChange={(e) => value.handlePlatformChange(e)} className={styles.inputCheck} value="Nintendo DS" type="checkbox" id="nintendoDS" name="nintendoDSSelect"/>
                                 </li>
                             </ul>       
                         </div>
@@ -62,6 +58,6 @@ export default class PlatformFilter extends Component {
                 )}
 
                 </GamesConsumer>
-        )
-    }
-}
+        );
+    };
+};

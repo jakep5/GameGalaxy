@@ -1,16 +1,18 @@
 div.resultItem {
   border: 1px solid black;
   display: inline-block;
-  height: 350px;
+  height: 375px;
   width: 275px;
   margin-bottom: 45px;
   border: none;
+  overflow: auto;
   box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75)
 }
 
 h1.gameTitle {
   font-size: 18px;
   font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
   margin-right: 4px;
   margin-left: 4px;
 }
@@ -18,14 +20,16 @@ h1.gameTitle {
 p.noPlatform {
   font-size: 12px;
   font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
 }   
 
 p.platformName {
   font-size: 12px;
+  display: block;
   margin-top: 0px;
   margin-bottom: 2px;
-  margin-right: 3px;
   font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
 }
 
 div.platformHolder {
@@ -38,29 +42,38 @@ p.genreName {
   margin-bottom: 2px;
   margin-right: 3px;
   font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
+}
+
+p.noGenre {
+  color: rgb(0, 140, 255);
+  font-size: 12px;
+  font-family: 'Fira Sans';
 }
 
 p.gameRating {
   display: block;
   font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
 }
 
 p.noRating {
   display: block;
   font-family: 'Fira Sans';
+  color: rgb(0, 140, 255);
 }
 
 button.addToFolder {
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: grey;
+  background: rgb(0, 140, 255);
   padding: 10px 20px;
   border-radius: 50px;
   display: inline-block;
   border: none;
   transition: all 0.4s ease 0s;
-  margin-top: 40px;
+  margin-top: 20px;
   font-family: 'Fira Sans';
 }
 
@@ -77,8 +90,8 @@ button.addToFolder:hover {
 }
 
 @media only screen and (min-width: 1080px) {
-    div.resultItem {
-      margin-right: 7%;
-      margin-left: 7%;
-    }
+  div.resultItem {
+    margin-right: 7%;
+    margin-left: 7%;
+  }
 }
