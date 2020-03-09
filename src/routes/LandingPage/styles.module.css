@@ -26,12 +26,12 @@ h1.mainTitle {
 }
 
 h2.landingText {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: lighter;
   margin-top: 200px;
   margin-right: 40px;
   margin-left: 40px;
-  font-family: 'Pacifico';
+  font-family: 'Darker Grotesque';
   color: rgb(4, 103, 184);
 }
 

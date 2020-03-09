@@ -50,7 +50,7 @@ const GameApiServiceObject = {
 
     deleteGame(gameId) {
         let token = TokenServiceObject.getAuthToken();
-        return fetch(`${config.API_BASE_URL}/games/${gameId}`, {
+        return fetch(`${config.API_BASE_URL}/games/id/${gameId}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
@@ -72,16 +72,16 @@ const GameApiServiceObject = {
 
     toggleCompleted(gameId, toggleCompleted) {
         let token = TokenServiceObject.getAuthToken();
-        
 
-        return fetch(`${config.API_BASE_URL}/games/${gameId}`, {
+        
+        return fetch(`${config.API_BASE_URL}/games/id/${gameId}`, {
             method: 'PATCH',
             body: JSON.stringify({
-                completed: toggleCompleted
+                completed: toggleCompleted  
             }),
             headers: {
-                'content-type': 'application/json',
-                'Authorization': `bearer ${token}`
+                'Authorization': `bearer ${token}`,
+                'Content-type': 'application/json' 
             }
         })
             .then(res => {

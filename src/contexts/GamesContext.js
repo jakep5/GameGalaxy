@@ -240,14 +240,22 @@ class GamesProvider extends Component {
         });
     };
 
-    toggleCompleted = (toggleId, userId) => {
-        this.state.userGames.map((game, i) => {
-            if (game.id === toggleId) {
+    toggleCompleted = (toggleId) => {
+
+        let intToggleId = parseInt(toggleId);
+
+        this.setState({
+            userGames: this.state.userGames.map(game => 
+                game.id === intToggleId ? {...game, completed: !game.completed} : game)
+        })
+
+        this.state.userGames.map((game) => {
+            if (game.id === intToggleId) {
 
                 game.completed = !game.completed;
 
-                GameApiServiceObject.toggleCompleted(toggleId, !game.completed)
-/*                     .then(this.getUserGames(userId)) */
+                GameApiServiceObject.toggleCompleted(intToggleId, game.completed)
+    /*                 .then(this.getUserGames(sessionStorage.getItem('user-id'))) */
             };
 
             return null;
