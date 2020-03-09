@@ -3,10 +3,13 @@ import TokenServiceObject from './token-service';
 
 const GameApiServiceObject = {
     getGames(userId) {
+
         let token = TokenServiceObject.getAuthToken();
-        return fetch(`${config.API_BASE_URL}/games/${userId}`, {
+        
+        return fetch(`${config.API_BASE_URL}/games`, {
             headers: {
-                'Authorizaton': `bearer ${token}`
+                'Authorization': `bearer ${token}`,
+                'user_id': userId
             }
         })
             .then(response => {

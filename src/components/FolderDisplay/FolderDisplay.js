@@ -10,6 +10,7 @@ export default class FolderDisplay extends Component {
         this.state = {
             addFolder: false,
             userFolders: [],
+            folderName: ''
         };
     };
     
@@ -30,7 +31,8 @@ export default class FolderDisplay extends Component {
     handleFolderSubmit = (e) => {
         e.preventDefault();
 
-        let folderName = document.getElementById('folderName').value;
+        let folderName = this.state.folderName;
+
         let userId = sessionStorage.getItem('user-id');
 
         let newFolder = {
@@ -38,7 +40,7 @@ export default class FolderDisplay extends Component {
             user_id: userId
         };
 
-        this.context.setNewFolder(newFolder);
+        this.context.addNewFolder(newFolder);
     }
 
     openFolder = (e) => {
@@ -56,6 +58,16 @@ export default class FolderDisplay extends Component {
 
         this.context.deleteFolder(deleteId);
     };
+
+    handleInputChange = (e) => {
+        this.setState({
+            folderName: e.target.value,
+        })
+    };
+
+    //handlechange = ev => this.setState({
+    //    text: ev.target.value
+    //})
 
 
     render() {
@@ -84,7 +96,15 @@ export default class FolderDisplay extends Component {
                             {this.state.addFolder && 
                             <form onSubmit={(e) => this.handleFolderSubmit(e)} id="addFolder">
                                 <label className={styles.addFolderLabel} htmlFor="folderName">Folder name:</label>
-                                <input name="folderName" className={styles.newFolderInput} id="folderName" type="text" required></input>
+                                <input 
+                                    value={this.state.folderName} 
+                                    onChange={(e) => this.handleInputChange(e)} 
+                                    name="folderName" 
+                                    className={styles.newFolderInput} 
+                                    id="folderName" 
+                                    type="text" 
+                                    required>
+                                </input>
                                 <button type="submit" className={styles.submitFolderButton} htmlFor="addFolder">Submit</button>
                             </form>}
                             

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import GameApiServiceObject from '../services/game-api-service';
 import FolderApiServiceObject from '../services/folder-api-service';
-import {withRouter} from 'react-router-dom'
+import TokenServiceObject from '../services/token-service';
+import config from '../config';
+import {withRouter} from 'react-router-dom';
 import { platformStore } from '../store';
 import { genreStore } from '../store';
 import UsersApiServiceObject from '../services/users-api-service';
@@ -73,13 +75,40 @@ class GamesProvider extends Component {
                 })
             });
     };
+    
 
-    setNewFolder = (newFolder) => {
+    addNewFolder = (newFolder) => {
+
+        const userId = parseInt(newFolder.user_id);
+
+        const folderToAdd = {
+            name: newFolder.name,
+            user_id: userId
+        };
+
         this.setState({
-            folders: [...this.state.folders, newFolder]
+            folders: [...this.state.folders, folderToAdd] 
         });
 
-        FolderApiServiceObject.postFolder(newFolder.name, newFolder.user_id);
+        let token = TokenServiceObject.getAuthToken();
+
+        return fetch(`${config.API_BASE_URL}/folders`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${token}`
+            },
+            body: JSON.stringify({
+                name: newFolder.name,
+                user_id: newFolder.user_id,
+            })
+        })
+            
+            .then(res => {
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : this.setFolders(sessionStorage.getItem('user-id'));
+            })      
     }
 
     setUserGames = (games) => {
@@ -124,7 +153,7 @@ class GamesProvider extends Component {
 
     deleteFolder = (deleteId) => {
         const afterDeleteFolders = this.state.folders.filter(fldr =>
-            fldr.id !== deleteId);
+            fldr.id !== parseInt(deleteId));
         this.setState({
             folders: afterDeleteFolders
         });
@@ -293,7 +322,7 @@ class GamesProvider extends Component {
             setCurrentUser: this.setCurrentUser,
             currentUser: this.state.currentUser,
             setFolders: this.setFolders,
-            setNewFolder: this.setNewFolder,
+            addNewFolder: this.addNewFolder,
             toggleLoading: this.toggleLoading,
             isLoading: this.state.isLoading,
             toggleCompleted: this.toggleCompleted,

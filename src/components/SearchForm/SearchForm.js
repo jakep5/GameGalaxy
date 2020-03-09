@@ -15,6 +15,7 @@ export default class SearchForm extends Component {
         this.state = {
             games: null,
             isLoading: false,
+            gameName: ''
         }
     }
 
@@ -25,13 +26,7 @@ export default class SearchForm extends Component {
     handleSearchSubmit = (e) => {
         e.preventDefault();
 
-        const title = document.getElementById('nameInput').value;
-
-        const newItem = {
-            "title": title,
-        };
-
-        let gameTitle = newItem.title;
+        let gameTitle = this.state.gameName;
 
         const url = config.IGDB_BASE_URL;
 
@@ -60,9 +55,13 @@ export default class SearchForm extends Component {
             .catch(error => {
                 console.log(error)
         });
-
     };
 
+    handleGameNameChange = (e) => {
+        this.setState({
+            gameName: e.target.value
+        })
+    };
 
     render() {
         return (
@@ -74,7 +73,16 @@ export default class SearchForm extends Component {
                 <form onSubmit={(e) => this.handleSearchSubmit(e)} className={styles.searchForm} id="searchForm">
 
                     <label className={styles.nameInputLabel} htmlFor="nameInput" id="nameInputLabel">Name of game:</label>
-                    <input className={styles.nameInput} type="text" id="nameInput" name="nameInput" autoComplete='off' required/>
+                    <input 
+                        className={styles.nameInput} 
+                        value={this.state.gameName}
+                        onChange={(e) => this.handleGameNameChange(e)}
+                        type="text" 
+                        id="nameInput" 
+                        name="nameInput" 
+                        autoComplete='off' 
+                        required
+                    />
 
                     <button id='callToActionButton' type='submit' htmlFor='searchForm' className={styles.searchButton}>
                         Search

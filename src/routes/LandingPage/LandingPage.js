@@ -17,7 +17,7 @@ export default class LandingPage extends Component {
     }
 
     componentDidMount() {
-        document.title = 'Game Galaxy'
+        document.title = 'Game Galaxy';
         $(window).scroll(function(){
             $('#title').css('opacity', 1 - $(window).scrollTop() / 400);
         });
@@ -29,6 +29,9 @@ export default class LandingPage extends Component {
         $(window).scroll(function(){
             $('#callToActionButton').css('opacity', 1 - $(window).scrollTop() / 2000)
         })
+
+        sessionStorage.removeItem('user-id');
+        sessionStorage.removeItem('game-galaxy-token-key');
     };
 
     static contextType = GamesContext;

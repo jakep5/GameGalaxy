@@ -22,7 +22,6 @@ export default class ProfilePage extends Component {
 
         let userId = sessionStorage.getItem('user-id');
 
-
         this.context.getUserGames(userId);
     };
 

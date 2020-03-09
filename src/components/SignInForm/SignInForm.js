@@ -14,7 +14,9 @@ export default class SignInForm extends Component {
         super(props);
         this.state = {
             error: null,
-            isLoading: false
+            isLoading: false,
+            username: '',
+            password: ''
         }
     };
 
@@ -26,21 +28,23 @@ export default class SignInForm extends Component {
             isLoading: true
         });
 
-        let { user_name, password } = e.target;
+        let username = this.state.username;
+
+        let userPassword = this.state.password;
 
         AuthApiServiceObject.logIn({
-            user_name: user_name.value,
-            password: password.value
+            user_name: username,
+            password: userPassword
         })
             .then(res => {
-                this.context.setCurrentUser(user_name.value);
-                user_name.value = '';
-                password.value = '';
+                this.context.setCurrentUser(username);
                 TokenServiceObject.saveAuthToken(res.authToken);
                 this.setState({
-                    isLoading: false
+                    isLoading: false,
+                    username: '',
+                    password: ''
                 });
-                this.props.onLogInSuccess(user_name);
+                this.props.onLogInSuccess(username);
             })
             .catch(res => {
                 this.setState({
@@ -48,6 +52,18 @@ export default class SignInForm extends Component {
                     isLoading: false
                 })
             })
+    };
+
+    handleUsernameChange = (e) => {
+        this.setState({
+            username: e.target.value,
+        })
+    };
+
+    handlePasswordChange = (e) => {
+        this.setState({
+            password: e.target.value,
+        })
     };
 
     render() {
@@ -87,10 +103,26 @@ export default class SignInForm extends Component {
                             </div>
 
                             <label className={styles.userNameLabel} for="user_name">Username</label>
-                            <input className={styles.signInUsername} type="text" name="user_name" id="signInUsername" placeholder="username" autoComplete='off'/>
+                            <input 
+                                className={styles.signInUsername} 
+                                value={this.state.username}
+                                onChange={(e) => this.handleUsernameChange(e)}
+                                type="text" 
+                                name="user_name" 
+                                id="signInUsername" 
+                                placeholder="username" 
+                                autoComplete='off'
+                            />
                             <br />
                             <label className={styles.passwordLabel} for="password">Password</label>
-                            <input className={styles.signInPassword} type="password" name="password" id="signInPassword" placeholder="password"/>
+                            <input 
+                                className={styles.signInPassword} 
+                                value={this.state.password}
+                                onChange={(e) => this.handlePasswordChange(e)}
+                                type="password" 
+                                name="password" 
+                                id="signInPassword" 
+                                placeholder="password"/>
                             <br />
                             <button type="submit" for="signInForm" className={styles.signInButton}>Sign In</button>
                         </form>

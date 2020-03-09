@@ -31,7 +31,7 @@ export default class SearchPage extends Component {
         return JSON.parse(jsonPayload);
     };
 
-    componentWillMount = () => {
+    componentDidMount = () => {
 
         document.title = 'Search Page';
 

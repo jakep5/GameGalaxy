@@ -15,7 +15,7 @@ export default class ProfileStats extends Component {
                 count += 1;
             }
 
-            return ;count;
+            return count;
         })
 
         return count;

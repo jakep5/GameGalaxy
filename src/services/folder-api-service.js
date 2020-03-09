@@ -1,5 +1,6 @@
 import config from '../config';
 import TokenServiceObject from './token-service';
+import { GamesContext } from '../contexts/GamesContext';
 
 
 const FolderApiServiceObject = {
@@ -7,9 +8,10 @@ const FolderApiServiceObject = {
     getFolders(userId) {
         let token = TokenServiceObject.getAuthToken();
 
-        return fetch(`${config.API_BASE_URL}/folders/${userId}`, {
+        return fetch(`${config.API_BASE_URL}/folders`, {
             headers: {
-                'Authorization': `bearer ${token}`
+                'Authorization': `bearer ${token}`,
+                'user_id': userId
             }
         })
             .then(res => 
@@ -22,7 +24,7 @@ const FolderApiServiceObject = {
     getById(folderId) {
         let token = TokenServiceObject.getAuthToken();
 
-        return fetch(`${config.API_BASE_URL}/folders/folder/${folderId}`, {
+        return fetch(`${config.API_BASE_URL}/folders/${folderId}`, {
             headers: {
                 'Authorization': `bearer ${token}`
             }
@@ -36,7 +38,7 @@ const FolderApiServiceObject = {
 
     postFolder(folderName, user_id) {
         let token = TokenServiceObject.getAuthToken();
-        return fetch(`${config.API_BASE_URL}/folders/`, {
+        return fetch(`${config.API_BASE_URL}/folders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -56,7 +58,7 @@ const FolderApiServiceObject = {
 
     deleteFolder(deleteId) {
         let token = TokenServiceObject.getAuthToken();
-        return fetch(`${config.API_BASE_URL}/folders/folder/${deleteId}`, {
+        return fetch(`${config.API_BASE_URL}/folders/${deleteId}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',

@@ -17,40 +17,55 @@ export default class SignUpForm extends Component {
         super(props);
         this.state = {
             error: null,
-            isLoading: false
+            isLoading: false,
+            username: '',
+            password: ''
         };
     };
 
     handleSignUpAuth = (e) => {
         e.preventDefault();
 
-        var {user_name, password} = e.target;
+        let username = this.state.username;
+
+        let userPassword = this.state.password;
 
         this.setState({
             error: null,
-            isLoading: true
+            isLoading: true,
+            username: '',
+            password: ''
         });
 
         AuthApiServiceObject.registerUser({
-            user_name: user_name.value,
-            password: password.value  
+            user_name: username,
+            password: userPassword  
         })
             .then(res => {
-                user_name.value = '';
-                password.value = '';
                 this.setState({
                     isLoading: false
                 })
             })
-            .then(this.props.onRegistrationSuccess(user_name.value, password.value))
+            .then(this.props.onRegistrationSuccess(username, userPassword))
             .catch(res => {
                 this.setState({
                     error: res.error,
                     isLoading: false
                 })
-        });
-
+        })
     };
+
+    handleUsernameChange = (e) => {
+        this.setState({
+            username: e.target.value,
+        })
+    };
+
+    handlePasswordChange = (e) => {
+        this.setState({
+            password: e.target.value,
+        })
+    }
 
     render() {
 
@@ -75,12 +90,29 @@ export default class SignUpForm extends Component {
                     </div>
 
                     <label for="user_name" className={styles.usernameLabel}>Username:</label>
-                    <input type="text" placeholder="username" name="user_name" className={styles.signUpUsername} id="signUpUsername" autoComplete='off'/>
+                    <input 
+                        value={this.state.username}
+                        onChange={(e) => this.handleUsernameChange(e)}
+                        type="text" 
+                        placeholder="username" 
+                        name="user_name" 
+                        className={styles.signUpUsername} 
+                        id="signUpUsername" 
+                        autoComplete='off'
+                    />
 
                     <br/>
 
                     <label for="password" className={styles.passwordLabel}>Password:</label>
-                    <input type="password" placeholder="password" name="password" className={styles.signUpPassword} id="signUpPassword" />
+                    <input
+                        value={this.state.password}
+                        onChange={(e) => this.handlePasswordChange(e)} 
+                        type="password" 
+                        placeholder="password" 
+                        name="password" 
+                        className={styles.signUpPassword} 
+                        id="signUpPassword" 
+                    />
 
                     <br />
 
