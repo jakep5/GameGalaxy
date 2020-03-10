@@ -51,14 +51,6 @@ export default class FolderDisplay extends Component {
         this.context.setOpenFolder(openId);
     };
 
-    deleteFolder = (e) => {
-        e.preventDefault();
-
-        let deleteId = e.target.getAttribute('name');
-
-        this.context.deleteFolder(deleteId);
-    };
-
     handleInputChange = (e) => {
         this.setState({
             folderName: e.target.value,
@@ -84,7 +76,16 @@ export default class FolderDisplay extends Component {
                                 return (
                                 <>
                                     <li name={folder.id} id={folder.name} onClick={(e) => this.openFolder(e)} className={styles.folderItem}>{folder.name}</li>
-                                    <button name={folder.id} onClick={(e) => this.deleteFolder(e)} className={styles.deleteFolder}>Delete</button>
+                                    <button 
+                                        name={folder.id} 
+                                        onClick={() => { 
+                                            if (window.confirm(`Are you sure you wish to delete ${folder.name} and all of its contents?`))
+                                                value.deleteFolder(folder.id)
+                                        }}
+                                        className={styles.deleteFolder}
+                                    >
+                                        Delete
+                                    </button>
                                 </> 
                                 )
                             })

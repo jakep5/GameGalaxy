@@ -7,14 +7,6 @@ export default class FolderGame extends Component {
 
     static contextType = GamesContext;
 
-    deleteGame = (e) => {
-        e.preventDefault();
-
-        let deleteId = e.target.getAttribute('name');
-
-        this.context.deleteGame(deleteId);
-    };
-
     handleCheckCompleted = (e) => {
         e.preventDefault();
 
@@ -31,7 +23,16 @@ export default class FolderGame extends Component {
                 {value => (
                     <div className={styles.folderGameHolder}>
                         <h1 className={styles.folderGameName}>{this.props.title}</h1>
-                        <button className={styles.deleteGameButton} name={this.props.gameId} onClick={(e) => this.deleteGame(e)}>Delete</button>
+                        <button 
+                            className={styles.deleteGameButton} 
+                            name={this.props.gameId} 
+                            onClick={() => {
+                                if (window.confirm(`Are you sure you wish to delete ${this.props.title}?`)) 
+                                    value.deleteGame(this.props.gameId)
+                            }}
+                        >
+                            Delete
+                        </button>
                         <button className={styles.completeButton} name={this.props.gameId} onClick={(e) => this.handleCheckCompleted(e)}>Mark as Completed</button>
 
                         {this.props.completed
