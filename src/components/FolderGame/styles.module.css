@@ -3,7 +3,7 @@ div.folderGameHolder {
   height: 300px;
   width: 250px;
   margin-left: calc(50% - 125px);
-  border: 2px solid rgb(0, 89, 255);
+  border: 2px solid rgb(0, 140, 255);
   margin-bottom: 20px;
   overflow: auto;
 }
@@ -12,8 +12,9 @@ button.deleteGameButton {
   display: block;
   padding: 5px 20px;
   background: transparent;
-  border: 4px solid rgb(0, 89, 255);
-  color: rgb(0, 89, 255);
+  border: 4px solid rgb(0, 140, 255);
+  color: rgb(0, 140, 255);
+  font-weight: bold;
   margin-left: calc(50% - 40px);
   font-family: 'Merriweather';
 }
@@ -21,16 +22,16 @@ button.deleteGameButton {
 button.deleteGameButton:hover {
   cursor: pointer;
   color: #ffffff !important;
-  background: rgb(0, 89, 255);
-  border-color: rgb(0, 89, 255);
+  background: rgb(0, 140, 255);
+  border-color: rgb(0, 140, 255);
   transition: all 0.4s ease 0s;
 }
 
 button.completeButton:hover {
   cursor: pointer;
   color: #ffffff !important;
-  background: rgb(0, 89, 255);
-  border-color: rgb(0, 89, 255);
+  background: rgb(0, 140, 255);
+  border-color: rgb(0, 140, 255);
   transition: all 0.4s ease 0s;
 }
 
@@ -38,9 +39,10 @@ button.completeButton {
   display: inline-block;
   background: transparent;
   padding: 4px 20px;
-  border: 4px solid rgb(0, 89, 255);
-  color: rgb(0, 89, 255);
+  border: 4px solid rgb(0, 140, 255);
+  color: rgb(0, 140, 255);
   font-family: 'Merriweather';
+  font-weight: bold;
 }
 
 h1.folderGameName {
@@ -48,5 +50,5 @@ h1.folderGameName {
   font-size: 25px;
   margin-left: 10px;
   margin-right: 10px;
-  color: rgb(0, 89, 255);
+  color: rgb(0, 140, 255);
 }

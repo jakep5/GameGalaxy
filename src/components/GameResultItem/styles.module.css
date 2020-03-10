@@ -21,15 +21,17 @@ p.noPlatform {
   font-size: 12px;
   font-family: 'Fira Sans';
   color: rgb(0, 140, 255);
+  font-weight: bold;
 }   
 
 p.platformName {
-  font-size: 12px;
+  font-size: 13px;
   display: block;
   margin-top: 0px;
   margin-bottom: 2px;
   font-family: 'Fira Sans';
   color: rgb(0, 140, 255);
+  font-weight: bold;
 }
 
 div.platformHolder {
@@ -37,7 +39,8 @@ div.platformHolder {
 }
 
 p.genreName {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: bold;
   margin-top: 0px;
   margin-bottom: 2px;
   margin-right: 3px;
@@ -47,19 +50,22 @@ p.genreName {
 
 p.noGenre {
   color: rgb(0, 140, 255);
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: bold;
   font-family: 'Fira Sans';
 }
 
 p.gameRating {
   display: block;
   font-family: 'Fira Sans';
+  font-weight: bold;
   color: rgb(0, 140, 255);
 }
 
 p.noRating {
   display: block;
   font-family: 'Fira Sans';
+  font-weight: bold;
   color: rgb(0, 140, 255);
 }
 

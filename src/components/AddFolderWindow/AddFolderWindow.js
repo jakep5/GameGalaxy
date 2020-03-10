@@ -10,7 +10,8 @@ export default class AddFolderWindow extends Component {
     constructor(props) {
         super(props) 
         this.state = {
-            folderName: ''
+            folderName: '',
+            addNewFolder: false,
         }
     }
 
@@ -39,6 +40,12 @@ export default class AddFolderWindow extends Component {
         };
 
         this.context.addNewFolder(newFolder);
+    }
+
+    toggleAddFolder = () => {
+        this.setState({
+            addNewFolder: !this.state.addNewFolder
+        })
     }
 
     handleInputChange = (e) => {
@@ -76,6 +83,26 @@ export default class AddFolderWindow extends Component {
                         : value.folders.map(folder => {
                             return <p onClick={(e) => this.addToFolder(e)} id={folder.id} name={folder.name} className={styles.folderTitle}>{folder.name}</p>
                         })
+                        }
+
+                        <button onClick={this.toggleAddFolder} className={styles.toggleAddFolder}>Add folder</button>
+
+                        {this.state.addNewFolder &&
+                            <div className={styles.addFolderHolder}>
+                                <form onSubmit={(e) => this.handleFolderSubmit(e)} className={styles.addFolderSecondary} id='addFolderSecondary'>
+                                    <label htmlFor='addFolderSecondary' className={styles.addFolderSecondaryLabel}>Folder name:</label>
+                                    <input
+                                        value={this.state.folderName}
+                                        onChange={(e) => this.handleInputChange(e)}
+                                        name="folderName"
+                                        className={styles.addFolderSecondaryInput}
+                                        type="text"
+                                        required
+                                    >
+                                    </input>
+                                    <button type='submit' htmlFor='addFolderSecondary' className={styles.submitFolderButton}>Submit</button>
+                                </form> 
+                            </div>
                         }
                     </div>
                 )}

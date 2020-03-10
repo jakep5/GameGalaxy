@@ -1,6 +1,7 @@
 p.gamesSaved, p.gamesSavedCount, p.gamesCompleted, p.gamesCompletedCount {
-  color: rgb(0, 89, 255);
+  color: rgb(0, 140, 255);
   font-family: 'Merriweather';
+  font-weight: bold;
 }
 
 p.gamesSavedCount {

@@ -11,14 +11,14 @@ div.itemsHolder {
 h1.itemsLabel {
   font-family: 'Merriweather';
   text-decoration: underline;
-  color: rgb(0, 89, 255);
-  font-weight: lighter;
+  color: rgb(0, 140, 255);
+  font-weight: bolder;
 }
 
 h2.mustOpenFolder {
   font-family: 'Merriweather';
-  font-weight: lighter;
-  color: rgb(0, 89, 255);
+  font-weight: bold;
+  color: rgb(0, 140, 255);
 }
 
 @media only screen and (min-width: 1080px) { 

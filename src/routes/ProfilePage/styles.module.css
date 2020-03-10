@@ -57,11 +57,12 @@ section.profileSection {
 }
 
 h1.userName {
-  color: rgb(0, 89, 255);
-  font-weight: lighter;
+  color: rgb(0, 140, 255);
+  font-weight: 400;
   margin-left: 15px;
+  font-family: 'Merriweather';
   font-size: 40px;
-  border-bottom: 2px solid rgb(0, 89, 255);
+  border-bottom: 2px solid rgb(0, 140, 255);
   display: block;
   height: 60px;
 }
