@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Game Galaxy
 
-## Available Scripts
+### Link to live app
 
-In the project directory, you can run:
+https://game-galaxy.now.sh/
 
-### `npm start`
+### Link to API docs/server code
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://github.com/jakep5/game-galaxy-api
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Technologies used
 
-### `npm test`
+React.js, JavaScript, CSS3, HTML, Node.js, Express, PostgreSQL, JWT Authentication, jQuery
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Summary
 
-### `npm run build`
+This application allows users to search a third-party API (IGDB) for various games and add them to their profile. Users have the ability to create various folders for their games, and check games off when completed. A user's profile page displays the number of games that have been completed, as well as total number of games added. Users are able to create their own accounts, and create an infinite amount of folders for their games. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Motivation
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+This application was built with the motivation to allow users to keep track of video games they desire to play in the future. This application hopes to allow individuals that play video games the ability to more-easily search through a large database of games and save them in one place. Additionally, users will be able to see games they have completed in the past in hopes of sparking memories and creating a "trophy list" of sorts.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### App Screenshots:
 
-### `npm run eject`
+Landing Page:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![alt text](https://user-images.githubusercontent.com/53489910/76363030-1a506f80-631a-11ea-88da-1ae35c4f11b1.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Sign In Form:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![alt text](https://user-images.githubusercontent.com/53489910/76363032-1b819c80-631a-11ea-9a6d-400f83651ebc.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Search Form:
 
-## Learn More
+![alt text](https://user-images.githubusercontent.com/53489910/76363042-21777d80-631a-11ea-9008-6b8fe403f4ea.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Search Results:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![alt text](https://user-images.githubusercontent.com/53489910/76363045-23414100-631a-11ea-8b07-9e255139a556.png)
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Profile Page:
+![alt text](https://user-images.githubusercontent.com/53489910/76363048-24726e00-631a-11ea-8727-727ddc5d2941.png)
