@@ -30,8 +30,8 @@ legend.signUpLegend {
 
 input.signUpUsername {
   -webkit-appearance: none;
-  border: 1px solid rgb(199, 198, 198);
-  background-color: rgb(199, 198, 198);
+  border: 2px solid rgb(199, 198, 198);
+  background-color: white;
   display: inline-block;
   height: 30px;
   width: 50%;
@@ -53,8 +53,8 @@ input.signUpUsername:focus {
 
 input.signUpPassword {
   -webkit-appearance: none;
-  border: 1px solid rgb(199, 198, 198);
-  background-color: rgb(199, 198, 198);
+  border: 2px solid rgb(199, 198, 198);
+  background-color: white;
   display: inline-block;
   height: 30px;
   width: 50%;
@@ -97,7 +97,7 @@ button.signUpButton {
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: grey;
+  background: rgb(0, 140, 255);
   padding: 20px 40px;
   border-radius: 50px;
   display: inline-block;
@@ -118,6 +118,7 @@ button.signUpButton:hover {
 h1.passwordRequirementsHeader {
   font-size: 20px;
   font-family: 'Merriweather';
+  color: rgb(0, 140, 255);
   position: relative;
   bottom: 20px;
 }
@@ -125,6 +126,7 @@ h1.passwordRequirementsHeader {
 ul.passwordRequirements {
   list-style-type: none;
   font-family: 'Merriweather';
+  color: rgb(0, 140, 255);
   margin-right: 40px;
   position: relative;
   bottom: 30px;

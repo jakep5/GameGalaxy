@@ -70,8 +70,8 @@ label.userNameLabel {
 
 input.signInUsername {
   -webkit-appearance: none;
-  border: 1px solid rgb(199, 198, 198);
-  background-color: rgb(199, 198, 198);
+  border: 2px solid rgb(199, 198, 198);
+  background-color: white;
   display: inline-block;
   height: 30px;
   width: 50%;
@@ -93,8 +93,8 @@ input.signInUsername:focus {
 
 input.signInPassword {
   -webkit-appearance: none;
-  border: 1px solid rgb(199, 198, 198);
-  background-color: rgb(199, 198, 198);
+  border: 2px solid rgb(199, 198, 198);
+  background-color: white;
   display: inline-block;
   height: 30px;
   width: 50%;
@@ -131,7 +131,7 @@ button.signInButton {
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: grey;
+  background: rgb(0, 140, 255);
   padding: 20px 40px;
   border-radius: 50px;
   display: inline-block;
@@ -150,12 +150,14 @@ button.signInButton:hover {
 
 h1.demoAccountLabel {
   font-family: 'Merriweather';
+  color: rgb(0, 140, 255);
 }
 
 ul.demoAccount {
   font-family: 'Merriweather';
   font-size: 10px;
   margin-right: 40px;
+  color: rgb(0, 140, 255);
 }
 
 @media only screen and (min-width: 350px) and (max-width: 450px) {

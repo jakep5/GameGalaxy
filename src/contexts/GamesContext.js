@@ -297,6 +297,12 @@ class GamesProvider extends Component {
         });
     };
 
+    clearSearchResults = () => {
+        this.setState({
+            games: []
+        })
+    }
+
     render() {
 
         const contextValue = {
@@ -342,7 +348,8 @@ class GamesProvider extends Component {
             successMessage: this.state.successMessage,
             noResults: this.state.noResults,
             toggleNoResults: this.toggleNoResuts,
-            deleteGame: this.deleteGame
+            deleteGame: this.deleteGame,
+            clearSearchResults: this.clearSearchResults
         }
 
         return (

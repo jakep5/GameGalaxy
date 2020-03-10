@@ -80,15 +80,11 @@ export default class LandingPage extends Component {
                     </section>
 
                     <section className={styles.landingSection}>
-                        <h2 className={styles.landingText}>Navigate through a large database of games with the ability to view review scores, average completion time, price, and other various stats</h2>
+                        <h2 className={styles.landingText}>Navigate through a large database of games with the ability to view review scores, platform information, and genre</h2>
                     </section>
 
                     <section className={styles.landingSection}>
-                        <h2 className={styles.landingText}>Save games to your account, with the ability to create folders for your game</h2>
-                    </section>
-
-                    <section className={styles.landingSection}>
-                        <h2 className={styles.landingText}>View your friends' accounts via account search function, see what games your friends are playing</h2>
+                        <h2 className={styles.landingText}>Save games to your account, with the ability to create folders for your games</h2>
                     </section>
 
                     <section className={styles.landingSection}>

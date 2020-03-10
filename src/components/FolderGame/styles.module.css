@@ -45,6 +45,7 @@ button.completeButton {
 
 h1.folderGameName {
   font-family: 'Merriweather';
+  font-size: 25px;
   margin-left: 10px;
   margin-right: 10px;
   color: rgb(0, 89, 255);

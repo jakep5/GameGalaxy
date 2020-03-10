@@ -26,6 +26,8 @@ export default class SearchForm extends Component {
     handleSearchSubmit = (e) => {
         e.preventDefault();
 
+        this.context.clearSearchResults();
+
         let gameTitle = this.state.gameName;
 
         const url = config.IGDB_BASE_URL;
@@ -51,7 +53,14 @@ export default class SearchForm extends Component {
             }
         })
             .then(response => response.json())
-            .then(responseJson => this.context.setNewGames(responseJson))
+            .then(responseJson => {
+                if (responseJson.length === 0) {
+                    alert('No results found');
+                    this.context.toggleLoading();
+                } else {
+                    this.context.setNewGames(responseJson);
+                }
+            })
             .catch(error => {
                 console.log(error)
         });

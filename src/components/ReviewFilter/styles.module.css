@@ -4,14 +4,16 @@ input.reviewInput {
   position: relative;
   left: 40px;
   width: 200px;
+  display: inline-block;
 }
 
 label.reviewInputLabel {
   font-family: 'Fira Sans';
+  size: 14px;
   color: rgb(0, 140, 255);
   position: relative;
   display: inline-block;
-  left: 5vw;
+  left: 13vw;
  
 }
 
@@ -28,7 +30,7 @@ div.reviewHolder {
   transition: max-height 0.2s ease-out;
   position: relative;
   top: 20%;
-  right: 6%;
+  right: 50px;
   display: inline-block;
   text-align: center;
 }
@@ -41,6 +43,12 @@ h1.reviewFilterTitle {
   position: relative;
 }
 
+@media only screen and (min-width: 760px) {
+  label.reviewInputLabel {
+    left: 5vw;
+  }
+}
+
 @media only screen and (min-width: 1080px) {
   h1.reviewFilterTitle {
     font-size: 25px;
@@ -49,14 +57,18 @@ h1.reviewFilterTitle {
     right: 0px;
   }
 
+  div.reviewHolder {
+    right: 75px;
+  }
+
   label.reviewInputLabel {
     bottom: 0px;
-    left: 0px;
+    left: -30px;
   }
 
   input.reviewInput {
     margin-top: -100px;
     bottom: 0px;
-    left: 0px;
+    left: -30px;
   }
 }
