@@ -12,10 +12,12 @@ h1.itemsLabel {
   font-family: 'Merriweather';
   text-decoration: underline;
   color: rgb(0, 89, 255);
+  font-weight: lighter;
 }
 
 h2.mustOpenFolder {
   font-family: 'Merriweather';
+  font-weight: lighter;
   color: rgb(0, 89, 255);
 }
 

@@ -7,6 +7,13 @@ export default class AddFolderWindow extends Component {
 
     static contextType = GamesContext;
 
+    constructor(props) {
+        super(props) 
+        this.state = {
+            folderName: ''
+        }
+    }
+
     addToFolder = (e) => {
         let folderId = e.target.getAttribute('id');
 
@@ -19,6 +26,27 @@ export default class AddFolderWindow extends Component {
         this.context.closeWindow();
     }
 
+    handleFolderSubmit = (e) => {
+        e.preventDefault();
+
+        let folderName = this.state.folderName;
+
+        let userId = sessionStorage.getItem('user-id');
+
+        let newFolder = {
+            name: folderName,
+            user_id: userId
+        };
+
+        this.context.addNewFolder(newFolder);
+    }
+
+    handleInputChange = (e) => {
+        this.setState({
+            folderName: e.target.value,
+        })
+    }
+
     render() {
         return (
             <GamesConsumer>
@@ -27,8 +55,24 @@ export default class AddFolderWindow extends Component {
                         <button onClick={(e) => this.closeWindow(e)} className={styles.closeWindow}>X</button>
                         <h1 className={styles.addFolderHeader}>Choose folder to add this game to:</h1>
 
-                        {value.folders == []
-                        ? <p className={styles.noFolders}>No folders added</p>
+                        {value.folders.length == 0
+                        ?   <>
+                                <p className={styles.noFolders}>No folders added. Add one?</p>
+                                <form onSubmit={(e) => this.handleFolderSubmit(e)} className={styles.addFolderSecondary} id='addFolderSecondary'>
+                                    <label htmlFor='addFolderSecondary' className={styles.addFolderSecondaryLabel}>Folder name:</label>
+                                    <input
+                                        value={this.state.folderName}
+                                        onChange={(e) => this.handleInputChange(e)}
+                                        name="folderName"
+                                        className={styles.addFolderSecondaryInput}
+                                        type="text"
+                                        required
+                                    >
+                                    </input>
+                                    <button type='submit' htmlFor='addFolderSecondary' className={styles.submitFolderButton}>Submit</button>
+                                </form> 
+                            </>
+                            
                         : value.folders.map(folder => {
                             return <p onClick={(e) => this.addToFolder(e)} id={folder.id} name={folder.name} className={styles.folderTitle}>{folder.name}</p>
                         })
