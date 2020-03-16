@@ -14,12 +14,6 @@ export default class ReviewFilter extends Component {
 
     static contextType = GamesContext;
 
-    togglePanel = () => {
-        this.setState({
-            open: !this.state.open
-        })
-    };
-
     render() {
         return (
             <GamesConsumer>

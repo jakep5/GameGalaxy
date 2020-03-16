@@ -7,10 +7,6 @@ import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
 
 export default class SignInNav extends Component {
 
-    componentDidMount = () => {
-        
-    };
-
     static contextType = GamesContext;
 
     handleIconClick = (e) => {
@@ -32,7 +28,6 @@ export default class SignInNav extends Component {
                 <Link to='/signUp' style={{ textDecoration: 'none' }}>
                     <a className='hvr-float-shadow' href='signUp'>Sign Up</a>
                 </Link>
-
                                 
             </nav>
         );

@@ -9,9 +9,11 @@ export default class SearchPageNav extends Component {
 
     static contextType = GamesContext;
 
+    /*Toggle display of 'thanks for signing up' message in sign in form*/
     handleSignInClick = () => {
         this.context.toggleJustSignedUp();
     };
+    /**/
 
     render() {
         return (

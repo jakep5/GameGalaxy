@@ -9,9 +9,11 @@ export default class ProfileNav extends Component {
 
     static contextType = GamesContext;
 
+    /*Toggle display of 'thanks for signing up' message on sign in form*/
     handleSignInClick = () => {
         this.context.toggleJustSignedUp();
     };
+    /**/
 
     render() {
         return (

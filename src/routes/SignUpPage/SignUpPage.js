@@ -15,9 +15,7 @@ export default class SignUpPage extends Component {
     static contextType = GamesContext;
 
     handleRegistrationSuccess = () => {
-
        window.location = '/signIn';
-
     };
 
     componentDidMount() {

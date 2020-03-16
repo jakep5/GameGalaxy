@@ -9,9 +9,11 @@ export default class SignUpNav extends Component {
 
     static contextType = GamesContext;
 
+    /*Toggle display of 'thanks for signing up' message for sign in form*/
     handleSignInClick = () => {
         this.context.toggleJustSignedUp();
     };
+    /**/
 
     handleIconClick = (e) => {
         window.location = '/';

@@ -42,11 +42,14 @@ export default class AddFolderWindow extends Component {
         this.context.addNewFolder(newFolder);
     }
 
+
+    /*Toggle display of popup window to add game to folder */
     toggleAddFolder = () => {
         this.setState({
             addNewFolder: !this.state.addNewFolder
         })
     }
+    /**/
 
     handleInputChange = (e) => {
         this.setState({

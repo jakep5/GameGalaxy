@@ -45,12 +45,14 @@ class GamesProvider extends Component {
         }
     };
 
+    /*Set current user to display in profile*/
     setCurrentUser = (user_name) => {
         this.setState({
             currentUser: user_name,
         });
         sessionStorage.setItem('current-user', user_name);
     };
+    /**/
 
     setNewGames = (games) => {
         console.log(games);
@@ -75,7 +77,6 @@ class GamesProvider extends Component {
     };
     
     addNewFolder = (newFolder) => {
-
         const userId = parseInt(newFolder.user_id);
 
         const folderToAdd = {
@@ -180,7 +181,6 @@ class GamesProvider extends Component {
     };
 
     handlePlatformChange = (e) => {
-
         let platform = e.target.value;
 
         console.log(platform);
@@ -200,7 +200,6 @@ class GamesProvider extends Component {
         };
 
         console.log(this.state.platformFilters);
-
     };
 
     handleGenreChange = (e) => {
@@ -280,23 +279,22 @@ class GamesProvider extends Component {
         });
     };
 
+    /*Toggle display of 'thanks for signing up' message on sign in form*/
     toggleJustSignedUp = () => {
         this.setState({
             justSignedUp: false,
         });
     };
+    /**/
 
-    toggleNoResuts = () => {
-        this.setState({
-            noResults: !this.state.noResults
-        });
-    };
 
+    /*Clear search results when search form is submitted*/
     clearSearchResults = () => {
         this.setState({
             games: []
         });
     };
+    /**/
 
     render() {
         const contextValue = {

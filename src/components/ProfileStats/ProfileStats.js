@@ -14,7 +14,6 @@ export default class ProfileStats extends Component {
             if (game.completed === true) {
                 count += 1;
             }
-
             return count;
         })
 

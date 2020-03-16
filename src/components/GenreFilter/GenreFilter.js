@@ -11,12 +11,6 @@ export default class GenreFilter extends Component {
         }
     };
 
-    togglePanel = (e) => {
-        this.setState({
-            open: !this.state.open
-        })
-    };
-
     render() {
 
         return (

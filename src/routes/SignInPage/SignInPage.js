@@ -8,18 +8,19 @@ export default class SignInPage extends Component {
 
     static contextType = GamesContext;
 
-    handleLogInSuccess = (user_name) => {;
+    /*Navigate to search page upon successful login*/
+    handleLogInSuccess = () => {;
         const { history } = this.props;
 
         history.push('/search')
     };
+    /**/
 
     componentDidMount() {
         document.title = 'Sign In Page';
     };
 
     render() {
-
         return (
             <>
                 <SignInNav />

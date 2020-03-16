@@ -65,15 +65,17 @@ export default class SignUpForm extends Component {
         this.setState({
             password: e.target.value,
         })
-    }
+    };
 
     render() {
 
+        /*CSS for loading bar*/
         const override = css`
             display: block;
             margin-top: 5%;
             border-color: grey;
         `;
+        /**/
 
         const { error } = this.state;
 

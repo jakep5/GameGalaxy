@@ -45,11 +45,13 @@ export default class LandingPage extends Component {
         document.documentElement.scrollTop = 0; 
     };
 
+    /*Toggle display of up arrow upon hovering over footer*/
     setIsShown = (boolean) => {
         this.setState({
             showArrow: boolean
         })
     };
+    /**/
 
     render() {
 
