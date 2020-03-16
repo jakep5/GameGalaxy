@@ -65,7 +65,7 @@ export default class AddFolderWindow extends Component {
                         <button onClick={(e) => this.closeWindow(e)} className={styles.closeWindow}>X</button>
                         <h1 className={styles.addFolderHeader}>Choose folder to add this game to:</h1>
 
-                        {value.folders.length == 0
+                        {value.folders.length === 0
                         ?   <>
                                 <p className={styles.noFolders}>No folders added. Add one?</p>
                                 <form onSubmit={(e) => this.handleFolderSubmit(e)} className={styles.addFolderSecondary} id='addFolderSecondary'>
