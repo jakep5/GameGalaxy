@@ -54,7 +54,6 @@ class GamesProvider extends Component {
     /**/
 
     setNewGames = (games) => {
-        console.log(games);
         this.setState({
             games
         });
@@ -182,8 +181,6 @@ class GamesProvider extends Component {
     handlePlatformChange = (e) => {
         let platform = e.target.value;
 
-        console.log(platform);
-
         let platformId;
 
         for(let i = 0; i < platformStore.length; i++) {
@@ -197,8 +194,6 @@ class GamesProvider extends Component {
         } else {
             this.state.platformFilters.splice(this.state.platformFilters.indexOf(platformId), 1)
         };
-
-        console.log(this.state.platformFilters);
     };
 
     handleGenreChange = (e) => {
@@ -218,8 +213,6 @@ class GamesProvider extends Component {
         } else {
             this.state.genreFilters.splice(this.state.genreFilters.indexOf(genreId), 1);
         };
-
-        console.log(this.state.genreFilters);
 
     };
 
