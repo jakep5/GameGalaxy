@@ -77,8 +77,9 @@ div.profileStats {
   }
 }
 
-@media only screen and (min-width: 1969px) {
+@media only screen and (min-width: 2019px) {
   div.profileStats {
-    left: -45vw !important;
+    position: relative;
+    left: -45% !important;
   }
 }

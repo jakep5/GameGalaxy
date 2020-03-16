@@ -130,4 +130,11 @@ button.submitFolderButton {
     bottom: 428px;
   }
 }
+
+@media only screen and (min-width: 1219px) and (max-width: 1268px) {
+  div.folderHolder {
+    position: relative;
+    bottom: 428px;
+  }
+}
   

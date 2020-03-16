@@ -46,6 +46,13 @@ h2.mustOpenFolder {
   }
 }
 
+@media only screen and (min-width: 1220px) and (max-width: 1268px) {
+  div.itemsHolder {
+    position: relative;
+    bottom: 1325px !important; 
+  }
+}
+
 @media only screen and (min-width: 1219px) and (max-width: 1769px) {
   div.itemsHolder {
     position: relative;
@@ -53,10 +60,24 @@ h2.mustOpenFolder {
   }
 }
 
+@media only screen and (min-width: 1769px) and (max-width: 1818px) {
+  div.itemsHolder {
+    position: relative;
+    bottom: 1150px !important;
+  }
+}
+
 @media only screen and (min-width: 1769px) and (max-width: 1969px) {
   div.itemsHolder {
     position: relative;
     bottom: 210px;
+  }
+}
+
+@media only screen and (min-width: 1969px) and (max-width: 2018px) {
+  div.itemsHolder {
+    position: relative;
+    bottom: 210px !important;
   }
 }
 
