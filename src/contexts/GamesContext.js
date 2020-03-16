@@ -256,15 +256,6 @@ class GamesProvider extends Component {
         });
     };
 
-    setUserImage = (url) => {
-        let userId = sessionStorage.getItem('user-id');
-        this.setState({
-            profileUrl: url,
-        });
-
-        UsersApiServiceObject.setProfileImage(url, userId);
-    };
-
     handleSignOut = (e) => {
         sessionStorage.removeItem('user-id');
 
