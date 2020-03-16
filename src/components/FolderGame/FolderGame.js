@@ -7,6 +7,7 @@ export default class FolderGame extends Component {
 
     static contextType = GamesContext;
 
+    /*Toggle completed status of respective game*/
     handleCheckCompleted = (e) => {
         e.preventDefault();
 
@@ -16,6 +17,7 @@ export default class FolderGame extends Component {
 
         this.context.toggleCompleted(toggleId, userId);
     };
+    /**/
     
     render() {
         return (

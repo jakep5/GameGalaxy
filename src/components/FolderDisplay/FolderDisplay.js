@@ -22,12 +22,13 @@ export default class FolderDisplay extends Component {
         this.context.setFolders(userId);
     };
     
-    //Toggle display of input field for adding a folder
+    /*Toggle display of input field for adding a new folder */
     handleAddFolderClick = () => {
         this.setState({
             addFolder: !this.state.addFolder,
         });
     };
+    /**/ 
 
     handleFolderSubmit = (e) => {
         e.preventDefault();

@@ -6,7 +6,6 @@ import config from '../config';
 import {withRouter} from 'react-router-dom';
 import { platformStore } from '../store';
 import { genreStore } from '../store';
-import UsersApiServiceObject from '../services/users-api-service';
 
 export const GamesContext = React.createContext();
 
