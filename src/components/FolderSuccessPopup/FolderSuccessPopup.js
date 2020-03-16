@@ -12,8 +12,7 @@ export default class FolderSuccessPopup extends Component {
                         <p className={styles.successMessage}>Success! Added to {value.focusedFolder}</p>
                     </div>
                 )}
-            </GamesConsumer>
-            
+            </GamesConsumer>           
         );
     };
 };

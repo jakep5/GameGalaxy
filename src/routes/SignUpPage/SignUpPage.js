@@ -10,7 +10,7 @@ export default class SignUpPage extends Component {
         history: {
             push: () => {}
         }
-    }
+    };
 
     static contextType = GamesContext;
 
@@ -21,7 +21,7 @@ export default class SignUpPage extends Component {
     };
 
     componentDidMount() {
-        document.title = "Sign Up Page"
+        document.title = 'Sign Up Page';
     };
 
     render() {
@@ -29,9 +29,9 @@ export default class SignUpPage extends Component {
             <>
                 <SignUpNav />
 
-                <main className={styles.main} role="main">
+                <main className={styles.main} role='main'>
 
-                    <section className={styles.signUpWrapper} role="banner">
+                    <section className={styles.signUpWrapper} role='banner'>
                         <SignUpForm onRegistrationSuccess={this.handleRegistrationSuccess}/>
                     </section>
 

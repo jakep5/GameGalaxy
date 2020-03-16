@@ -18,7 +18,7 @@ export default class ProfilePage extends Component {
     static contextType = GamesContext;
 
     componentDidMount = () => {
-        document.title = "Profile Page";
+        document.title = 'Profile Page';
 
         let userId = sessionStorage.getItem('user-id');
 
@@ -38,10 +38,9 @@ export default class ProfilePage extends Component {
                     <>
                         <ProfileNav />
 
-                        <main className={styles.main} role="main">
-
-                            <section className={styles.profileSection} role="banner">
-                                <div role="presentation" className={styles.profileMain}>
+                        <main className={styles.main} role='main'>
+                            <section className={styles.profileSection} role='banner'>
+                                <div role='presentation' className={styles.profileMain}>
                                     <h1 className={styles.userName}>{value.currentUser}</h1>
                                 </div>
 
@@ -52,7 +51,6 @@ export default class ProfilePage extends Component {
                                 <FolderGamesDisplay />
 
                             </section>
-
                         </main>
                     </>
                 )}

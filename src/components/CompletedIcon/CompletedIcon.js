@@ -14,7 +14,7 @@ export default class CompletedIcon extends Component {
             <GamesConsumer>
                 {value => (
                     <div className={styles.toggleIconHolder}>
-                        <FontAwesomeIcon icon={faCheck} size="2x"/>
+                        <FontAwesomeIcon icon={faCheck} size='2x'/>
                     </div>
                 )}
             </GamesConsumer>          

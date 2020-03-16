@@ -21,13 +21,13 @@ export default class SignUpNav extends Component {
         return (
             <nav className={styles.nav}>
 
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to='/' style={{ textDecoration: 'none' }}>
                     <a className='hvr-float-shadow' href='#'>Return to Homepage</a>
                 </Link> 
 
                 <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo} onClick={(e) => this.handleIconClick(e)}/>
 
-                <Link to="/signIn" style={{ textDecoration: 'none' }}>
+                <Link to='/signIn' style={{ textDecoration: 'none' }}>
                     <a className='hvr-float-shadow' href='#signIn' onClick={() => this.handleSignInClick()}>Sign In</a>
                 </Link>
 

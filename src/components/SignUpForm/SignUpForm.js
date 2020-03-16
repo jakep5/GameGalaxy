@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 import GamesContext from '../../contexts/GamesContext';
 import BeatLoader from 'react-spinners/BeatLoader';
 import AuthApiServiceObject from '../../services/auth-api-service';
-import { css} from '@emotion/core';
+import { css } from '@emotion/core';
 
 export default class SignUpForm extends Component {
 
@@ -80,8 +80,8 @@ export default class SignUpForm extends Component {
         let isLoading = this.state.isLoading
 
         return (
-            <div role="presentation" className={styles.signUpHolder}>
-                <form onSubmit={e => this.handleSignUpAuth(e)}className={styles.signUpForm} id="signUpForm" name="signUpForm">
+            <div role='presentation' className={styles.signUpHolder}>
+                <form onSubmit={e => this.handleSignUpAuth(e)}className={styles.signUpForm} id='signUpForm' name='signUpForm'>
 
                     <legend className={styles.signUpLegend}>Sign Up</legend>
 
@@ -89,29 +89,29 @@ export default class SignUpForm extends Component {
                     {error && <p className={styles.error}>{error}</p>}
                     </div>
 
-                    <label for="user_name" className={styles.usernameLabel}>Username:</label>
+                    <label for='user_name' className={styles.usernameLabel}>Username:</label>
                     <input 
                         value={this.state.username}
                         onChange={(e) => this.handleUsernameChange(e)}
-                        type="text" 
-                        placeholder="username" 
-                        name="user_name" 
+                        type='text' 
+                        placeholder='username' 
+                        name='user_name' 
                         className={styles.signUpUsername} 
-                        id="signUpUsername" 
+                        id='signUpUsername' 
                         autoComplete='off'
                     />
 
                     <br/>
 
-                    <label for="password" className={styles.passwordLabel}>Password:</label>
+                    <label for='password' className={styles.passwordLabel}>Password:</label>
                     <input
                         value={this.state.password}
                         onChange={(e) => this.handlePasswordChange(e)} 
-                        type="password" 
-                        placeholder="password" 
-                        name="password" 
+                        type='password' 
+                        placeholder='password' 
+                        name='password' 
                         className={styles.signUpPassword} 
-                        id="signUpPassword" 
+                        id='signUpPassword' 
                     />
 
                     <br />
@@ -119,15 +119,15 @@ export default class SignUpForm extends Component {
                     <div className={styles.loadingHolder}>
                         <BeatLoader
                             css={override}
-                            sizeUnit={"px"}
+                            sizeUnit={'px'}
                             size={15}
-                            color={"#808080"}
+                            color={'#808080'}
                             loading={isLoading}
                         />
 
                     </div>
 
-                    <button type="submit" for="signUpForm" className={styles.signUpButton}>Sign Up</button>
+                    <button type='submit' for='signUpForm' className={styles.signUpButton}>Sign Up</button>
 
                     <div className={styles.passwordRequirementsHolder}>
                         <h1 className={styles.passwordRequirementsHeader}>Password requirements:</h1>

@@ -23,7 +23,7 @@ export default class HomepageNav extends Component {
 
                 <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo}/>
 
-                <Link to="/signUp" style={{ textDecoration: 'none' }}>
+                <Link to='/signUp' style={{ textDecoration: 'none' }}>
                     <a className='hvr-float-shadow' href='signUp'>Sign Up</a>
                 </Link>  
             </nav>

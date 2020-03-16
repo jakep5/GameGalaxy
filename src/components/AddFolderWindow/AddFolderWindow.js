@@ -70,9 +70,9 @@ export default class AddFolderWindow extends Component {
                                     <input
                                         value={this.state.folderName}
                                         onChange={(e) => this.handleInputChange(e)}
-                                        name="folderName"
+                                        name='folderName'
                                         className={styles.addFolderSecondaryInput}
-                                        type="text"
+                                        type='text'
                                         required
                                     >
                                     </input>
@@ -94,9 +94,9 @@ export default class AddFolderWindow extends Component {
                                     <input
                                         value={this.state.folderName}
                                         onChange={(e) => this.handleInputChange(e)}
-                                        name="folderName"
+                                        name='folderName'
                                         className={styles.addFolderSecondaryInput}
-                                        type="text"
+                                        type='text'
                                         required
                                     >
                                     </input>

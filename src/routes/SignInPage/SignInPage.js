@@ -15,7 +15,7 @@ export default class SignInPage extends Component {
     };
 
     componentDidMount() {
-        document.title = "Sign In Page"
+        document.title = 'Sign In Page';
     };
 
     render() {
@@ -24,9 +24,9 @@ export default class SignInPage extends Component {
             <>
                 <SignInNav />
 
-                <main className={styles.main} role="main">
+                <main className={styles.main} role='main'>
 
-                    <section className={styles.signInWrapper} role="banner">
+                    <section className={styles.signInWrapper} role='banner'>
                         <SignInForm onLogInSuccess={this.handleLogInSuccess}/>
                     </section>
 

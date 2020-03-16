@@ -30,8 +30,6 @@ export default class SearchForm extends Component {
 
         let gameTitle = this.state.gameName;
 
-        const url = config.IGDB_BASE_URL;
-
         let platformFilters = this.context.platformFilters;
 
         let genreFilters = this.context.genreFilters;
@@ -39,6 +37,8 @@ export default class SearchForm extends Component {
         let reviewFilter = this.context.reviewFilter;
 
         this.context.toggleLoading();
+
+        const url = config.IGDB_BASE_URL;
 
         fetch(url, {
             method: 'GET',
@@ -79,16 +79,16 @@ export default class SearchForm extends Component {
                     <button onClick={(e) => this.scrollToResults(e)} className={styles.scrollToResults}>Scroll to results</button>
                 </div>
 
-                <form onSubmit={(e) => this.handleSearchSubmit(e)} className={styles.searchForm} id="searchForm">
+                <form onSubmit={(e) => this.handleSearchSubmit(e)} className={styles.searchForm} id='searchForm'>
 
-                    <label className={styles.nameInputLabel} htmlFor="nameInput" id="nameInputLabel">Name of game:</label>
+                    <label className={styles.nameInputLabel} htmlFor='nameInput' id='nameInputLabel'>Name of game:</label>
                     <input 
                         className={styles.nameInput} 
                         value={this.state.gameName}
                         onChange={(e) => this.handleGameNameChange(e)}
-                        type="text" 
-                        id="nameInput" 
-                        name="nameInput" 
+                        type='text' 
+                        id='nameInput' 
+                        name='nameInput' 
                         autoComplete='off' 
                         required
                     />

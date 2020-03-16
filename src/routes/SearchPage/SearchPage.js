@@ -36,6 +36,7 @@ export default class SearchPage extends Component {
         document.title = 'Search Page';
 
         const token = sessionStorage.getItem('game-galaxy-token-key');
+
         let payload = this.parseJwt(token);
 
         let tempUserId = payload.user_id;
@@ -74,7 +75,7 @@ export default class SearchPage extends Component {
                     <>
                         <SearchPageNav />
                         
-                        <main className={styles.main} role="main">
+                        <main className={styles.main} role='main'>
 
                             <section className={styles.searchPage}>
                                 <SearchForm />
@@ -86,14 +87,14 @@ export default class SearchPage extends Component {
                                 <div className={styles.loadingHolder}>
                                     <BeatLoader
                                         css={override}
-                                        sizeUnit={"px"}
+                                        sizeUnit={'px'}
                                         size={15}
-                                        color={"#808080"}
+                                        color={'#808080'}
                                         loading={value.isLoading}
                                     />
                                 </div>
 
-                                <div id='searchResultHolder' id="searchResultHolder" className={styles.searchResultHolder}>
+                                <div id='searchResultHolder' className={styles.searchResultHolder}>
                                     <GameResults />
                                 </div>
 
@@ -101,7 +102,7 @@ export default class SearchPage extends Component {
                             </section>
 
                         </main>
-                        <footer className={styles.footer} role="navigation" >
+                        <footer className={styles.footer} role='navigation'>
                             <p  role='button'
                                 onMouseEnter={() => this.setIsShown(true)}
                                 onMouseLeave={() => this.setIsShown(false)}

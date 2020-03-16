@@ -18,7 +18,7 @@ export default class ProfileNav extends Component {
             <GamesConsumer>
                 {value => (
                     <nav className={styles.nav}>
-                        <Link to="/" style={{ textDecoration: 'none' }}>
+                        <Link to='/' style={{ textDecoration: 'none' }}>
                             <a className='hvr-float-shadow'href='#' onClick={(e) => value.handleSignOut(e)}>Sign Out</a>
                         </Link>
 
@@ -26,7 +26,7 @@ export default class ProfileNav extends Component {
                             <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo}/>
                         </Link>
 
-                        <Link to="/search" style={{ textDecoration: 'none' }}>
+                        <Link to='/search' style={{ textDecoration: 'none' }}>
                             <a className='hvr-float-shadow' href='#search'>Back to Search</a>
                         </Link>  
                     </nav>

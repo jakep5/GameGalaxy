@@ -49,16 +49,14 @@ class GamesProvider extends Component {
         this.setState({
             currentUser: user_name,
         });
-
         sessionStorage.setItem('current-user', user_name);
-    }
+    };
 
     setNewGames = (games) => {
         console.log(games);
         this.setState({
             games
         });
-
         this.toggleLoading();
     };
 
@@ -76,7 +74,6 @@ class GamesProvider extends Component {
             });
     };
     
-
     addNewFolder = (newFolder) => {
 
         const userId = parseInt(newFolder.user_id);
@@ -109,7 +106,7 @@ class GamesProvider extends Component {
                     ? res.json().then(e => Promise.reject(e))
                     : this.setFolders(sessionStorage.getItem('user-id'));
             })      
-    }
+    };
 
     setUserGames = (games) => {
         this.setState({
@@ -141,7 +138,7 @@ class GamesProvider extends Component {
         });
 
         GameApiServiceObject.postGame(this.state.gameTitleToAdd, this.state.gameIdToAdd, folderId);
-    }
+    };
 
     closeWindow = () => {
         this.setState({
@@ -247,15 +244,14 @@ class GamesProvider extends Component {
         this.setState({
             userGames: this.state.userGames.map(game => 
                 game.id === intToggleId ? {...game, completed: !game.completed} : game)
-        })
+        });
 
         this.state.userGames.map((game) => {
             if (game.id === intToggleId) {
 
                 game.completed = !game.completed;
 
-                GameApiServiceObject.toggleCompleted(intToggleId, game.completed)
-    /*                 .then(this.getUserGames(sessionStorage.getItem('user-id'))) */
+                GameApiServiceObject.toggleCompleted(intToggleId, game.completed);
             };
 
             return null;
@@ -284,7 +280,6 @@ class GamesProvider extends Component {
         });
     };
 
-
     toggleJustSignedUp = () => {
         this.setState({
             justSignedUp: false,
@@ -300,11 +295,10 @@ class GamesProvider extends Component {
     clearSearchResults = () => {
         this.setState({
             games: []
-        })
-    }
+        });
+    };
 
     render() {
-
         const contextValue = {
             handleSignUp: this.handleSignUp,
             justSignedUp: this.state.justSignedUp,
@@ -360,7 +354,7 @@ class GamesProvider extends Component {
             </GamesContext.Provider>
         )
     }
-}
+};
 
 export default withRouter(GamesProvider);
 

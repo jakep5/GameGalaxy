@@ -95,18 +95,18 @@ export default class FolderDisplay extends Component {
 
                         <div className={styles.addFolderHolder}>
                             {this.state.addFolder && 
-                            <form onSubmit={(e) => this.handleFolderSubmit(e)} id="addFolder">
-                                <label className={styles.addFolderLabel} htmlFor="folderName">Folder name:</label>
+                            <form onSubmit={(e) => this.handleFolderSubmit(e)} id='addFolder'>
+                                <label className={styles.addFolderLabel} htmlFor='folderName'>Folder name:</label>
                                 <input 
                                     value={this.state.folderName} 
                                     onChange={(e) => this.handleInputChange(e)} 
-                                    name="folderName" 
+                                    name='folderName' 
                                     className={styles.newFolderInput} 
-                                    id="folderName" 
-                                    type="text" 
+                                    id='folderName' 
+                                    type='text' 
                                     required>
                                 </input>
-                                <button type="submit" className={styles.submitFolderButton} htmlFor="addFolder">Submit</button>
+                                <button type='submit' className={styles.submitFolderButton} htmlFor='addFolder'>Submit</button>
                             </form>}
                             
                         </div>
