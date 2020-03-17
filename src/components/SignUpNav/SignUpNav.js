@@ -24,7 +24,7 @@ export default class SignUpNav extends Component {
             <nav className={styles.nav}>
 
                 <Link to='/' style={{ textDecoration: 'none' }}>
-                    <a className='hvr-float-shadow' href='#'>Return to Homepage</a>
+                    <a className='hvr-float-shadow' href='home'>Return to Homepage</a>
                 </Link> 
 
                 <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo} onClick={(e) => this.handleIconClick(e)}/>
