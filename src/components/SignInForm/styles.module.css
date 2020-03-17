@@ -36,6 +36,7 @@ li.demoPassword {
   color: rgb(0, 140, 255);
   font-family: 'Pacifico';
   font-size: 25px;
+  display: inline-block;
 }
 
 .signInButton {

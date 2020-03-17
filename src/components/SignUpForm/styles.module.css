@@ -26,6 +26,7 @@ legend.signUpLegend {
   font-size: 23px;
   font-family: 'Pacifico';
   color: rgb(0, 140, 255);
+  display: inline-block;
 }
 
 input.signUpUsername {
