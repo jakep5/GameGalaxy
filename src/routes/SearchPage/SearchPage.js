@@ -96,7 +96,7 @@ export default class SearchPage extends Component {
                                     />
                                 </div>
 
-                                <div id='searchResultHolder' className={styles.searchResultHolder}>
+                                <div id='searchResultHolder' className={styles.searchResultHolder} role='contentinfo'>
                                     <GameResults />
                                 </div>
 

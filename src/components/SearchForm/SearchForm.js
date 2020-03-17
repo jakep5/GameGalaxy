@@ -75,7 +75,7 @@ export default class SearchForm extends Component {
     render() {
         return (
             <>
-                <div className={styles.scrollToResultsHolder}>
+                <div className={styles.scrollToResultsHolder} role='button'>
                     <button onClick={(e) => this.scrollToResults(e)} className={styles.scrollToResults}>Scroll to results</button>
                 </div>
 
@@ -99,7 +99,7 @@ export default class SearchForm extends Component {
                         <div className={styles.searchButtonVertical}></div>
                     </button> 
 
-                    <div className={styles.filtersHolder}>
+                    <div className={styles.filtersHolder} role='menu'>
                         <PlatformFilter />
 
                         <GenreFilter />

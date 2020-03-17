@@ -56,7 +56,7 @@ export default class GameResultItem extends Component {
         };
 
         return (
-            <div className={styles.resultItem}>
+            <div className={styles.resultItem} role='contentinfo'>
                 <h1 className={styles.gameTitle}>{this.props.name}</h1>
                 {genreArray === 'No genre information'
                 ?   <p className={styles.noGenre}>No genre information</p>

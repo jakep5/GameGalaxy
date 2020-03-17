@@ -23,7 +23,7 @@ export default class FolderGame extends Component {
         return (
             <GamesConsumer>
                 {value => (
-                    <div className={styles.folderGameHolder}>
+                    <div className={styles.folderGameHolder} role='contentinfo'>
                         <h1 className={styles.folderGameName}>{this.props.title}</h1>
                         <button 
                             className={styles.deleteGameButton} 

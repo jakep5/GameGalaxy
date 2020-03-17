@@ -12,7 +12,7 @@ export default class FolderGamesDisplay extends Component {
         return (
             <GamesConsumer>
                 {value => (
-                        <div className={styles.itemsHolder}>
+                        <div className={styles.itemsHolder} role='contentinfo'>
                             
                             
                             {value.openFolder == null

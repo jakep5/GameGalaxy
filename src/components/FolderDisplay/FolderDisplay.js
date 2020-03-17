@@ -69,7 +69,7 @@ export default class FolderDisplay extends Component {
         return (
             <GamesConsumer>
                 {value => (
-                    <div className={styles.folderHolder}>
+                    <div className={styles.folderHolder} role='contentinfo'>
                         <p className={styles.folderLabel}>My folders (click title to open)</p>
                         <ul className={styles.folderList}>
                             {value.folders == null
@@ -95,7 +95,7 @@ export default class FolderDisplay extends Component {
                         </ul>
                         <button onClick={this.handleAddFolderClick} className={styles.addFolderButton}>Add folder</button>
 
-                        <div className={styles.addFolderHolder}>
+                        <div className={styles.addFolderHolder} role='form'>
                             {this.state.addFolder && 
                             <form onSubmit={(e) => this.handleFolderSubmit(e)} id='addFolder'>
                                 <label className={styles.addFolderLabel} htmlFor='folderName'>Folder name:</label>

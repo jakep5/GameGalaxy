@@ -13,7 +13,7 @@ export default class CompletedIcon extends Component {
         return (
             <GamesConsumer>
                 {value => (
-                    <div className={styles.toggleIconHolder}>
+                    <div className={styles.toggleIconHolder} role='contentinfo'>
                         <FontAwesomeIcon icon={faCheck} size='2x'/>
                     </div>
                 )}

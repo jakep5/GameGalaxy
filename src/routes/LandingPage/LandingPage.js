@@ -63,7 +63,7 @@ export default class LandingPage extends Component {
                 
                 <main className={styles.main} role='main'>
                     <header className={styles.header} id='header' role='banner'>
-                        <div className={styles.title}>
+                        <div className={styles.title} role='contentinfo'>
                             <h1 id='title' className={styles.mainTitle}>Game Galaxy</h1>
                         </div>
 

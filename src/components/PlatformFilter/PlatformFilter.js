@@ -19,7 +19,7 @@ export default class PlatformFilter extends Component {
                     <>
                         <h1 className={styles.platformFilterLabel}>Platform Filters</h1>
                         
-                        <div className={styles.platformHolder}>
+                        <div className={styles.platformHolder} role='menu'>
 
                             <ul className={styles.platformFiltersList}>
                                 <li className={styles.platformFilterItem}>

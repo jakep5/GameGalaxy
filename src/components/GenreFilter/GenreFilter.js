@@ -18,7 +18,7 @@ export default class GenreFilter extends Component {
                 {value => (
                     <>
                         <h1 className={styles.genreFilterTitle}>Genre Filters</h1>
-                            <div className={styles.genreHolder}>
+                            <div className={styles.genreHolder} role='menu'>
 
                                 <ul className={styles.genreFilterList}>
                                     <li className={styles.genreFilterItem}>

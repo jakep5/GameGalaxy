@@ -27,7 +27,7 @@ export default class ProfileStats extends Component {
         return (
             <GamesConsumer>
                 {value => (
-                    <div className={styles.profileStats}>
+                    <div className={styles.profileStats} role='contentinfo'>
                         <p className={styles.gamesSaved}>
                             Games saved: 
                             <p className={styles.gamesSavedCount}>{value.userGames.length}</p>

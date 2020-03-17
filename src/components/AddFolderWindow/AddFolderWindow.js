@@ -61,7 +61,7 @@ export default class AddFolderWindow extends Component {
         return (
             <GamesConsumer>
                 {value => (
-                    <div className={styles.addFolderWindow}>
+                    <div className={styles.addFolderWindow} role='menu'>
                         <button onClick={(e) => this.closeWindow(e)} className={styles.closeWindow}>X</button>
                         <h1 className={styles.addFolderHeader}>Choose folder to add this game to:</h1>
 
