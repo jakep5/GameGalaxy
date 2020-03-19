@@ -10,7 +10,6 @@ div.itemsHolder {
 
 h1.itemsLabel {
   font-family: 'Merriweather';
-  text-decoration: underline;
   color: rgb(0, 140, 255);
   font-weight: bolder;
 }
@@ -23,10 +22,11 @@ h2.mustOpenFolder {
 
 @media only screen and (min-width: 1080px) { 
   div.itemsHolder {
-    height: 800px;
+    min-height: 800px;
+    height: auto;
     float: right;
     width: 750px;
-    margin-right: 0px;
+    margin-right: 20px;
     margin-top: 150px;
     box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
   }

@@ -6,7 +6,8 @@ div.resultItem {
   margin-bottom: 45px;
   border: none;
   overflow: auto;
-  box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75)
+  box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+  background-color: white;
 }
 
 h1.gameTitle {
@@ -99,7 +100,6 @@ button.addToFolder:hover {
 
 @media only screen and (min-width: 1080px) {
   div.resultItem {
-    margin-right: 7%;
-    margin-left: 7%;
+    margin-left: 26%;
   }
 }

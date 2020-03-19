@@ -59,10 +59,13 @@ section.searchResults {
   z-index: 5;
   overflow-y: auto;
   height: 100%;
-  background-color: rgb(240, 240, 240);
+  background-image: url('http://getwallpapers.com/wallpaper/full/b/6/a/1198344-free-download-4k-galaxy-wallpaper-2560x1440-phone.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 1;
 
 }
-
 
 p.returnToTop:hover {
   cursor: pointer;
@@ -76,7 +79,7 @@ p.returnToTop {
 .searchResultHeader {
   font-family: 'Merriweather';
   margin-right: 10px;
-  color: rgb(0, 140, 255);
+  color: white;
 }
 
 .arrowUp {
@@ -85,15 +88,60 @@ p.returnToTop {
   left: 20px;
 }
 
+div.filtersHolder {
+  margin-top: 200px;
+  margin-left: 20px;
+  height: 950px;
+  text-align: center;
+}
+
 @media only screen and (min-width: 1080px) {
+
   section.searchPage {
-    min-height: 0;
-    height: 500px;
+    display: block;
+    min-height: 450px;
+    height: auto;
+    overflow-y: auto;
   }
 
   div.searchResultHolder {
     display: grid;
-    grid-template-columns: 40% 40% 40%;
+    grid-template-columns: 33% 33% 33%;
   }
 
+  section.searchResults {
+    height: auto;
+    min-height: 52vh;
+  }
+
+  button.showFilters {
+    position: relative;
+    top: 210px;
+    left: 7px;
+    background-color: transparent;
+    border: 0px;
+    color: rgb(0, 140, 255);
+    font-size: 30px;
+    font-family: 'Merriweather';
+  }
+
+  button.showFilters:hover {
+    cursor: pointer;
+  }
+
+  button.showFilters:focus {
+    outline: none;
+  }
+
+  button.showFilters:active {
+    outline: none;
+  }
+  
+  div.filtersHolder {
+    height: 500px;
+    width: calc(100% - 2px);
+    margin-top: 220px;
+    display: flex;
+    justify-content: space-between;
+  }
 }

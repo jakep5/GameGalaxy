@@ -40,16 +40,6 @@ input[type=text] {
   width: 50%;
 } */
 
-
-
-div.filtersHolder {
-  display: block;
-  height: 900px;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
 .searchButton {
   --offset: 10px;
   --border-size: 2px;
@@ -152,15 +142,6 @@ button.scrollToResults {
 }
 
 @media only screen and (min-width: 1080px) {
-
-  div.filtersHolder {
-    display: block;
-    height: 500px;
-    width: calc(100% - 2px);
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-  }
 
   form.searchForm {
     top: 150px;

@@ -16,12 +16,12 @@ input.newFolderInput {
 
 p.folderLabel {
   font-family: 'Merriweather';
-  text-decoration: underline;
   font-weight: bolder;
 }
 
 ul.folderList {
   list-style: none;
+  padding-left: 0;
 }
 
 li.folderItem {

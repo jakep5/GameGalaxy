@@ -9,14 +9,22 @@ import SearchPageNav from '../../components/SearchPageNav/SearchPageNav';
 import { css } from '@emotion/core';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PlatformFilter from '../../components/PlatformFilter/PlatformFilter';
+import GenreFilter from '../../components/GenreFilter/GenreFilter';
+import ReviewFilter from '../../components/ReviewFilter/ReviewFilter';
+
 
 export default class SearchPage extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            showArrow: false
+            showArrow: false,
+            width: 0,
+            height: 0,
+            showFilters: false,
         }
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     };
 
     static contextType = GamesContext;
@@ -33,6 +41,14 @@ export default class SearchPage extends Component {
 
     componentDidMount = () => {
 
+        this.updateWindowDimensions();
+
+        this.setState({
+            showFilters: false
+        })
+
+        window.addEventListener('resize', this.updateWindowDimensions);
+
         document.title = 'Search Page';
 
         const token = sessionStorage.getItem('game-galaxy-token-key');
@@ -48,6 +64,17 @@ export default class SearchPage extends Component {
         this.context.setFolders(userId);
     };
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({
+            width: window.innerWidth,
+            height: window.innerHeight
+        })
+    }
+
     returnToTop = (e) => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0; 
@@ -59,6 +86,15 @@ export default class SearchPage extends Component {
             showArrow: boolean
         })
     };
+    /**/
+
+
+    /*Toggle display of filters (only for larger screens)*/
+    toggleShowFilters = () => {
+        this.setState({
+            showFilters: !this.state.showFilters
+        })
+    }   
     /**/
 
     render() {
@@ -81,6 +117,47 @@ export default class SearchPage extends Component {
 
                             <section className={styles.searchPage}>
                                 <SearchForm />
+
+                                {this.state.width >= 1080 && 
+                                    <>
+                                        {this.state.showFilters === false
+                                        ?
+                                            <button 
+                                                className={styles.showFilters}
+                                                onClick={this.toggleShowFilters}
+                                            >
+                                                Show filters &#9660;
+                                            </button>
+                                        :   <button 
+                                                className={styles.showFilters}
+                                                onClick={this.toggleShowFilters}
+                                            >
+                                                Hide filters &#9650;
+                                            </button>
+                                        }
+
+                                        {this.state.showFilters && 
+                                            <div className={styles.filtersHolder} role='menu'>
+                                                <PlatformFilter />
+
+                                                <GenreFilter />
+
+                                                <ReviewFilter />
+                                            </div>
+                                        }
+                                    </>
+                                }
+
+                                {this.state.width < 1080 &&
+                                    <div className={styles.filtersHolder} role='menu'>
+                                        <PlatformFilter />
+
+                                        <GenreFilter />
+
+                                        <ReviewFilter />
+                                    </div>
+                                }
+                                
                             </section>
 
                             <section id='searchResults' className={styles.searchResults}>

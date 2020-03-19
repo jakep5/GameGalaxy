@@ -61,7 +61,6 @@ h1.userName {
   margin-left: 15px;
   font-family: 'Merriweather';
   font-size: 40px;
-  border-bottom: 2px solid rgb(0, 140, 255);
   display: block;
   height: 60px;
 }
@@ -96,6 +95,7 @@ div.profileMain {
     margin-top: 120px;
     box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
     border: 1px solid black;
+    margin-left: 20px;
   }
 
   section.profileSection {

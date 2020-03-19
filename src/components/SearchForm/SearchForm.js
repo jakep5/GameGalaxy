@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
 import { GamesContext } from '../../contexts/GamesContext';
-import PlatformFilter from '../PlatformFilter/PlatformFilter';
-import GenreFilter from '../GenreFilter/GenreFilter';
-import ReviewFilter from '../ReviewFilter/ReviewFilter';
 import config from '../../config';
 
 export default class SearchForm extends Component {
@@ -15,7 +12,7 @@ export default class SearchForm extends Component {
         this.state = {
             games: null,
             isLoading: false,
-            gameName: ''
+            gameName: '',
         }
     }
 
@@ -99,13 +96,7 @@ export default class SearchForm extends Component {
                         <div className={styles.searchButtonVertical}></div>
                     </button> 
 
-                    <div className={styles.filtersHolder} role='menu'>
-                        <PlatformFilter />
-
-                        <GenreFilter />
-
-                        <ReviewFilter />
-                    </div>
+                    
           
                 </form>
             </>
