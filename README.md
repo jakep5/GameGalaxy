@@ -39,4 +39,5 @@ Search Results:
 ![alt text](https://user-images.githubusercontent.com/53489910/76363045-23414100-631a-11ea-8b07-9e255139a556.png)
 
 Profile Page:
+
 ![alt text](https://user-images.githubusercontent.com/53489910/76363048-24726e00-631a-11ea-8727-727ddc5d2941.png)
