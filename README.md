@@ -4,7 +4,7 @@
 
 https://game-galaxy.now.sh/
 
-### Link to API docs/server code
+### Link to API documentation/server code
 
 https://github.com/jakep5/game-galaxy-api
 
