@@ -4,13 +4,13 @@
 
 https://game-galaxy.now.sh/
 
-### Link to API docs/server code
+### Link to API documentation/server code
 
 https://github.com/jakep5/game-galaxy-api
 
 ### Technologies used
 
-React.js, JavaScript, CSS3, HTML, Node.js, Express, PostgreSQL, JWT Authentication, jQuery
+React.js, JavaScript, CSS3, HTML, Node.js, Express.js, PostgreSQL, JWT Authentication, jQuery
 
 ### Summary
 
@@ -39,4 +39,5 @@ Search Results:
 ![alt text](https://user-images.githubusercontent.com/53489910/76363045-23414100-631a-11ea-8b07-9e255139a556.png)
 
 Profile Page:
+
 ![alt text](https://user-images.githubusercontent.com/53489910/76363048-24726e00-631a-11ea-8727-727ddc5d2941.png)
