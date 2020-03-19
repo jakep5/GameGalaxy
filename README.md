@@ -10,7 +10,7 @@ https://github.com/jakep5/game-galaxy-api
 
 ### Technologies used
 
-React.js, JavaScript, CSS3, HTML, Node.js, Express, PostgreSQL, JWT Authentication, jQuery
+React.js, JavaScript, CSS3, HTML, Node.js, Express.js, PostgreSQL, JWT Authentication, jQuery
 
 ### Summary
 
