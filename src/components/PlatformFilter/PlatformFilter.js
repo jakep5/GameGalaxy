@@ -17,10 +17,10 @@ export default class PlatformFilter extends Component {
             <GamesConsumer>
                 {value => (
                     <>
-                        <h1 className={styles.platformFilterLabel}>Platform Filters</h1>
-                        
                         <div className={styles.platformHolder} role='menu'>
 
+                            <h1 className={styles.platformFilterLabel}>Platform Filters</h1>
+                            
                             <ul className={styles.platformFiltersList}>
                                 <li className={styles.platformFilterItem}>
                                     <label htmlFor='xboxOneSelect'>Xbox One</label>

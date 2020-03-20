@@ -25,8 +25,8 @@ h1.genreFilterTitle {
   font-family: 'Merriweather';
   font-size: 25px;
   position: relative;
-  right: 10px;
   color: rgb(0, 140, 255);
+  left: 15px;
 }
 
 ul.genreFilterList {
@@ -56,16 +56,7 @@ input.inputCheck:hover {
     display: inline-block;
     transition: max-height 0.2s ease-out;
     position: relative;
-    top: 14%;
-    right: 11%;
+    left: 23%;
   }
 
-  h1.genreFilterTitle {
-    font-size: 25px;
-    position: relative;
-    right: 0;
-    left: 5%;
-    width: 325px;
-    display: inline-block;
-  }
 }

@@ -38,7 +38,11 @@ export default class FolderGame extends Component {
                         <button className={styles.completeButton} name={this.props.gameId} onClick={(e) => this.handleCheckCompleted(e)}>Mark as Completed</button>
 
                         {this.props.completed
-                        ? <CompletedIcon className={styles.completedIcon}/>
+                        
+                        ?   <>
+                                <CompletedIcon className={styles.completedIcon}/>
+                                <p className={styles.completedConfirmation}>Completed!</p>
+                            </>
                         : null}
                     </div>
                 )}

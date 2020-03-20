@@ -14,7 +14,7 @@ export default class CompletedIcon extends Component {
             <GamesConsumer>
                 {value => (
                     <div className={styles.toggleIconHolder} role='contentinfo'>
-                        <FontAwesomeIcon icon={faCheck} size='2x'/>
+                        <FontAwesomeIcon icon={faCheck} size='2x' color='#008CFF'/>
                     </div>
                 )}
             </GamesConsumer>          

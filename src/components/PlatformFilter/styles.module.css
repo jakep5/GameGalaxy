@@ -11,7 +11,7 @@ h1.platformFilterLabel {
   color: rgb(0, 140, 255);
   font-size: 25px;
   position: relative;
-  right: 10px;
+  left: 15px;
 }
 
 div.platformHolder {
@@ -34,19 +34,8 @@ li.platformFilterItem {
     height: 350px;
     width: 400px;
     justify-content: space-between;
-    display: flex;
-    position: relative;
-    top: 12%;
-    left: -12%;
-  }
-
-  h1.platformFilterLabel {
-    font-size: 25px;
-    position: relative;
-    left: 5%;
-    font-family: 'Merriweather';
-    color: rgb(0, 140, 255);
     display: inline-block;
-    width: 375px;
+    position: relative;
+    right: 0px;
   }
 }

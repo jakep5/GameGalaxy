@@ -1,3 +1,5 @@
 div.toggleIconHolder {
   margin-left: 15px;
+  position: relative;
+  top: 10px;
 }

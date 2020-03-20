@@ -17,9 +17,11 @@ export default class GenreFilter extends Component {
             <GamesConsumer>
                 {value => (
                     <>
-                        <h1 className={styles.genreFilterTitle}>Genre Filters</h1>
+                        
                             <div className={styles.genreHolder} role='menu'>
 
+                                <h1 className={styles.genreFilterTitle}>Genre Filters</h1>
+                                
                                 <ul className={styles.genreFilterList}>
                                     <li className={styles.genreFilterItem}>
                                         <label htmlFor='adventureSelect'>Adventure</label>

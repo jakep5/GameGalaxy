@@ -52,3 +52,13 @@ h1.folderGameName {
   margin-right: 10px;
   color: rgb(0, 140, 255);
 }
+
+p.completedConfirmation {
+  font-family: 'Merriweather';
+  font-size: 14px;
+  color: rgb(0, 140, 255);
+  margin-top: 0px;
+  position: relative;
+  left: 2px;
+  top: 5px;
+}

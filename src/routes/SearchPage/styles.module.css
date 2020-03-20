@@ -90,9 +90,7 @@ p.returnToTop {
 
 div.filtersHolder {
   margin-top: 200px;
-  margin-left: 20px;
   height: 950px;
-  text-align: center;
 }
 
 @media only screen and (min-width: 1080px) {
@@ -141,7 +139,7 @@ div.filtersHolder {
     height: 500px;
     width: calc(100% - 2px);
     margin-top: 220px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
   }
 }

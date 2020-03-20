@@ -2,8 +2,6 @@ input.reviewInput {
   font-family: 'Fira Sans';
   color: rgb(0, 140, 255);
   position: relative;
-  left: -25px;
-  top: 85px;
   width: 200px;
   display: inline-block;
 }
@@ -14,9 +12,7 @@ label.reviewInputLabel {
   color: rgb(0, 140, 255);
   position: relative;
   display: inline-block;
-  top: 80px;
-  right: 20px;
- 
+
 }
 
 button.setButton {
@@ -32,43 +28,29 @@ div.reviewHolder {
   transition: max-height 0.2s ease-out;
   position: relative;
   top: 20%;
-  right: 50px;
+  right: 15px;
   display: inline-block;
-  text-align: center;
+  text-align: center
 }
 
 h1.reviewFilterTitle {
   font-family: 'Merriweather';
   color: rgb(0, 140, 255);
   font-size: 25px;
-  left: 175px;
+  left: 0px;
   position: relative;
   display: inline-block;
 }
 
 @media only screen and (min-width: 1080px) {
-  h1.reviewFilterTitle {
-    font-size: 25px;
-    position: relative;
-    left: 0%;
-    margin-left: 250px;
-    width: 250px;
-  }
-
   div.reviewHolder {
-    right: 75px;
-    bottom: 200px;
+    display: inline-block;
+    right: 0px;
+    top: 0%;
+    left: 25%;
   }
 
   label.reviewInputLabel {
-    bottom: 0px;
-    left: -30px;
-  }
-
-  input.reviewInput {
-    margin-top: -100px;
-    bottom: 0px;
-    left: -35px;
-    right: 0px;
+    display: block;
   }
 }
