@@ -33,7 +33,7 @@ div.profileStats {
     display: inline-block;
     position: relative;
     bottom: 170px;
-    left: 20%;
+    left: 75px;
   }
 
   p.gamesCompleted {
@@ -58,7 +58,6 @@ div.profileStats {
 /* iPad Styles */ 
 @media only screen and (min-width: 768px) {
   div.profileStats {
-    left: 95px;
     width: 100%;
   }
 }

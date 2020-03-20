@@ -71,4 +71,14 @@ let TestObject = {
     folders: testFoldersArray,
 }
 
-module.exports = TestObject;
+let noFoldersTestObject = {
+    userGames: testUserGames,
+    games: testGameResults,
+    isLoading: true,
+    folders: [],
+}
+
+module.exports = {
+    TestObject,
+    noFoldersTestObject
+};

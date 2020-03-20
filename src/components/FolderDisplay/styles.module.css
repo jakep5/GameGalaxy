@@ -1,12 +1,13 @@
 div.folderHolder {
   display: inline-block;
   margin-top: 20px;
-  overflow-y: auto; 
+  height: auto; 
   color: rgb(0, 140, 255);
   border: none;
   background-color: white;
   position: relative;
-  bottom: 250px;
+  width: 400px;
+  bottom: 100px !important; 
 }
 
 input.newFolderInput {
@@ -131,10 +132,15 @@ button.submitFolderButton {
   }
 }
 
-@media only screen and (min-width: 1219px) and (max-width: 1268px) {
+@media only screen and (min-width: 1219px) and (max-width: 1289px) {
   div.folderHolder {
     position: relative;
     bottom: 428px;
   }
 }
-  
+
+@media only screen and (min-width: 1280px) and (max-width: 1089px) {
+  div.folderHolder {
+    bottom: 0px
+  }
+}

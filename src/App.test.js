@@ -251,18 +251,5 @@ describe('Basic smoke tests', () => {
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    it('Add folder window renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(
-            <BrowserRouter>
-                <GamesProvider value={TestObject}>
-                    <AddFolderWindow />
-                </GamesProvider>
-            </BrowserRouter>
-        , div);
-        ReactDOM.unmountComponentAtNode(div);
-    });
-
-
 })
 

@@ -1,26 +1,43 @@
 div.itemsHolder {
   border: 1px solid black;
-  height: 500px;
+  min-height: 200px;
+  height: auto;
   position: relative;
-  bottom: 130px;
+  width: 100%;
+  bottom: 0px;
   overflow-y: auto;
   background-color: white;
   border: none;
+  display: inline-block;
+  background-image: url('http://getwallpapers.com/wallpaper/full/b/6/a/1198344-free-download-4k-galaxy-wallpaper-2560x1440-phone.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 1;
 }
 
 h1.itemsLabel {
   font-family: 'Merriweather';
-  color: rgb(0, 140, 255);
+  color: white;
+  
   font-weight: bolder;
 }
 
 h2.mustOpenFolder {
   font-family: 'Merriweather';
   font-weight: bold;
-  color: rgb(0, 140, 255);
+  color: white;
 }
 
 @media only screen and (min-width: 1080px) { 
+  h1.itemsLabel {
+    color: rgb(0, 140, 255);
+  }
+
+  h1.mustOpenFolder {
+    color: rgb(0, 140, 255);
+  }
+
   div.itemsHolder {
     min-height: 800px;
     height: auto;
@@ -29,6 +46,7 @@ h2.mustOpenFolder {
     margin-right: 20px;
     margin-top: 150px;
     box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
+    background: white;
   }
 }
 
@@ -38,7 +56,13 @@ h2.mustOpenFolder {
   }
 }
 
-@media only screen and (min-width: 1080px) and (max-width: 1219px) {
+@media only screen and (min-width: 1080px) and (max-width: 1088px) {
+  div.itemsHolder {
+    bottom: 750px !important;
+  }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1218px) {
   div.itemsHolder {
     position: relative;
     bottom: 1180px;
@@ -46,10 +70,16 @@ h2.mustOpenFolder {
   }
 }
 
-@media only screen and (min-width: 1220px) and (max-width: 1268px) {
+@media only screen and (min-width: 1219px) and (max-width: 1268px) {
   div.itemsHolder {
     position: relative;
     bottom: 1325px !important; 
+  }
+}
+
+@media only screen and (min-width: 1269px) and (max-width: 1288px) {
+  div.itemsHolder {
+    bottom: 1330px !important;
   }
 }
 

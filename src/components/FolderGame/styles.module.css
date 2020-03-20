@@ -5,7 +5,8 @@ div.folderGameHolder {
   margin-left: calc(50% - 125px);
   margin-bottom: 20px;
   overflow: auto;
-  box-shadow: 1px 3px 8px 3px rgba(0,0,0,0.5);
+  background-color: white;
+  box-shadow: 1px 3px 10px 3px rgba(0,0,0,0.5);
 }
 
 button.deleteGameButton {

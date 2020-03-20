@@ -279,6 +279,14 @@ class GamesProvider extends Component {
     };
     /**/
 
+    /*Resets open folder when user navigates away from profile*/
+    removeOpenFolder = () => {
+        this.setState({
+            openFolder: null
+        })
+    }
+    /**/
+
     render() {
         const contextValue = {
             handleSignUp: this.handleSignUp,
@@ -324,7 +332,8 @@ class GamesProvider extends Component {
             noResults: this.state.noResults,
             toggleNoResults: this.toggleNoResuts,
             deleteGame: this.deleteGame,
-            clearSearchResults: this.clearSearchResults
+            clearSearchResults: this.clearSearchResults,
+            removeOpenFolder: this.removeOpenFolder
         }
 
         return (
