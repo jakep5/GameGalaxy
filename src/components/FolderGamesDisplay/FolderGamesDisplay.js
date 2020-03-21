@@ -8,6 +8,10 @@ export default class FolderGamesDisplay extends Component {
 
     static contextType = GamesContext;
 
+    componentWillUnmount = () => {
+        this.context.removeOpenFolder();
+    }
+
     render() {
         return (
             <GamesConsumer>

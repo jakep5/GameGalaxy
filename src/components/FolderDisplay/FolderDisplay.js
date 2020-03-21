@@ -93,7 +93,7 @@ export default class FolderDisplay extends Component {
                             })
                             }
                         </ul>
-                        <button onClick={this.handleAddFolderClick} className={styles.addFolderButton}>Add folder</button>
+                        <button onClick={this.handleAddFolderClick} className={styles.addFolderButton} id='addFolderButton'>Add folder</button>
 
                         <div className={styles.addFolderHolder} role='form'>
                             {this.state.addFolder && 

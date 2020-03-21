@@ -1,3 +1,5 @@
+import FolderApiServiceObject from './services/folder-api-service';
+
 let testUserGames = [
     {
         "id": 1,
@@ -76,6 +78,12 @@ let noFoldersTestObject = {
     games: testGameResults,
     isLoading: true,
     folders: [],
+    setFolders: function(userId = 2) {
+        FolderApiServiceObject.getFolders(userId)
+            .then(foldersRes => {
+                noFoldersTestObject.folders = foldersRes;
+            });
+    }
 }
 
 module.exports = {

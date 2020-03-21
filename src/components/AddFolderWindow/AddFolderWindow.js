@@ -88,7 +88,7 @@ export default class AddFolderWindow extends Component {
                         })
                         }
 
-                        <button onClick={this.toggleAddFolder} className={styles.toggleAddFolder}>Add folder</button>
+                        <button onClick={this.toggleAddFolder} className={styles.toggleAddFolder} id='addFolderButton'>Add folder</button>
 
                         {this.state.addNewFolder &&
                             <div className={styles.addFolderHolder}>

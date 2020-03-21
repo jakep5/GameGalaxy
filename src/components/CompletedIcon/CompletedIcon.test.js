@@ -28,6 +28,6 @@ describe('Basic smoke tests', () => {
     it ('Completed icon successfuly displays FontAwesome icon', () => {
         const render = shallow(<CompletedIcon />);
 
-        expect(render.contains(<FontAwesomeIcon icon={faCheck} size='2x' color='#008CFF'/>))
+        expect(render.find('#checkIcon').exists()).toBe(true);
     })
 })

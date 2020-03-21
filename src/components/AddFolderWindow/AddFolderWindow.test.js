@@ -37,8 +37,8 @@ describe('AddFolderWindow basic smoke tests', () => {
     });
 
     it('component successfully renders add folder toggle button', () => {
-        const render = shallow(<AddFolderWindow />)
+        const render = shallow(<AddFolderWindow />);
 
-        expect(render.contains(<button className={styles.toggleAddFolder}>Add folder</button>));
+        expect(render.find('#addFolderButton').exists()).toBeTruthy();
     });
 })
