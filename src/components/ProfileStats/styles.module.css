@@ -28,12 +28,15 @@ div.profileStats {
   height: 100px;
 }
 
+p.gamesSaved, p.gamesCompleted {
+  position: relative;
+}
+
 @media only screen and (min-width: 350px) and (max-width: 1080px) {
   div.profileStats {
     display: inline-block;
     position: relative;
     bottom: 170px;
-    left: 75px;
   }
 
   p.gamesCompleted {

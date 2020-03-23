@@ -9,12 +9,6 @@
   background-color: #aaa;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-}
-
 .nav {
   display: flex;
   position: fixed;
