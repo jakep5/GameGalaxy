@@ -80,7 +80,10 @@ export default class FolderDisplay extends Component {
 
         let element = document.getElementById('itemsHolder');
 
-        element.scrollIntoView();
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
 
         this.context.setOpenFolder(openId);
 
