@@ -11,7 +11,7 @@ section.header {
   background-image: url('http://getwallpapers.com/wallpaper/full/b/6/a/1198344-free-download-4k-galaxy-wallpaper-2560x1440-phone.jpg');
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: initial;
   opacity: 1;
 }
 
@@ -139,6 +139,12 @@ p.returnToTop {
   position: relative;
   left: 10px;
   font-weight: lighter;
+}
+
+@media only screena and (min-width: 1080px) {
+  section.header {
+    background-attachment: fixed;
+  }
 }
 
 @media only screen and (min-width: 400px) {
