@@ -67,7 +67,7 @@ export default class LandingPage extends Component {
                             <h1 id='title' className={styles.mainTitle}>Game Galaxy</h1>
                         </div>
 
-                    <Link to='/signIn'>
+                    <Link to='/signUp'>
                         <button onClick={(e) => this.handleCallToActionClick(e)} id='callToActionButton' className={styles.button}>
                             Create an Account
                             <div className={styles.buttonHorizontal}></div>
