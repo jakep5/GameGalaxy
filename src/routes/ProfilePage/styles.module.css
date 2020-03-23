@@ -52,11 +52,13 @@ section.profileSection {
 h1.userName {
   color: rgb(0, 140, 255);
   font-weight: 400;
-  margin-left: 15px;
+  margin-left: 0px;
   font-family: 'Merriweather';
   font-size: 40px;
   display: block;
   height: 60px;
+  width: 100%;
+  box-shadow: 0 5px 5px -2px rgba(0,0,0,.4);
 }
 
 div.itemsHolder {
@@ -90,6 +92,12 @@ div.profileMain {
     box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
     border: 1px solid black;
     margin-left: 20px;
+  }
+
+  h1.userName {
+    box-shadow: none;
+    width: 0;
+    margin-left: 30px;
   }
 
   section.profileSection {
