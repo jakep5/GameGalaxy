@@ -5,6 +5,7 @@ import FolderGamesDisplay from '../../components/FolderGamesDisplay/FolderGamesD
 import { GamesConsumer, GamesContext } from '../../contexts/GamesContext';
 import ProfileNav from '../../components/ProfileNav/ProfileNav'
 import ProfileStats from '../../components/ProfileStats/ProfileStats';
+import $ from 'jquery';
 
 export default class ProfilePage extends Component {
 
@@ -12,12 +13,15 @@ export default class ProfilePage extends Component {
         super(props);
         this.state = {
             addFolder: false,
+            width: 0,
+            height: 0
         }
     };
 
     static contextType = GamesContext;
 
     componentDidMount = () => {
+
         document.title = 'Profile Page';
 
         let userId = sessionStorage.getItem('user-id');

@@ -8,7 +8,7 @@ export default class FolderSuccessPopup extends Component {
         return (
             <GamesConsumer>
                 {value => (
-                    <div className={styles.successPopup} role='alert'>
+                    <div className={styles.successPopup} id='successPopup' role='alert'>
                         <p className={styles.successMessage}>Success! Added to {value.focusedFolder}</p>
                     </div>
                 )}

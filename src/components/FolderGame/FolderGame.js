@@ -28,7 +28,6 @@ export default class FolderGame extends Component {
                         <button 
                             className={styles.deleteGameButton} 
                             name={this.props.gameId} 
-                            id='deleteGameButton'
                             onClick={() => {
                                 if (window.confirm(`Are you sure you wish to delete ${this.props.title}?`)) 
                                     value.deleteGame(this.props.gameId)

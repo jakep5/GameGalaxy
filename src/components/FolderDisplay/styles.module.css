@@ -6,8 +6,8 @@ div.folderHolder {
   border: none;
   background-color: white;
   position: relative;
-  width: 400px;
-  bottom: 100px !important; 
+  width: 300px;
+  bottom: 200px !important; 
 }
 
 input.newFolderInput {
@@ -27,7 +27,7 @@ ul.folderList {
 
 li.folderItem {
   position: relative;
-  right: 120px;
+  right: 100px;
   top: 2px;
   margin-top: 20px;
   font-size: 20px;
@@ -100,9 +100,22 @@ button.submitFolderButton {
   padding: 7px !important;
 }
 
-@media only screen and (min-width: 350px) and (max-width: 1080px) {
+@media only screen and (min-width: 361px) and (max-width: 1080px) {
   div.folderHolder {
-    bottom: 150px;
+    bottom: 100px !important;
+    width: 400px;
+  }
+
+  li.folderItem {
+    right: 145px;
+  }
+
+  button.deleteFolder {
+    left: 120px;
+  }
+
+  button.addFolderButton {
+    left: 0px;
   }
 }
 

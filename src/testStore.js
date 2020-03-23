@@ -71,6 +71,7 @@ let TestObject = {
     games: testGameResults,
     isLoading: true,
     folders: testFoldersArray,
+    focusedFolder: null
 }
 
 let noFoldersTestObject = {

@@ -28,9 +28,11 @@ describe('FolderDisplay basic smoke tests', () => {
 
     it('successfully renders add folder button', () => {
         const render = shallow(
-            
+            <BrowserRouter>
+                <GamesProvider value={TestObject}>
                     <FolderDisplay />
-                
+                </GamesProvider>
+            </BrowserRouter>
         )
 
         expect(render.find('#addFolderButton')).toHaveLength(1);

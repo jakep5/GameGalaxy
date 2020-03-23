@@ -10,8 +10,12 @@ export default class FolderDisplay extends Component {
         this.state = {
             addFolder: false,
             userFolders: [],
-            folderName: ''
+            folderName: '',
+            width: 0,
+            height: 0
         };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
     };
     
     static contextType = GamesContext;
@@ -19,7 +23,23 @@ export default class FolderDisplay extends Component {
     componentDidMount = () => {
         let userId = sessionStorage.getItem('user-id');
 
+        this.updateWindowDimensions();
+
+        window.addEventListener('resize', this.updateWindowDimensions);
+
+
         this.context.setFolders(userId);
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    };
+
+    updateWindowDimensions() {
+        this.setState({
+            width: window.innerWidth,
+            height: window.innerHeight
+        })
     };
     
     /*Toggle display of input field for adding a new folder */
@@ -53,6 +73,19 @@ export default class FolderDisplay extends Component {
         this.context.setOpenFolder(openId);
     };
 
+    openFolderAndScroll = (e) => {
+        e.preventDefault();
+
+        let openId = e.target.getAttribute('name');
+
+        let element = document.getElementById('itemsHolder');
+
+        element.scrollIntoView();
+
+        this.context.setOpenFolder(openId);
+
+    }
+
     handleInputChange = (e) => {
         this.setState({
             folderName: e.target.value,
@@ -77,7 +110,11 @@ export default class FolderDisplay extends Component {
                             : value.folders.map(folder => {
                                 return (
                                 <>
-                                    <li name={folder.id} id={folder.name} onClick={(e) => this.openFolder(e)} className={styles.folderItem}>{folder.name}</li>
+                                    {this.state.width <= 1080 
+                                    ?<li name={folder.id} id={folder.name} onClick={(e) => this.openFolderAndScroll(e)} className={styles.folderItem}>{folder.name}</li>
+                                    :<li name={folder.id} id={folder.name} onClick={(e) => this.openFolder(e)} className={styles.folderItem}>{folder.name}</li>
+
+                                    }
                                     <button 
                                         name={folder.id} 
                                         onClick={() => { 

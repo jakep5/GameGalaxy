@@ -33,6 +33,18 @@ describe('FolderGame basic smoke tests', () => {
             </BrowserRouter>
         );
 
-        expect(shallowRender.find('#deleteGameButton')).to.have.lengthOf(1);
+        expect(shallowRender.find('.styles.deleteGameButton')).to.have.lengthOf(1);
+    })
+
+    it('folder game contains completed button', () => {
+        const shallowRender = shallow(
+            <BrowserRouter>
+                <GamesProvider value={TestObject}>
+                    <FolderGame />
+                </GamesProvider>
+            </BrowserRouter>
+        );
+
+        expect(shallowRender.find('.styles.completeButton')).to.have.lengthOf(1);
     })
 })
