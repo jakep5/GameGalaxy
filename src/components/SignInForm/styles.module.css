@@ -75,7 +75,7 @@ input.signInUsername {
   border: 2px solid rgb(199, 198, 198);
   background-color: white;
   display: inline-block;
-  height: 35px;
+  height: 37px;
   width: 50%;
   border-radius: 10px;
   transition: width 0.5s, box-shadow 0.5s;
