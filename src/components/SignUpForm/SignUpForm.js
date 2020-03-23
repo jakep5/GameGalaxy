@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './styles.module.css'
-import GamesContext from '../../contexts/GamesContext';
+import { GamesContext } from '../../contexts/GamesContext';
 import BeatLoader from 'react-spinners/BeatLoader';
 import AuthApiServiceObject from '../../services/auth-api-service';
 import { css } from '@emotion/core';

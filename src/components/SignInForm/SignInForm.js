@@ -124,7 +124,7 @@ export default class SignInForm extends Component {
                                 id='signInPassword' 
                                 placeholder='password'/>
                             <br />
-                            <button type='submit' for='signInForm' className={styles.signInButton}>Sign In</button>
+                            <button type='submit' htmlFor='signInForm' className={styles.signInButton}>Sign In</button>
                         </form>
 
                         <div className={styles.loadingHolder}>

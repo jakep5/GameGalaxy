@@ -36,7 +36,7 @@ li.demoPassword {
   font-family: 'Merriweather';
   color: rgb(0, 140, 255);
   font-family: 'Pacifico';
-  font-size: 25px;
+  font-size: 20px;
   display: inline-block;
 }
 
@@ -51,12 +51,13 @@ p.signUpLink {
 
 p.error {
   color: rgb(179, 5, 5);
+  font-size: 13px;
 }
 
 p.justSignedUp {
   color: red;
   font-family: 'Merriweather';
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .demoPassword, .demoUsername {
@@ -153,25 +154,49 @@ button.signInButton:hover {
 h1.demoAccountLabel {
   font-family: 'Merriweather';
   color: rgb(0, 140, 255);
+  margin-top: 30px;
 }
 
 ul.demoAccount {
   font-family: 'Merriweather';
   font-size: 10px;
   margin-right: 40px;
+  margin-top: 10px;
   color: rgb(0, 140, 255);
+}
+
+form.signInForm {
+  position: relative;
+  top: 0px;
+}
+
+@media only screen and (min-width: 350px) {
+  .signInLegend {
+    font-size: 25px;
+  }
+  form.signInForm {
+    top: 20px !important;
+  }
+  
+  p.justSignedUp {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 350px) and (max-width: 450px) {
   div.signInHolder {
     display: block;
     width: 350px;
-    height: 500px;
+    height: 530px;
     position: relative;
     top: 120px;
     margin-left: calc(50% - 175px);
     border-radius: 25px;
     background-color: white;
+  }
+  
+  p.error {
+    font-size: 15px;
   }
 }
 
@@ -179,7 +204,7 @@ ul.demoAccount {
   div.signInHolder {
     display: block;
     width: 450px;
-    height: 520px;
+    height: 565px;
     position: relative;
     top: 150px;
     margin-left: calc(50% - 225px);
