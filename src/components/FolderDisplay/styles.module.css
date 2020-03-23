@@ -7,7 +7,7 @@ div.folderHolder {
   background-color: white;
   position: relative;
   width: 300px;
-  bottom: 200px !important; 
+  bottom: 150px !important; 
 }
 
 input.newFolderInput {
@@ -100,7 +100,7 @@ button.submitFolderButton {
   padding: 7px !important;
 }
 
-@media only screen and (min-width: 380px) and (max-width: 1080px) {
+@media only screen and (min-width: 415px) and (max-width: 1080px) {
   div.folderHolder {
     bottom: 100px !important;
     width: 400px;
