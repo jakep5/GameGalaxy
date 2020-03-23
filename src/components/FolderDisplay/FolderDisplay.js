@@ -78,7 +78,7 @@ export default class FolderDisplay extends Component {
 
         let openId = e.target.getAttribute('name');
 
-        let element = document.getElementById('itemsHolder');
+        let element = document.getElementById('addFolderButton');
 
         element.scrollIntoView({
             behavior: "smooth",
