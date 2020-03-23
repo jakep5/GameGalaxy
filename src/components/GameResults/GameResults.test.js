@@ -16,5 +16,5 @@ describe('GameResults basic smoke tests', () => {
             </BrowserRouter>
         , div)
         ReactDOM.unmountComponentAtNode(div);
-    })
+    });
 })

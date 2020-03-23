@@ -4,7 +4,6 @@ import TestObject from '../../testStore';
 import noFoldersContext from '../../testStore';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import styles from './styles.module.css';
 import { shallow } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import GamesProvider from '../../contexts/GamesContext';
@@ -37,8 +36,23 @@ describe('AddFolderWindow basic smoke tests', () => {
     });
 
     it('component successfully renders add folder toggle button', () => {
-        const render = shallow(<AddFolderWindow />);
+        const renderer = shallow(
+            <BrowserRouter>
+                <GamesProvider value={TestObject}>
+                    <AddFolderWindow />
+                </GamesProvider>
+            </BrowserRouter>);
 
-        expect(render.find('#addFolderButton').exists()).toBeTruthy();
+        expect(renderer
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .find('#addFolderButton').exists()).toBeTruthy();
+
     });
 })

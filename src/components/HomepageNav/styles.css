@@ -68,7 +68,7 @@
   position: absolute;
   z-index: -1;
   content: '';
-  top: 100%;
+  top: 50%;
   left: 5%;
   height: 10px;
   width: 90%;

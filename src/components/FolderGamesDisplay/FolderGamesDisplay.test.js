@@ -24,13 +24,23 @@ describe('FolderGameDisplay basic smoke tests', () => {
     });
 
     it('component successfully renders item holder div', () => {
-        const shallowRender = shallow(
+        const renderer = shallow(
             <BrowserRouter>
                 <GamesProvider value={TestObject}>
                     <FolderGameDisplay />
                 </GamesProvider>
             </BrowserRouter>
         );
-        expect(shallowRender.find('#itemsHolder')).to.have.length(1);
+        expect(renderer
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .find('#itemsHolder').exists()).toBeTruthy();
+        
     })
 })

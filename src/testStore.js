@@ -71,7 +71,7 @@ let TestObject = {
     games: testGameResults,
     isLoading: true,
     folders: testFoldersArray,
-    focusedFolder: null
+    focusedFolder: 'test',
 }
 
 let noFoldersTestObject = {
@@ -79,6 +79,7 @@ let noFoldersTestObject = {
     games: testGameResults,
     isLoading: true,
     folders: [],
+    justSignedUp: false,
     setFolders: function(userId = 2) {
         FolderApiServiceObject.getFolders(userId)
             .then(foldersRes => {

@@ -26,8 +26,8 @@ describe('Basic smoke tests', () => {
     });
 
     it ('Completed icon successfuly displays FontAwesome icon', () => {
-        const render = shallow(<CompletedIcon />);
+        const renderer = shallow(<CompletedIcon />);
 
-        expect(render.find('#checkIcon').exists()).toBe(true);
+        expect(renderer.dive().find('#checkIcon').exists()).toBeTruthy();
     })
 })

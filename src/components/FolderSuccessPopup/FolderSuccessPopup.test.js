@@ -25,14 +25,24 @@ describe('FolderSuccessPopup basic smoke tests', () => {
     });
 
     it('component successfully renders success message', () => {
-        const wrapper = shallow(mount(
-                    <FolderSuccessPopup>
-                        <GamesConsumer value={TestObject} />
-                    </FolderSuccessPopup>
-            ).find('#successPopup'));
+        const renderer = shallow(
+            <BrowserRouter>
+                <GamesProvider value={TestObject}>
+                    <FolderSuccessPopup />
+                </GamesProvider>
+            </BrowserRouter>
+        );
+     
+        expect(renderer
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .find('p').length).toBe(1);
 
-        expect(wrapper.find('p').shallow.length).toBe(1);
-
-        /* console.log(wrapper.debug()); */
     })
 })

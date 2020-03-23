@@ -4,7 +4,6 @@ import TestObject from '../../testStore';
 import { shallow } from 'enzyme';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import TestRenderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import GamesProvider, { GamesConsumer } from '../../contexts/GamesContext';
 import FolderGame from './FolderGame';
@@ -25,7 +24,7 @@ describe('FolderGame basic smoke tests', () => {
     });
 
     it('folder game contains delete button', () => {
-        const shallowRender = shallow(
+        const renderer = shallow(
             <BrowserRouter>
                 <GamesProvider value={TestObject}>
                     <FolderGame />
@@ -33,11 +32,20 @@ describe('FolderGame basic smoke tests', () => {
             </BrowserRouter>
         );
 
-        expect(shallowRender.find('.styles.deleteGameButton')).to.have.lengthOf(1);
+        expect(renderer
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .find('.deleteGameButton').exists()).toBeTruthy();
     })
 
     it('folder game contains completed button', () => {
-        const shallowRender = shallow(
+        const renderer = shallow(
             <BrowserRouter>
                 <GamesProvider value={TestObject}>
                     <FolderGame />
@@ -45,6 +53,15 @@ describe('FolderGame basic smoke tests', () => {
             </BrowserRouter>
         );
 
-        expect(shallowRender.find('.styles.completeButton')).to.have.lengthOf(1);
+        expect(renderer
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .dive()
+                .find('.completeButton').exists()).toBeTruthy();
     })
 })

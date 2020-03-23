@@ -91,7 +91,7 @@ export default class SignUpForm extends Component {
                     {error && <p className={styles.error}>{error}</p>}
                     </div>
 
-                    <label for='user_name' className={styles.usernameLabel}>Username:</label>
+                    <label htmlFor='user_name' className={styles.usernameLabel}>Username:</label>
                     <input 
                         value={this.state.username}
                         onChange={(e) => this.handleUsernameChange(e)}
@@ -105,7 +105,7 @@ export default class SignUpForm extends Component {
 
                     <br/>
 
-                    <label for='password' className={styles.passwordLabel}>Password:</label>
+                    <label htmlFor='password' className={styles.passwordLabel}>Password:</label>
                     <input
                         value={this.state.password}
                         onChange={(e) => this.handlePasswordChange(e)} 
@@ -129,7 +129,7 @@ export default class SignUpForm extends Component {
 
                     </div>
 
-                    <button type='submit' for='signUpForm' className={styles.signUpButton}>Sign Up</button>
+                    <button type='submit' htmlFor='signUpForm' className={styles.signUpButton}>Sign Up</button>
 
                     <div className={styles.passwordRequirementsHolder}>
                         <h1 className={styles.passwordRequirementsHeader}>Password requirements:</h1>

@@ -20,14 +20,14 @@ export default class SearchPageNav extends Component {
             <GamesConsumer>
                 {value => (
                     <nav className={styles.nav}>
-                        <Link to='/' style={{ textDecoration: 'none' }}>
-                            <a className='hvr-float-shadow' href='sign out' onClick={(e) => value.handleSignOut(e)}>Sign Out</a>
+                        <Link to='/' className='hvr-float-shadow' href='sign out' onClick={(e) => value.handleSignOut(e)}>
+                            Sign Out
                         </Link>
 
                         <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo}/>
                         
-                        <Link to='/profile' style={{ textDecoration: 'none' }}>
-                            <a className='hvr-float-shadow'href='#profile'>My Profile</a>
+                        <Link to='/profile' className='hvr-float-shadow'href='#profile'>
+                            My Profile
                         </Link>  
                     </nav>
                 )}

@@ -102,7 +102,7 @@ export default class SignInForm extends Component {
                             {justSignedUp && <p className={styles.justSignedUp}>Thanks for signing up! Please sign in.</p>}
                             </div>
 
-                            <label className={styles.userNameLabel} for='user_name'>Username</label>
+                            <label className={styles.userNameLabel} htmlFor='user_name'>Username</label>
                             <input 
                                 className={styles.signInUsername} 
                                 value={this.state.username}
@@ -114,7 +114,7 @@ export default class SignInForm extends Component {
                                 autoComplete='off'
                             />
                             <br />
-                            <label className={styles.passwordLabel} for='password'>Password</label>
+                            <label className={styles.passwordLabel} htmlFor='password'>Password</label>
                             <input 
                                 className={styles.signInPassword} 
                                 value={this.state.password}

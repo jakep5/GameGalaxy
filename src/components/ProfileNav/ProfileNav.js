@@ -20,16 +20,16 @@ export default class ProfileNav extends Component {
             <GamesConsumer>
                 {value => (
                     <nav className={styles.nav}>
-                        <Link to='/' style={{ textDecoration: 'none' }}>
-                            <a className='hvr-float-shadow'href='sign out' onClick={(e) => value.handleSignOut(e)}>Sign Out</a>
+                        <Link to='/' className='hvr-float-shadow' href='sign out' onClick={(e) => value.handleSignOut(e)}>
+                            Sign Out
                         </Link>
 
                         <Link to='/search' style={{ textDecoration: 'none' }}>
                             <FontAwesomeIcon icon={faUserAstronaut} className={styles.siteLogo}/>
                         </Link>
 
-                        <Link to='/search' style={{ textDecoration: 'none' }}>
-                            <a className='hvr-float-shadow' href='#search'>Back to Search</a>
+                        <Link to='/search' className='hvr-float-shadow' href='#search'>
+                            Back to Search
                         </Link>  
                     </nav>
                 )}
