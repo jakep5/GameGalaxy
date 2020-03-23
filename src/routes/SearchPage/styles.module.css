@@ -58,7 +58,8 @@ section.searchPage {
 section.searchResults {
   z-index: 5;
   overflow-y: auto;
-  height: 100%;
+  height: auto;
+  min-height: 200px;
   background-image: url('http://getwallpapers.com/wallpaper/full/b/6/a/1198344-free-download-4k-galaxy-wallpaper-2560x1440-phone.jpg');
   background-position: center center;
   background-repeat: repeat-y;
