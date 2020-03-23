@@ -7,6 +7,7 @@ div.signInHolder {
   margin-left: calc(50% - 150px);
   border-radius: 25px;
   background-color: white;
+  text-align: center;
 }
 
 ul.demoAccount {
