@@ -62,7 +62,7 @@ export default class LandingPage extends Component {
                 <HomepageNav />
                 
                 <main className={styles.main} role='main'>
-                    <header className={styles.header} id='header' role='banner'>
+                    <section className={styles.header} id='header' role='banner'>
                         <div className={styles.title} role='contentinfo'>
                             <h1 id='title' className={styles.mainTitle}>Game Galaxy</h1>
                         </div>
@@ -75,7 +75,7 @@ export default class LandingPage extends Component {
                         </button> 
                     </Link>
                             
-                    </header>
+                    </section>
 
                     <section className={styles.landingSection}>
                         <h2 className={styles.landingText}>Welcome to Game Galaxy, a place to select your next games to play!</h2>
