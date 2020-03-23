@@ -28,7 +28,6 @@ div.reviewHolder {
   transition: max-height 0.2s ease-out;
   position: relative;
   top: 20%;
-  right: 15px;
   display: inline-block;
   text-align: center
 }

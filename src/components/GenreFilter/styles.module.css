@@ -18,7 +18,7 @@ button.genreCollapse {
 
 div.genreHolder {
   position: relative;
-  right: 20px;
+  right: 15px;
 }
 
 h1.genreFilterTitle {
@@ -42,6 +42,7 @@ li.genreFilterItem {
 input.inputCheck:hover {
   cursor: pointer;
 }
+
 
 @media only screen and (min-width: 1080px) {
   input.inputCheck {
