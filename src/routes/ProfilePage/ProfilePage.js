@@ -5,7 +5,6 @@ import FolderGamesDisplay from '../../components/FolderGamesDisplay/FolderGamesD
 import { GamesConsumer, GamesContext } from '../../contexts/GamesContext';
 import ProfileNav from '../../components/ProfileNav/ProfileNav'
 import ProfileStats from '../../components/ProfileStats/ProfileStats';
-import $ from 'jquery';
 
 export default class ProfilePage extends Component {
 
