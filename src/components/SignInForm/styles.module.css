@@ -38,6 +38,9 @@ li.demoPassword {
   font-family: 'Pacifico';
   font-size: 20px;
   display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: lighter;
 }
 
 .signInButton {
@@ -127,6 +130,8 @@ label.passwordLabel {
 }
 
 div.loadingHolder {
+  position: relative;
+  top: 25px;
   margin-left: 0%;
 }
 

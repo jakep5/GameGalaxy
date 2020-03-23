@@ -85,7 +85,7 @@ export default class SignUpForm extends Component {
             <div role='presentation' className={styles.signUpHolder}>
                 <form onSubmit={e => this.handleSignUpAuth(e)}className={styles.signUpForm} id='signUpForm' name='signUpForm'>
 
-                    <legend className={styles.signUpLegend}>Sign Up</legend>
+                    <h1 className={styles.signUpLegend}>Sign Up</h1>
 
                     <div role='alert'>
                     {error && <p className={styles.error}>{error}</p>}

@@ -92,7 +92,7 @@ export default class SignInForm extends Component {
 
                         <form onSubmit={(e) => this.handleLogInAuth(e)} className={styles.signInForm} id='signInForm' name='signInForm'>
 
-                            <legend className={styles.signInLegend} id='signInLabel'>Sign In</legend>
+                            <h1 className={styles.signInLegend} id='signInLabel'>Sign In</h1>
 
                             <div className={styles.errorDiv} role='alert'>
                             {error && <p className={styles.error}>{error}</p>}

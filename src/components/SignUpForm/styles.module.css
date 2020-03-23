@@ -21,13 +21,16 @@ label.usernameLabel {
   font-size: 15px;
 }
 
-legend.signUpLegend {
+.signUpLegend {
   position: relative;
   top: 10px;
   font-size: 23px;
   font-family: 'Pacifico';
   color: rgb(0, 140, 255);
   display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: lighter;
 }
 
 input.signUpUsername {
