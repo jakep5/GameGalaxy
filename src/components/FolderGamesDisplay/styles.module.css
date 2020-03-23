@@ -11,10 +11,11 @@ div.itemsHolder {
   display: inline-block;
   background-image: url('http://getwallpapers.com/wallpaper/full/b/6/a/1198344-free-download-4k-galaxy-wallpaper-2560x1440-phone.jpg');
   background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-attachment: scroll;
   opacity: 1;
 }
+
 
 h1.itemsLabel {
   font-family: 'Merriweather';
@@ -47,6 +48,8 @@ h2.mustOpenFolder {
     margin-top: 150px;
     box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.75);
     background: white;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 }
 
