@@ -146,3 +146,10 @@ div.filtersHolder {
     grid-template-columns: 33% 33% 33%;
   }
 }
+
+@media only screen and (min-width: 1080px) and (max-width: 1400px) {
+  div.filtersHolder {
+    position: relative;
+    right: 45px;
+  }
+}
